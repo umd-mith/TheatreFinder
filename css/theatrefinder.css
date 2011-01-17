@@ -1,0 +1,995 @@
+/* =====================
+Theatre Finder
+Copyright 2009-2010 MITH
+
+Written by Elisabeth Kvernen
+Maryland Institute for Technology in the Humanities
+
+swatch colors
+------------------
+ab2023 - red
+97c53c - green
+ffcf41 - yellow
+2c6871 - teal
+f69c2d - orange
+cde6e9 - light blue
+======================== */
+/*general styles*/
+body { 
+	font-family:Arial, Helvetica, sans-serif;
+	background:#e5e5e5 url(../images/bkgd_shadow.png) repeat-y scroll 50% 0;
+}a:link {
+	text-decoration:none;
+	color:#ab2023;
+}a:visited {
+	text-decoration:none;
+	color:#2c6871;
+}a:hover {
+	text-decoration:underline;
+}a:active {
+	text-decoration:underline;
+}strong {
+	font-weight:bold;
+}em {
+	font-style:italic;
+}.bolditalic {
+	font-style:italic;
+	font-weight:bold;
+}h1 {
+	font-size:20px;
+	font-weight:normal;
+}h2 {
+	font-weight:normal;	
+	font-size:16px;
+	margin-bottom:15px;
+}h3 {
+	font-size:16px;
+	margin-bottom:15px;
+	font-weight:100;
+}h3.status {
+	display:inline;
+}h4 {
+	font-size:14px;	
+	margin-bottom:10px;
+	text-transform:uppercase;
+	color:#333;
+	font-weight:100;
+}h5 {
+	font-size:14px;
+	font-weight:bold;
+	margin-bottom:5px;
+	color:#333;
+}p {
+	font-size:1em;
+	margin-bottom:10px;	
+	color:#000000;
+}.warning {
+	background:#f8dada;
+	border-top:1px solid #ff0000;
+	border-bottom:1px solid #ff0000;
+	margin-right:10px;
+}.waitingedits {
+	background:#f8dada;
+	border-top:1px solid #ff0000;
+	border-bottom:1px solid #ff0000;
+	display:inline;
+}.waitingapproval {
+	background:#f5f6d4;
+	border-top:1px solid #d4b10d;
+	border-bottom:1px solid #d4b10d;
+	display:inline;
+}.approved {
+	background:#CCFFCC;
+	border-top:1px solid #6C9B0D;
+	border-bottom:1px solid #6C9B0D;
+	display:inline;
+}.container_12 {
+	background:#fff;
+	padding:50px 30px 30px 30px;
+}.leftrightpadding {
+	padding:0 10px;	
+}.rightpadding {
+	padding:0 10px 0 0;	
+}.leftpadding {
+	padding:0 0 0 10px;	
+}
+/* loginbar styles */
+.login {
+	width:100%;
+	background:#E7F3F4;
+	border-bottom:2px solid #94BEC4;
+	border-top:1px solid #CDE0E3;
+	position:absolute;
+	top:0;
+	right:0;
+}.login p.login_admin {
+	float:right; 
+	padding:.5em;
+	margin-bottom:0;
+	margin-right:15px;
+}
+.login p.login_options, .login p.login_account {
+	float:left; 
+	padding:.5em;
+	margin-bottom:0;
+	margin-left:15px
+}
+/*logo styles*/
+.logo h1 {
+	background-repeat:no-repeat;
+	width:140px;
+	height:71px;
+	text-indent:-9999px;
+}.logo h1 a {
+	display:block;
+	height:100%;
+	width:100%;
+} 
+/*nav styles*/
+.nav {
+	margin-top:20px;
+	margin-bottom:10px;
+}.nav .nav_1, .nav .nav_2, .nav .nav_3, .nav .nav_4, .nav .nav_5 {
+	margin-top:21px;
+}.nav h2 {
+	background-repeat:no-repeat;
+	width:135px;
+	height:14px;
+	margin-bottom:20px;
+}.nav h2 a {
+	display:block;
+	height:100%;
+	width:100%;
+	color:#000;
+	padding:0 0 0 5px;
+	#padding-top:0px;
+}.nav h2 a:visited {
+	color:#000;
+}.nav h2 a:hover {
+	text-decoration:none;	
+}.nav_1 h2 a, .nav_4 h2 a {
+	color:#fff;
+}.nav_1 h2 a:visited, .nav_4 h2 a:visited {
+	color:#fff;	
+}.nav_0 {
+	border-bottom:5px solid #fff;
+}.nav_1 {
+	background:url(../images/nav1.jpg) no-repeat;	
+	border-bottom:5px solid #fff;
+}.nav_2 {
+	background:url(../images/nav2.jpg) no-repeat;	
+	border-bottom:5px solid #fff;
+}.nav_3 {
+	background:url(../images/nav3.jpg) no-repeat;	
+	border-bottom:5px solid #fff;
+}.nav_4 {
+	background:url(../images/nav4.jpg) no-repeat;	
+	border-bottom:5px solid #fff;
+}.nav_5 {
+	background:url(../images/nav5.jpg) no-repeat;	
+	border-bottom:5px solid #fff;
+}.nav ul li p {
+	font-style:italic;	
+	margin-bottom:10px;
+}
+
+/*page styles */
+/* --------------home (and some theatre entry) styles */
+#home .nav h1, #entry .nav h1, #list .nav h1, #bio .nav h1, #login .nav h1, #admin .nav h1, #signup .nav h1 {
+	background-image:url(../images/TFLogoHome.jpg);	
+}#home .maincontent h2, #entry .maincontent h2 {
+	color:#ab2023;
+}#home div.featuredarea {
+	border:1px #cccccc solid;	
+}#home .featuredarea h1 {
+	background-image:url(../images/h1Home.png);
+	left:-1px;
+}#home h3, #home h3 a, #entry h3 a, #entry h3, #bio h3, #bio h3 a{
+	color:#ab2023;
+}#home .footer, #entry .footer {
+	border-color:#ab2023;	
+}#home .copyright, #entry .copyright {
+	border-color:#c36061;	
+}
+/*bio page styles */
+#bio .theatreName {
+	padding-bottom:25px;		
+}#bio .theatreName h1 {
+	background:#AB2023 url(../images/h1_bkgdEnd.jpg) 100% 0% no-repeat;
+	padding-right:38px;
+	height:30px;
+	min-width:221px;
+	width:auto;
+}#bio .bioimg {
+	margin:20px;
+}
+/* --------------theatre entry styles */
+#entry .theatreName {
+	padding-bottom:25px;		
+}#entry .theatreName h1 {
+	background:#AB2023 url(../images/h1_bkgdEnd.jpg) 100% 0% no-repeat;
+	padding-right:38px;
+	height:30px;
+	min-width:221px;
+	width:auto;
+	letter-spacing:.03em;
+	line-height:1em;
+}#entry .entryDetails {
+	overflow:auto;
+	max-height:1000px;
+	margin-top:15px;
+	padding-right:10px;
+}#entry .basics {
+	margin-bottom:20px;	
+}#entry .rating {
+	display:inline;	
+}#entry .ratingName {
+	display:inline;
+	float:left;
+}
+/* --------------about styles */
+#about .nav h1 {
+	background-image:url(../images/TFLogoHome.jpg);	
+}#about .searchbar {
+	border-color:#ab2023;	
+}#about .maincontent h2 {
+	color:#ab2023;
+}#about .featuredarea h1 {
+	background-image:url(../images/h1Home.png);
+}#about h3 a, #about h3{
+	color:#ab2023;	
+}#about .footer {
+	border-color:#ab2023;	
+}#about .copyright {
+	border-color:#c36061;	
+}#about .featuredarea .sidebar {
+	min-height:464px;
+	float:left;
+}#about .featuredarea .map {
+	height:100%;
+	width:720px;
+}#about .featuredarea button {
+	background:#ab2023;
+	cursor:pointer;
+}#about .featuredarea button:hover {
+	background:#891012;
+}
+/* --------------search styles */
+#search .nav h1 {
+	background-image:url(../images/TFLogoSearch.jpg);	
+}#search .searchbar {
+	border-color:#97c53c;	
+}#search .maincontent h2 {
+	color:#6c9b0d;
+}#search .featuredarea h1 {
+	background-image:url(../images/h1Search.png);
+}#search h3 a, #search h3{
+	color:#6C9B0D;	
+}#search .footer {
+	border-color:#97c53c;	
+}#search .copyright {
+	border-color:#b5d673;	
+}#search .featuredarea .sidebar {
+	min-height:650px;
+	float:left;
+}#search .featuredarea .instructions {
+	min-height:100px;
+}#search .featuredarea .map {
+	height:100%;
+	width:720px;
+	float:left;
+	margin-left:-10px;
+}
+/* --------------join styles */
+#join .nav h1 {
+	background-image:url(../images/TFLogoJoin.jpg);	
+}#join .searchbar {
+	border-color:#ffcf41;
+}#join .maincontent h2 {
+	color:#e1a800;
+}#join .featuredarea h1 {
+	background:url(../images/h1Join.png) no-repeat;
+	color:#333;
+}#join h3 a, #join h3 {
+	color:#e1a800;
+}#join .footer {
+	border-color:#ffcf41;	
+}#join .copyright {
+	border-color:#fedd77;	
+}#join #slider-range {
+	margin-bottom:10px;
+	float:left;
+}#join ul.sliderDates  {
+	margin-bottom:10px;	
+}#join .sliderDates li{
+	padding-bottom:20px;
+	list-style:none;
+}#join .ui-widget-header {
+	background-image:none;
+	background-color:#fedd77;
+}#join .featuredarea button {
+	background:#ffcd33;
+}#join .featuredarea button:hover {
+	background:#ebb200;
+	color:#333;
+}#join p.loginbutton {
+	margin-bottom:20px;
+}#join #login_button {
+	border: none;
+	margin-right: 1em;
+	padding: 6px;
+	text-decoration: none;
+	font-size: 12px;
+	-moz-border-radius:4px; 
+	-webkit-border-radius:4px; 
+	border-radius:4px;
+	background: #ffcd33;
+	color: #333;
+}#join #login_button:hover {
+	background:#ebb200;
+	cursor: pointer;
+}
+/* --------------contribute styles */
+#contribute .nav h1 {
+	background-image:url(../images/TFLogoContribute.jpg);	
+}#contribute .searchbar {
+	border-color:#2c6871;  f69c2d
+}#contribute .maincontent h2 {
+	color:#2c6871; f69c2d
+}#contribute .featuredarea h1 {
+	background:url(../images/h1Contribute.png) no-repeat;
+	color:#fff;
+}#contribute .featuredarea button {
+	background:#2c6871; f69c2d
+}#contribute .featuredarea button:hover {
+	background:#195058; e98100
+}#contribute h3, #contribute h3 a {
+	color:#2c6871; ea7b24
+}#contribute .footer {
+	border-color:#2c6871;	f69c2d 
+}#contribute .copyright {
+	border-color:#699499;	 f8b868
+}
+/* unused button styles
+#contribute h3.button {
+	margin-bottom:0px;	
+}#contribute .button a {
+	color:#fff;
+	height:29px;
+	width:221px;
+	display:block;
+	padding:10px 5px 0px 10px;
+}#contribute .button a:hover {
+	text-decoration:none;
+	background:url(../images/h1ContributeHover.png) no-repeat;
+} */
+/* --------------resources styles */
+#resources .nav h1 {
+	background-image:url(../images/TFLogoResources.jpg);	
+}#resources .searchbar {
+	border-color:#f69c2d;  
+}#resources .maincontent h2 {
+	color:#f69c2d; 
+}#resources .featuredarea h1 {
+	background:url(../images/h1Contribute.png) no-repeat;
+	color:#fff;
+}#resources .featuredarea button {
+	background:#f69c2d; 
+}#resources .featuredarea button:hover {
+	background:#e98100; 
+}#resources h3, #contribute h3 a {
+	color:#ea7b24; 
+}#resources .footer {
+	border-color:#f69c2d;	 
+}#resources .copyright {
+	border-color:#f8b868;	 
+}
+/* --------------list styles */
+#list h3, #list h3 a{
+	color:#ab2023;
+}#list div.theatreList {
+	margin:30px 0px 10px;
+	width:940px;
+}#list div.featuredarea {
+	background:none;
+}#list div.theatreList div.headerRow, #list div.theatreList div.theatreEntries, #list div.theatreList div.editRow {
+	text-align:left;	
+	background:none;
+	margin-bottom:0;
+}#list div.theatreList div.editRow {
+	background:#e7f3f4;
+	border-bottom:2px solid #94bec4;
+	border-top:1px solid #cde0e3;
+	margin-bottom:0;
+}#list div.theatreList div.editRow p {
+	padding:0 0 0 5px;
+	margin-bottom:0px;
+	text-align:left;
+}
+/*  Added for 'back to top' link in 'Search Theatres' views */
+#list span.right_link {
+	padding:0 0 0 0;
+	margin-bottom:0px;
+	margin-right:5px;
+	float:right;
+}#list div.theatreList div.headerRow {
+	border-bottom:1px solid #94bec4;
+	border-top:1px solid #94bec4;
+	padding:0;
+}#list div.theatreList div.headerRow h4 {
+	margin-bottom:0;
+	padding-top:5px;
+}#list div.theatreList div {
+	vertical-align:middle;
+	padding:5px 0;
+}#list h3 {
+	margin-bottom:10px;
+}#list div.theatreList img.icon {
+	padding-right:3px;
+	vertical-align:middle;
+}
+/* --------------admin page styles */
+#admin .theatreName {
+	padding-bottom:25px;		
+}#admin .theatreName h1 {
+	background:#AB2023 url(../images/h1_bkgdEnd.jpg) 100% 0% no-repeat;
+	padding-right:38px;
+	height:30px;
+	min-width:221px;
+	width:auto;
+}
+/* ---Elisabeth, this is a combo of #login+#list body styles (#list div.editRow); pls adjust if not good */ 
+#admin .copyright {
+	border-color:#c36061;	
+}#admin .footer {
+	border-color:#ab2023;
+}#admin h3, #login h3 a {
+	color:#ab2023;
+	margin-top: 0;
+}#admin .sidebar {
+	padding-bottom:20px;
+}#admin .admin_header {
+	margin-top: 0;
+}#admin .adminOpts {
+	overflow:auto;
+	margin-top:10px;
+	padding-right:15px;
+	padding-bottom:20px;
+}#admin h3 {
+	color:#ab2023;
+}#admin div.maincontent div.headerRow, #admin div.maincontent div.editRow {
+	text-align:left;	
+	background:none;
+	margin-bottom:0;
+}#admin div.maincontent div {
+	padding:5px 0;
+	vertical-align:middle;
+}#admin div.maincontent div.editRow {
+	text-align:left;	
+	background:none;
+	margin-bottom:0;
+}#admin div.maincontent div.editRow {
+	background:#e7f3f4;
+	border-bottom:2px solid #94bec4;
+	border-top:1px solid #cde0e3;
+	margin-bottom:0;
+}#admin div.maincontent div.editRow p {
+	padding:0 0 0 5px;
+	margin-bottom:0px;
+	text-align:left;
+}#admin div.maincontent div.headerRow {
+	border-bottom:1px solid #94bec4;
+	border-top:1px solid #94bec4;
+	padding:0;
+}#admin div.maincontent div.headerRow h4 {
+	margin-bottom:0;
+	padding-top:5px;
+}#admin div.undoRow {
+	text-align:left;	
+	background:none;
+	margin-bottom:0;
+}#admin  div.undoRow {
+	background:#ccffcc;
+	border-bottom:2px solid #6C9B0D;
+	border-top:0;
+	margin-bottom:0;
+}#admin  div.undoRow p {
+	padding:0 0 0 5px;
+	margin-bottom:0px;
+	text-align:left;
+}
+/* **added acctbutton class to #admin body page (emb 06/26/2010)** */
+#admin .acctbutton {
+	color:#000;
+	text-decoration:none;
+	display:block;
+	margin: 0 25px 0 0;
+	padding:5px;
+	border:1.5px solid #94bec4;
+	text-align:center;
+	cursor:pointer;
+	float:right;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	-o-border-radius:5px;
+	border-radius:5px;
+	background:#cde6e9;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#cde6e9), to(#FFF));
+	background:-moz-linear-gradient(0% 90% 90deg, #cde6e9, #FFF);		
+}#admin .acctbutton:hover {
+	color:#fff;
+	border-color:#3278BE;
+	background:#94bec4;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#94bec4), to(#cde6e9));
+	background:-moz-linear-gradient(0% 90% 90deg, #cde6e9, #94bec4);
+}
+/* **updatebutton class to #admin body page (emb 07/06/2010)** 
+ * **not the best idea, but it's same as acctbutton class,  **
+ * **just that its 'click' is bound to different action     ** */
+#admin .updatebutton {
+	color:#000;
+	text-decoration:none;
+	display:block;
+	margin: 0 25px 0 0;
+	padding:5px;
+	border:1.5px solid #94bec4;
+	text-align:center;
+	cursor:pointer;
+	float:right;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	-o-border-radius:5px;
+	border-radius:5px;
+	background:#cde6e9;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#cde6e9), to(#FFF));
+	background:-moz-linear-gradient(0% 90% 90deg, #cde6e9, #FFF);		
+}#admin .updatebutton:hover {
+	color:#fff;
+	border-color:#3278BE;
+	background:#94bec4;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#94bec4), to(#cde6e9));
+	background:-moz-linear-gradient(0% 90% 90deg, #cde6e9, #94bec4);
+}#admin .undobutton {
+	color:#000;
+	text-decoration:none;
+	display:block;
+	margin: 0 25px 5px 0;
+	padding:5px;
+	border:1.5px solid #6C9B0D;
+	text-align:center;
+	cursor:pointer;
+	float:right;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	-o-border-radius:5px;
+	border-radius:5px;
+	background:#b5d673;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#ccffcc), to(#FFF));
+	background:-moz-linear-gradient(0% 90% 90deg, #ccffcc, #FFF);		
+}#admin .undobutton:hover {
+	color:#fff;
+	border-color:#97c53c;
+	background:#6C9B0D;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#def1f4;), to(#6C9B0D));
+	background:-moz-linear-gradient(0% 90% 90deg, #6C9B0D, #def1f4);
+}#admin .password_input {
+	margin: 5px 0 2px 0;
+	padding: 5px;
+	padding: 1em;
+	border:1px solid #D3D3D3;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius:2px;
+}#changepasswd_btn {
+	color:#000;
+	text-decoration:none;
+	display:block;
+	margin: 5px 25px 0 0;
+	padding:5px;
+	padding: 1em;
+	border:1.5px solid #94bec4;
+	text-align:center;
+	cursor:pointer;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	-o-border-radius:5px;
+	border-radius:5px;
+	background:#cde6e9;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#cde6e9), to(#FFF));
+	background:-moz-linear-gradient(0% 90% 90deg, #cde6e9, #FFF);		
+}#changepasswd_btn:hover {
+	color:#fff;
+	border-color:#3278BE;
+	background:#94bec4;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#94bec4), to(#cde6e9));
+	background:-moz-linear-gradient(0% 90% 90deg, #cde6e9, #94bec4);
+}
+/* --------------login and signup (request) body styles */
+#login #login_form h1 {
+	background-image:url(../images/h1Home.png);
+	left:-1px;
+}#login .copyright, #signup .copyright {
+	border-color:#c36061;	
+}#login .footer, #signup .footer {
+	border-color:#ab2023;
+}#login h3, #login h3 a {
+	color:#ab2023;
+	margin-top: 0;
+}/* ------ login_form ---- */
+#login .sidebar {
+	padding-bottom:20px;
+}#signup .sidebar {
+	padding-bottom:20px;
+}#signup h3, #signup h3 a {
+	color:#ab2023;
+	margin-top: 0;
+	text-align: center;
+}#login .login_header, #signup .signup_header {
+	margin-top: 0;
+	text-shadow: #fff 0 1px 0; /* color, x, y, blur */
+}/* For divs containing form: input[type=text], input[type=password] */
+#login .login_text, .signup .login_text {
+	display: block;
+	margin: 0 0 1em 0;
+	padding: 5px;
+	border:none;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 22px;
+	border-radius:2px;
+	padding: 1em;
+}.signup .login_text {
+	border:1px solid #D3D3D3;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border-radius:2px;
+}#login a.login_links {
+	border: none;
+	margin-right: 1em;
+	padding: 8px;
+	text-decoration: none;
+	font-size: 12px;
+	-moz-border-radius:4px; 
+	-webkit-border-radius:4px; 
+	border-radius:4px;
+	background: #AB2023; /* #2c6871 */;
+	color: white;
+}#login a.login_links:hover {
+	background:#891012; /* #195058 */;
+	cursor: pointer;
+}/* Validation error messages */
+#login .error {
+	color: #393939;
+	font-size: 15px;
+}#signup div.maincontent div {
+	padding:5px 0;
+	vertical-align:middle;
+}#signup fieldset {
+	margin: auto;
+	margin-top: 1em;
+	display: block;
+}#submit, #request {
+	border: none;
+	margin-right: 1em;
+	margin-top: 15px;
+	padding: 6px;
+	text-decoration: none;
+	font-size: 12px;
+	-moz-border-radius:4px; 
+	-webkit-border-radius:4px; 
+	border-radius:4px;
+	background: #AB2023; /* #2c6871 */;
+	color: white;
+}#submit:hover,  #request:hover {
+	background:#891012;
+	cursor: pointer;
+}
+
+
+/*searchbar styles */
+.searchbar {
+	background:#cde6e9;
+	border-top:5px solid #ab2023;
+	margin-bottom:20px;
+	border-bottom:1px solid #cccccc;
+	#margin-bottom:10px;
+}.searchbar h2 {
+	margin:15px 0 10px 10px;
+	font-size:14px;
+	padding-top:0px;
+	display:inline-block;
+}form.search {
+	margin:10px 10px 10px 0;	
+}.searchbar span.note {
+	display:inline-block;
+	width:50px;
+	height:20px;
+	background:url(../images/note.png) no-repeat;
+	cursor:pointer;
+}
+
+/*breadcrumbs styles*/
+.breadcrumbs p{
+	padding:0 0 5px 10px;
+	margin:-10px 0 0 0;
+	#margin-top:0;
+}
+
+/* featured theatre styles */
+div.featuredarea {
+	position:relative;
+	margin-top:20px;
+	margin-bottom:15px;
+	background-color:#ffffff;
+	background-image: url('../images/bkgd_featuredarea.gif');
+	background-repeat:repeat-y;
+}.featuredarea h1{
+	background:url(../images/h1Home.png) no-repeat;
+	position:absolute;
+	top:-19px;
+	left:0px;
+	color:#fff;
+	padding:10px 0 0 10px;
+	width:221px;
+	height:34px;
+	#padding-top:0px;
+	line-height:1em;
+	letter-spacing:.03em;
+}.featuredarea .sidebar {
+	padding-left:10px;	
+	background:	#cde6e9;
+	height:100%;
+	width:210px;
+}.featuredarea .sidebar h3 {
+	padding-top:35px;	
+}.featuredarea .sidebar h4 {
+	padding-left:3px;
+}.featuredarea .sidebar h4.inactive a {
+	color:#aaaaaa;
+}.featuredarea .sidebar h4.inactive a:hover {
+	text-decoration:none;
+	cursor:default;
+}.featuredarea .sidebar h4.active{
+	background:#fff url(../images/h4_bkgd.gif) no-repeat 100% 0;
+}.featuredarea .submit, .featuredarea button {
+	background:#AB2023;
+	padding:5px;
+	color:#ffffff;
+	border:none;
+	cursor:pointer;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius:5px;
+}.featuredarea .sidebar ul.inactive {
+	color:#aaaaaa;
+}.featuredarea .find {
+	position:absolute;
+	bottom:-1px;
+	left:72px;
+	height:24px;
+	width:148px;
+	background: url(../images/bkgd_find.gif) no-repeat;
+	background-position:left;
+}.featuredarea .find h3{
+	margin-bottom:5px;
+	padding:6px 5px 0 30px;
+}.featuredarea .sidebar p{
+	padding:0 10px 0 0;	
+}.featuredarea .sidebar select{
+	margin-bottom:10px;	
+}.featuredimage {
+	margin-right:0px;
+}.featuredimage img {
+	width:620px;
+	/* featured home page image should be 620x464px in size */
+}.featuredsidebar {
+	margin-left:0px;
+	margin-right:20px;
+}div.theatre {
+	margin-left:0;	
+	padding:10px;
+	border-bottom:1px solid #cccccc;
+	height:134px;
+	overflow:auto;
+}div.theatre.last{
+	border-bottom:none;
+}.theatre h3 {
+	font-style:italic;
+	font-weight:normal;
+	color:#2c6871;
+	margin-top:5px;
+}.theatre.active {
+	background:#ffb04e;
+}.theatre .tag {
+	font-style:italic;	
+}
+/* maincontent styles */
+.maincontent {
+	margin-top:15px;
+	margin-bottom:15px;
+}.featuredarea .maincontent {
+	margin-bottom:0px;	
+}.maincontent .row {
+	height:130px;	
+	margin-bottom:10px;
+}.maincontent h3 {
+	margin:20px 0 10px 0;
+}.maincontent h3:first-child {
+	margin-top:0;
+}
+
+/*  image grid with caption overlay styles */
+.boxgrid {
+	background:#fff none repeat scroll 0 0;
+	height:92px;
+	overflow:hidden;
+	position:relative;	
+	float:left;
+}.boxgrid img {
+	border:0 none;
+	left:0;
+	position:absolute;
+	top:0;
+	width:130px;
+}.captionfull .boxcaption {
+	left:0;
+	top:65px;
+}.boxcaption {
+	background-color:#fff;
+	float:left;
+	height:100%;
+	opacity:0.8;
+	filter:alpha(opacity=80);
+	-moz-opacity:0.8;
+	-khtml-opacity: 0.8;
+	position:absolute;
+	width:100%;
+}.boxgrid h4 {
+	font-size:12px;
+	font-weight:bold;
+	padding-left:10px;
+	margin: 5px 0;
+	color:#333;
+}.boxgrid p {
+	font-size:12px;
+	line-height:16px;
+	padding:0 10px;
+}.boxgrid p a {
+	font-weight:bold;
+	font-size:11px;
+}.boxgrid.captionfull {
+	margin-bottom:20px;
+}
+/* page editor styles */
+.editor {
+	border:1px solid #cccccc;
+	background:#f8f8f8;
+	margin-bottom:15px;
+	margin-top:15px;
+	padding:10px 0;
+}.editor p.entryTypeTitle {
+	display:inline;	
+}.editor ul{
+	display:inline;
+}.editor ul.entryType li {
+	display:inline;
+	list-style:none;
+	margin-left:10px;
+}.editor input.editorNotes {
+	width:100%;
+	height:100px
+}.editor p.editorNotesTitle {
+	padding-top:10px;	
+}.editor .qualityControl button {
+	margin-top:5px;	
+}.editor table {
+	background:#fff;
+	border:1px solid #cccccc;
+	width:100%;
+}.editor table tr {
+	line-height:31px;	
+	border-bottom:1px solid #cccccc;
+}.editor table tr:hover {
+	background:#e8e8e8;	
+}.editor table td {
+	padding:5px;
+	vertical-align:middle;
+}.editor table td a {
+	display:block;
+	text-decoration:none;
+	color:#000;
+}.editor table td a:hover {
+	#text-decoration:underline;	
+}.editor .entryContent p {
+	margin-bottom:5px;	
+}
+/* footer styles */
+.footer {
+	border-top:5px solid #ab2023;
+	margin-top:15px;
+}.footer h4 {
+	margin: 10px 0 2px 0;
+}.footer h4 a:hover {
+	text-decoration:none;
+}.footer p {
+	font-size:.9em;
+}.footer .nav_0, .footer .nav_1, .footer .nav_2, .footer .nav_3, .footer .nav_4, .footer .nav_5 {
+	background-image:none;	
+}.footer .nav_0 h4, .nav_0:hover {
+	border-bottom:5px solid #494a49;	
+}.footer .nav_1 h4, .nav_1:hover, .nav_1.current {
+	border-bottom:5px solid #c36061;	
+}.footer .nav_2 h4, .nav_2:hover, .nav_2.current {
+	border-bottom:5px solid #b5d673;	
+}.footer .nav_3 h4, .nav_3:hover, .nav_3.current {
+	border-bottom:5px solid #fedd77;	
+}.footer .nav_4 h4, .nav_4:hover, .nav_4.current {
+	border-bottom:5px solid #699499;	
+}.footer .nav_5 h4, .nav_5:hover, .nav_5.current {
+	border-bottom:5px solid #f8b868;	
+}.footer ul {
+	margin-bottom:10px;	
+}.footer ul li ul li {
+	margin-left:0px;
+	list-style-type:none;
+	font-size:11px;
+}.contact p {
+	margin-top:10px;
+	color:#3e3e3e;
+	font-style:italic;
+}.copyright {
+	border-top:1px solid #c36061;
+	margin-top:10px;
+	padding-top:5px;
+	font-size:11px;
+}
+/* tipsy styles */
+
+.tipsy { display:inline-block; padding: 5px; font-size: 15px; opacity: 0.9; filter: alpha(opacity=90); background-repeat: no-repeat;  background-image: url(../images/tipsy-green.gif); }
+  .tipsy-inner { padding: 5px 8px 4px 8px; background-color: #2C6871; color: white; max-width: 200px; text-align: center; }
+  .tipsy-inner { -moz-border-radius:3px; -webkit-border-radius:3px; border-radius:3px; }
+  .tipsy-north { background-position: top center; }
+  .tipsy-south { background-position: bottom center; }
+  .tipsy-east { background-position: right center; }
+  .tipsy-west { background-position: left center; }
+a.tipsy:hover {text-decoration:none;}
+
+/* added for ease of making some divs 'hidden' (emb, may2010) */
+.hidden { display: none; }
+
+/* ------- logout 'link' (partials/header.php emb, jun2010) ---- */
+#logout {
+	border: none;
+	margin-right: 1em;
+	margin-top: 2px;
+	padding: 2px 2px 2px 4px;
+	text-decoration: none;
+	font-style:italic;
+	font-size: 10px;
+	-moz-border-radius:6px; 
+	-webkit-border-radius:6px; 
+	border-radius:6px;
+	background: #CDEAE9;
+	color: #fff;
+	box-shadow: 0 1px 0 white;
+	-moz-box-shadow: 0 1px 0 white;
+	-webkit-box-shadow: 0 1px 0 white;
+} #logout a {
+	border: none;
+	margin-right: 1em;
+	margin-top: 2px;
+	padding: 2px 2px 2px 4px;
+	text-decoration: none;
+	font-style:italic;
+	font-size: 10px;
+	-moz-border-radius:6px; 
+	-webkit-border-radius:6px; 
+	border-radius:6px;
+	background: #CDEAE9;
+	color: #000;
+}
+
+#logout:hover #logout a:hover {
+	background:#e1f1ef;;
+	color: #000;
+	cursor: pointer;
+}

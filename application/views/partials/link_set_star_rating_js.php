@@ -1,0 +1,1 @@
+<script type="text/javascript" src="<?php echo base_url();?>javascript/set_star_rating.js"></script>
