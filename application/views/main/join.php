@@ -3,7 +3,7 @@
     <div class="grid_3 alpha sidebar">
         <h1>Join Finder</h1>
         <h3>Have visual or multimedia materials to contribute?</h3>
-        <p>If you would like to contribute images or video footage to the theatre-finder.org project, please visit our <a href="contribute">contribute page</a>.</p>
+        <p>If you would like to contribute images or video footage to the theatre-finder.org project, please visit our <a href="contribute">add to finder</a> page.</p>
 		<p>To create a 3-dimensional CAMP theatre model, please read the CAMP submission guidelines at: <a href="http://mith.umd.edu/camp/">http://mith.umd.edu/camp</a></p>
     </div>
     <div class="grid_8 omega maincontent suffix_1">
