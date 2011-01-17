@@ -1,6 +1,6 @@
 <?php
 
-class Login extends TheatreFinder_Controller {
+class User extends TheatreFinder_Controller {
 
 	function __construct() {
 		parent::__construct();
@@ -28,7 +28,6 @@ class Login extends TheatreFinder_Controller {
 	 * 				
 	 * *********************************************************** */
 	function _is_logged_in() {
-		
 		$is_logged_in = $this->session->userdata('is_logged_in');
 		if(!isset($is_logged_in) || $is_logged_in != true) {
 			$this->data['template'] = 'visitors_only_layout';
@@ -47,7 +46,6 @@ class Login extends TheatreFinder_Controller {
 	}
 
 	function index() {
-		
 		// check to see if user's already logged in
 		$is_logged_in = $this->session->userdata('is_logged_in');
 		
@@ -97,7 +95,6 @@ class Login extends TheatreFinder_Controller {
 	}
 	
 	function validate_user_credentials() {
-		
 		$valid_user = $this->Theatre_model->validate_user($this->input->post('username'), $this->input->post('password'));
 		
 		if(isset($valid_user)) { // if the user's credentials validated...
@@ -154,7 +151,6 @@ class Login extends TheatreFinder_Controller {
 	}
 
 	function signup() {
-		
 		$this->data['title'] = 'Theatre Finder | Request Account';
 		$this->data['body_id'] = '<body id="signup">';
 		
@@ -434,5 +430,4 @@ class Login extends TheatreFinder_Controller {
 	
 	
 }
-
 ?>

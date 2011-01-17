@@ -1,6 +1,6 @@
 <?php
 
-class Main extends TheatreFinder_Controller {
+class Index extends TheatreFinder_Controller {
 
 	function __construct() {
 		parent::__construct();

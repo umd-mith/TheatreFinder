@@ -18,7 +18,7 @@
 <a name="top_of_navbar"></a>
 <!-- Login bar: For visitors, this is only login (for those logged in, see main_layout.php) -->
     <div class="login">
-        <p class="login_options"><a href="<?php echo base_url();?>login">Login to Theatre Finder</a></p>
+        <p class="login_options"><a href="<?php echo base_url();?>user">Login to Theatre Finder</a></p>
     </div>
 <!-- body identifier, different foreach view -->
 	<?php $this->load->view('partials_visitors_only/header.php'); ?>

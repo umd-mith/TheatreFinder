@@ -2,20 +2,20 @@
     	<!-- Navigation area -->
         <div class="grid_12 nav">   
             <ul id="nav_header">
-	         	<li class="grid_2 alpha logo"><h1><a href="<?php echo base_url();?>main">Theatre Finder</a></h1></li>
-                <li class="grid_2 nav_1"><h2><a href="<?php echo base_url();?>main/about">about finder</a></h2>
+	         	<li class="grid_2 alpha logo"><h1><a href="<?php echo base_url();?>index">Theatre Finder</a></h1></li>
+                <li class="grid_2 nav_1"><h2><a href="<?php echo base_url();?>index/about">about finder</a></h2>
                 	<p>Information on what is covered in this guide</p>
                 </li>
-                <li class="grid_2 nav_2"><h2><a href="<?php echo base_url();?>main/search">search finder</a></h2>
+                <li class="grid_2 nav_2"><h2><a href="<?php echo base_url();?>index/search">search finder</a></h2>
                 	<p>Advanced textual and geographic searches</p>
                 </li>
-                <li class="grid_2 nav_3"><h2><a href="<?php echo base_url();?>main/join">join finder</a></h2>
+                <li class="grid_2 nav_3"><h2><a href="<?php echo base_url();?>index/join">join finder</a></h2>
                 	<p>Create &amp; edit entries, construct CAMP models</p>
                 </li>
-                <li class="grid_2 nav_4"><h2><a href="<?php echo base_url();?>main/contribute">add to finder</a></h2>
+                <li class="grid_2 nav_4"><h2><a href="<?php echo base_url();?>index/contribute">add to finder</a></h2>
                 	<p>Submit your photos or videos to finder</p>
                 </li>
-                <li class="grid_2 omega nav_5"><h2><a href="<?php echo base_url();?>main/resources">resources</a></h2>
+                <li class="grid_2 omega nav_5"><h2><a href="<?php echo base_url();?>index/resources">resources</a></h2>
                 	<p>Further resources on historic theatres</p>
                 </li>
 			</ul>

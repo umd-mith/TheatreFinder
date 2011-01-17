@@ -19,7 +19,7 @@
 <!-- Login/Logout bar -->
     <div class="login">
     	<p class="login_admin"><?php echo $admin_link;?></p>
-        <p class="login_account"><a href="<?php echo base_url();?>login/logout">Logout <?php echo $username;?></a></p>
+        <p class="login_account"><a href="<?php echo base_url();?>user/logout">Logout <?php echo $username;?></a></p>
     </div>
 <!-- body identifier, different foreach view -->
 	<?php $this->load->view('partials/header.php'); ?>
