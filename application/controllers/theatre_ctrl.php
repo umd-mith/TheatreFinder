@@ -27,7 +27,7 @@ class Theatre_ctrl extends TheatreFinder_Controller {
 		
 		// Most library functions loaded in autoload.php (under config/ dir) 02/04/2010
 			
-		$this->load->library('MY_Xmlrpc');
+		$this->load->library('TheatreFinder_Xmlrpc');
 		//$this->load->library('MyMultiByte');
 			
 		// load helper functions
@@ -2479,7 +2479,7 @@ class Theatre_ctrl extends TheatreFinder_Controller {
 	 ************************************************************************** */
 	function change_admin_password() {
 		
-		// trying out a better template than what i'm using in libraries/MY_Controller.php
+		// trying out a better template than what i'm using in libraries/TheatreFinder_Controller.php
 		$this->load->library('template');
 		// init $result to false
 		$result = FALSE;
@@ -2520,7 +2520,7 @@ class Theatre_ctrl extends TheatreFinder_Controller {
 			// theatre_ctrl username
 			$this->data['user'] = $this->Theatre_model->get_account_by_username($this->data['username']); 
 		
-			// Slightly different template format than the $this->render() from MY_Controller
+			// Slightly different template format than the $this->render() from TheatreFinder_Controller
 			// Using to ensure that the CI Form Validation Errors are working properly
 			// This may work better for the entire app - will look at changing (emb/07/05/2010)
 			$this->template->load('layouts/main_layout', 'theatre_ctrl/change_password_form', $this->data);
@@ -2577,7 +2577,7 @@ class Theatre_ctrl extends TheatreFinder_Controller {
 	 ************************************************************************** */
 	function change_password() {
 		
-		// trying out a better template than what i'm using in libraries/MY_Controller.php
+		// trying out a better template than what i'm using in libraries/TheatreFinder_Controller.php
 		$this->load->library('template');
 		
 		if ($this->form_validation->run()) { // form input is valid
@@ -2613,7 +2613,7 @@ class Theatre_ctrl extends TheatreFinder_Controller {
 			// get user data
 			$this->data['user'] = $this->Theatre_model->get_account_by_username($this->data['username']); 
 
-			// Slightly different template format than the $this->render() from MY_Controller
+			// Slightly different template format than the $this->render() from TheatreFinder_Controller
 			// Using to ensure that the CI Form Validation Errors are working properly
 			$this->template->load('layouts/main_layout', 'theatre_ctrl/password_form', $this->data);
 		}

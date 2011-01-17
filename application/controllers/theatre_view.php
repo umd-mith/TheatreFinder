@@ -22,11 +22,11 @@ class Theatre_view extends TheatreFinder_Controller {
 		// now loaded in autoload.php (under config/ dir) 02/04/2010
 		// **TESTING** removed from autoload.php 02/17/2010, calling here
 		//$this->load->library('form_validation');
-		$this->load->library('MY_Xmlrpc');
+		$this->load->library('TheatreFinder_Xmlrpc');
 		
 		//$this->load->library('MyMultiByte');
 		// specific tf functions
-		//$this->load->library('MY_TF_functions');
+		//$this->load->library('TheatreFinder_TF_functions');
 			
 		// load helper functions
 		// **Could be loaded in autoload.php (under config/ dir) 02/04/2010
