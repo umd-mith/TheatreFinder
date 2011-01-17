@@ -53,7 +53,7 @@
 			University of Maryland, College Park, MD 20742 | E-mail theatre-finder [at] umd [dot] edu</p>
 	   </div>
        <div class="grid_12 copyright">	
-       		<p>&copy; 2010 Franklin J. Hildy; website design by <a href="http://mith.info" target="_blank">MITH</a>. All right reserved.</p>
+       		<p>&copy; 2010 Franklin J. Hildy; website design by <a href="http://mith.umd.edu" target="_blank">MITH</a>. All right reserved.</p>
        </div>
 </div>
 
