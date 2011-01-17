@@ -1,6 +1,6 @@
 <?php
 
-class Main extends MY_Controller {
+class Main extends TheatreFinder_Controller {
 
 	function __construct() {
 		parent::__construct();
@@ -272,7 +272,5 @@ class Main extends MY_Controller {
 		
 		$this->render($this->data['template']);
 	}
-
-	
 }
 ?>

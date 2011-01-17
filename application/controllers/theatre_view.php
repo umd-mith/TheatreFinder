@@ -1,6 +1,6 @@
 <?php
 	
-class Theatre_view extends MY_Controller {
+class Theatre_view extends TheatreFinder_Controller {
 	
 	/* ***********************************************************
 	 * Name:		__construct() theatre_view constructor

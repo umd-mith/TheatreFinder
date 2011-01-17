@@ -2,7 +2,7 @@
 	// Creation of a base class from which all of our controllers 
 	// will inherit
 	 
-class MY_Controller extends Controller {
+class TheatreFinder_Controller extends Controller {
 		
 	// layout stuff
 	protected $data = array();

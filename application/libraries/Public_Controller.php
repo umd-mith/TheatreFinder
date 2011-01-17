@@ -1,5 +1,5 @@
 <?php
-    class Public_Controller extends MY_Controller {
+    class Public_Controller extends TheatreFnder_Controller {
     	
     	function __construct() {
 			parent::__construct();

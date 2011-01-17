@@ -30,7 +30,7 @@
 	 * @author		ExpressionEngine Dev Team
 	 * @link		http://codeigniter.com/user_guide/libraries/xmlrpc.html
 	 */
-	class MY_Xmlrpc {
+	class TheatreFinder_Xmlrpc {
 
 		var $debug			= FALSE; 	// Debugging on or off	
 		var $xmlrpcI4		= 'i4';
@@ -68,7 +68,7 @@
 		//  VALUES THAT MULTIPLE CLASSES NEED
 		//-------------------------------------
 
-		function MY_Xmlrpc ($config = array())
+		function TheatreFinder_Xmlrpc ($config = array())
 		{
 			$this->xmlrpcName 		= $this->xmlrpcName;
 			$this->xmlrpc_backslash = chr(92).chr(92);
@@ -349,7 +349,7 @@
 	 * @author		ExpressionEngine Dev Team
 	 * @link		http://codeigniter.com/user_guide/libraries/xmlrpc.html
 	 */
-	class XML_RPC_Client extends MY_Xmlrpc
+	class XML_RPC_Client extends TheatreFinder_Xmlrpc
 	{
 		var $path			= '';
 		var $server			= '';
@@ -607,7 +607,7 @@
 	 * @author		ExpressionEngine Dev Team
 	 * @link		http://codeigniter.com/user_guide/libraries/xmlrpc.html
 	 */
-	class XML_RPC_Message extends MY_Xmlrpc
+	class XML_RPC_Message extends TheatreFinder_Xmlrpc
 	{
 		var $payload;
 		var $method_name;
@@ -1204,7 +1204,7 @@
 	 * @author		ExpressionEngine Dev Team
 	 * @link		http://codeigniter.com/user_guide/libraries/xmlrpc.html
 	 */
-	class XML_RPC_Values extends MY_Xmlrpc
+	class XML_RPC_Values extends TheatreFinder_Xmlrpc
 	{
 		var $me 	= array();
 		var $mytype	= 0;

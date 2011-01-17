@@ -1,6 +1,6 @@
 <?php
 
-class Login extends MY_Controller {
+class Login extends TheatreFinder_Controller {
 
 	function __construct() {
 		parent::__construct();

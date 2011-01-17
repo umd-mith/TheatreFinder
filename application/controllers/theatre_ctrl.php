@@ -1,6 +1,6 @@
 <?php
 	
-class Theatre_ctrl extends MY_Controller {
+class Theatre_ctrl extends TheatreFinder_Controller {
 	
 	/* ***********************************************************
 	 * Name:		__construct() theatre_ctrl constructor
