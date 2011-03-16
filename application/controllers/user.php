@@ -221,7 +221,7 @@ class User extends TheatreFinder_Controller {
 				);
 			if($query = $this->Theatre_model->create_pending_account($new_account_insert_data)) {
 				// redirect them to the successful signup area
-				redirect('login/signup_success');
+				redirect('user/signup_success');
 				
 			} else { // some error in input to database
 				$affiliation = isset($_POST['affiliation']) ? $_POST['affiliation'] : '';
@@ -256,7 +256,7 @@ class User extends TheatreFinder_Controller {
 			
 				// Slightly different template format than the $this->render() from MY_Controller
 				// Using to ensure that the CI Form Validation Errors are working properly
-				$this->template->load('visitors_only_layout','login/signup', $this->data);
+				$this->template->load('visitors_only_layout','user/signup', $this->data);
 			}
 			
 			
@@ -299,7 +299,7 @@ class User extends TheatreFinder_Controller {
 			// Slightly different template format than the $this->render() from MY_Controller
 			// Using to ensure that the CI Form Validation Errors are working properly
 			// This may work better for the entire app - will look at changing (emb/07/05/2010)
-			$this->template->load('layouts/visitors_only_layout', 'login/signup', $this->data);
+			$this->template->load('layouts/visitors_only_layout', 'user/signup', $this->data);
 			
 		}
 	}

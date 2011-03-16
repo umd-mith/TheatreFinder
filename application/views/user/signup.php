@@ -1,6 +1,6 @@
 <div class="grid_12 featuredarea">
 <!-- form open -->
-<?php	echo form_open('login/create_member'); ?>
+<?php	echo form_open('user/create_member'); ?>
 	<div class="grid_3 alpha sidebar">
 		<div id="login_form">
 			<h1 class="signup_header">Request an Account</h1>

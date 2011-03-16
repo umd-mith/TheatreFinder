@@ -33,7 +33,7 @@ $('.acctbutton').click(function() {
 	// and we serialize the data to get it in a "GET"/"POST" string format
 	
 	// Post it to the theatre_ctrl method, "approve_accounts"
-	$.post(urlController+"approve_accounts",  // theatre_ctrl method to call-back
+	$.post(urlController+"theatre_ctrl/approve_accounts",  // theatre_ctrl method to call-back
 		   { acct_data : acct_data },	// serialized account data
    		   function(data){ // callback function to execute on success
 				
