@@ -10,9 +10,11 @@
 
   $exhibit_data["properties"] = array();
 
-  foureach($theatres as $theatre) {
+  foreach($theatres as $theatre) {
     
     $item = array();
+    $item['label'] = $theatre['theatre_name'];
+    $item['id'] = $theatre['id'];
     $item['theatre_name'] = $theatre['theatre_name'];
     $item['city'] = $theatre['city'];
     $item['thumbnail'] = base_url().$theatre['thumbnail'];
@@ -24,8 +26,6 @@
     
     $exhibit_data["items"][] = $item;
   }
-  
-  endforeach;
 
   echo json_encode($exhibit_data);
 ?>
