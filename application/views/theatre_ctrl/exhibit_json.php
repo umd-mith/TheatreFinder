@@ -10,5 +10,22 @@
 
   $exhibit_data["properties"] = array();
 
+  foureach($theatres as $theatre) {
+    
+    $item = array();
+    $item['theatre_name'] = $theatre['theatre_name'];
+    $item['city'] = $theatre['city'];
+    $item['thumbnail'] = base_url().$theatre['thumbnail'];
+    $item['country_name'] = $theatre['country_name'];
+    $item['region'] = $theatre['region'];
+    $item['sub_type'] = $theatre['sub_type'];
+    $item['date_range'] = $theatre['date_range'];
+    $item['period_rep'] = $theatre['period_rep'];
+    
+    $exhibit_data["items"][] = $item;
+  }
+  
+  endforeach;
+
   echo json_encode($exhibit_data);
 ?>
