@@ -14,7 +14,7 @@
 				</tr>
 			</table>
 			<div ex:role="view"
-				ex:viewClass="Thumbnail"
+				ex:viewClass="Tabular"
 				ex:columns=".label, .thumbnail, .sub_type, .period"
 				ex:columnFormats="list, image, list, list"
 				ex:columnLabels="name, photo, type, period"
@@ -23,9 +23,10 @@
 				ex:sortAscending="true">
 			</div>
 			<div ex:role="view"
+			ex:viewClass="Thumbnail"
 			    ex:orders=".label"
 			    ex:possibleOrders=".label, .sub_type, .period, .region"
-				ex:grouped="true"></div>
+				ex:grouped="false"></div>
 		</td>
 		<td width="25%">
 			<div ex:role="facet" ex:facetClass="TextSearch" ex:expression=".label" ex:facetLabel="Search"></div>
