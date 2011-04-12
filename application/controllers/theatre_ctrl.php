@@ -179,6 +179,68 @@ class Theatre_ctrl extends TheatreFinder_Controller {
 		
 	}
 	
+	function exhibit_json() {
+		$theatres = $this->Theatre_model->getTheatres();
+		
+		$prev=0; // init prev (to aid Frank in navigating through the list_view)
+		$lastRow = count($theatres)-1;
+		// Iterate through the associative array to set up the list_view output
+		for ($i=0; $i<count($theatres); $i++) {
+			
+			// First: need to unset the thumbnail vars to ensure we don't double-up
+			// the image files...isn't there a better way to do this? **TODO: Find better way**
+			unset($thumbnailFile);
+			unset($thumbnailData);
+			
+			switch ($i) {
+				case 0:
+				$theatres[$i]['prev'] = "top";
+				break;
+				
+				case $lastRow:
+				$theatres[$i]['prev'] = "last";
+				break;
+				
+				default:
+				$theatres[$i]['prev'] = "row".($i-1);
+				break;
+			}
+			$theatres[$i]['idData'] = $theatres[$i]['id']."_".$theatres[$i]['prev'];
+			
+			$theatres[$i]['theatre_name'] = stripslashes($theatres[$i]['theatre_name']);
+		
+			$theatres[$i]['country_name'] = stripslashes($theatres[$i]['country_name']);
+			$theatres[$i]['country_digraph'] = $theatres[$i]['country_digraph'];
+			$theatres[$i]['region'] = stripslashes($theatres[$i]['region']);
+			
+			$theatres[$i]['city'] = stripslashes($theatres[$i]['city']);
+				
+			$theatres[$i]['period_rep'] = stripslashes($theatres[$i]['period_rep']);
+			$theatres[$i]['period_rep'] = (strcmp('Not Yet Specified', $theatres[$i]['period_rep'])) ? 
+											"(".$theatres[$i]['period_rep']." period)" :
+											"(".$theatres[$i]['period_rep'].")";
+			$theatres[$i]['sub_type'] = stripslashes($theatres[$i]['sub_type']);
+			
+			$theatres[$i]['date_range'] = $this->_format_date($theatres[$i]['est_earliest'], $theatres[$i]['est_latest'], $theatres[$i]['earliestdate_bce_ce'], $theatres[$i]['latestdate_bce_ce']);
+			
+			// Build a uri for edit/delete that is comprised of the idData= entry id."_"previousRowNum ('prev');
+			$theatres[$i]['Details'] = anchor('theatre_ctrl/entry_visitor_info/'.$theatres[$i]['idData'], 'View Details');
+			$theatres[$i]['Edit'] = anchor('theatre_ctrl/edit_visitor_form/'.$theatres[$i]['idData'], 'Edit');
+			$theatres[$i]['Delete'] = anchor('theatre_ctrl/delete_theatre_form/'.$theatres[$i]['idData'], 'Delete');
+			$theatres[$i]['Add'] = anchor('theatre_ctrl/add_new_form/', 'Add new');
+			// get the image information for this theatre
+			$thumbnailData = $this->Theatre_model->getThumbNail($theatres[$i]['id']);
+			if (isset($thumbnailData)) {
+				$thumbnailFile = $thumbnailData->file_path."/".$thumbnailData->image_file;
+			}
+			$thumbnailFile = (isset($thumbnailFile)) ? $thumbnailFile : "images/130px/imageNeededThumbnail.gif";
+			$theatres[$i]['thumbnail'] = $thumbnailFile;
+
+		}
+		
+		$this->data['theatres'] = $theatres;		
+	}
+	
 	/* ***********************************************************
 	 * Name:		search_theatres
 	 * Input:		form $_POST[] select option and text to search
@@ -869,7 +931,7 @@ class Theatre_ctrl extends TheatreFinder_Controller {
 			redirect('theatre_ctrl/add_scholarly_form/'.$new_theatre_id.'-'.$scholarly_id, $this->data);
 		}
 	}
-	
+
 	/* ***********************************************************
 	 * Name:		add_scholarly_form()
 	 * Input:	
