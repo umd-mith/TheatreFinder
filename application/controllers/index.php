@@ -113,6 +113,12 @@ class Index extends TheatreFinder_Controller {
 		$this->render($this->data['template']);
 	}
 	
+	function exhibit() {
+		$this->data['title'] = 'Theatre Finder | Search';
+		$this->data['body_id'] = '<body id="search">';
+		$this->render($this->data['template']);  
+	}
+	
 	function join() {
 		$this->add_scripts('period_slider_script');
 		$this->data['title'] = 'Theatre Finder | Join';
