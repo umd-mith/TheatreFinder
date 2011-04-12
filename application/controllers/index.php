@@ -116,6 +116,7 @@ class Index extends TheatreFinder_Controller {
 	function exhibit() {
 		$this->data['title'] = 'Theatre Finder | Search';
 		$this->data['body_id'] = '<body id="search">';
+		$this->add_scripts("exhibit_headers");
 		$this->render($this->data['template']);  
 	}
 	
