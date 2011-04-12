@@ -238,7 +238,8 @@ class Theatre_ctrl extends TheatreFinder_Controller {
 
 		}
 		
-		$this->data['theatres'] = $theatres;		
+		$this->data['theatres'] = $theatres;
+		$this -> render('json_layout');	
 	}
 	
 	/* ***********************************************************
