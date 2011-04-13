@@ -5,26 +5,26 @@
 	</div>
 	<div class="grid_3 alpha sidebar">
 		<div class="adminOpts">            
-			<h4 class="active"><a href="<?php echo base_url();?>theatre_ctrl/admin_dashboard">Manage Accounts</a></h4>
+			<h4 class="active"><a href="<?php echo base_url();?>theatres/admin_dashboard">Manage Accounts</a></h4>
 				<ul>
-					<li><a href="<?php echo base_url();?>theatre_ctrl/admin_dashboard">Pending Accounts (total: <?php echo $pend_count;?>)</a></li>
-					<li><a href="<?php echo base_url();?>theatre_ctrl/admin_acct_info">Existing Accounts</a>
+					<li><a href="<?php echo base_url();?>theatres/admin_dashboard">Pending Accounts (total: <?php echo $pend_count;?>)</a></li>
+					<li><a href="<?php echo base_url();?>theatres/admin_acct_info">Existing Accounts</a>
 						<ul>
-							<li><a href="<?php echo base_url();?>theatre_ctrl/admin_update_accts/author">Authors</a></li>
-							<li><a href="<?php echo base_url();?>theatre_ctrl/admin_update_accts/editor">Editors</a></li>
-							<li><a href="<?php echo base_url();?>theatre_ctrl/admin_update_accts/administrator">Administrators</a></li>
+							<li><a href="<?php echo base_url();?>theatres/admin_update_accts/author">Authors</a></li>
+							<li><a href="<?php echo base_url();?>theatres/admin_update_accts/editor">Editors</a></li>
+							<li><a href="<?php echo base_url();?>theatres/admin_update_accts/administrator">Administrators</a></li>
 						</ul>
 					</li>
 					<li><a href="#">Change My Password</a></li>
 				</ul>
-			<h4><a href="<?php echo base_url();?>theatre_ctrl/edit_main_pages">Edit Site Content</a></h4>
+			<h4><a href="<?php echo base_url();?>theatres/edit_main_pages">Edit Site Content</a></h4>
 		</div>
 	</div>
 <!-- Admin Info area -->
 	<div class="grid_9 omega maincontent">            
 		<h3><a name="overview">Change Password</a></h3>
 		<form class="acct_form" id='acct_form-<?php echo $user['id'];?>' 
-		 method='post' action='<?php echo base_url();?>theatre_ctrl/change_admin_password'>
+		 method='post' action='<?php echo base_url();?>theatres/change_admin_password'>
 		 <?php echo form_hidden('user_id',$user['id']);?>
 		<div class="clear"></div> 
 		<div class="grid_9 headerRow alpha omega">

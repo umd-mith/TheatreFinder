@@ -9,7 +9,7 @@
 	<div class="grid_9 omega maincontent">            
 		<h3><a name="overview">Change Password</a></h3>
 		<form class="acct_form" id='acct_form-<?php echo $user['id'];?>' 
-		 method='post' action='<?php echo base_url();?>theatre_ctrl/change_password'>
+		 method='post' action='<?php echo base_url();?>theatres/change_password'>
 		 <?php echo form_hidden('user_id',$user['id']);?>
 		<div class="clear"></div> 
 		<div class="grid_9 headerRow alpha omega">

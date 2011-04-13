@@ -5,19 +5,19 @@
 	</div>
 	<div class="grid_3 alpha sidebar">
 		<div class="adminOpts">            
-			<h4 class="active"><a href="<?php echo base_url();?>theatre_ctrl/admin_dashboard">Manage Accounts</a></h4>
+			<h4 class="active"><a href="<?php echo base_url();?>theatres/admin_dashboard">Manage Accounts</a></h4>
 				<ul>
-					<li><a href="<?php echo base_url();?>theatre_ctrl/admin_dashboard">Pending Accounts (total: <?php echo $pend_count;?>)</a></li>
-					<li><a href="<?php echo base_url();?>theatre_ctrl/admin_acct_info">Existing Accounts</a>
+					<li><a href="<?php echo base_url();?>theatres/admin_dashboard">Pending Accounts (total: <?php echo $pend_count;?>)</a></li>
+					<li><a href="<?php echo base_url();?>theatres/admin_acct_info">Existing Accounts</a>
 						<ul>
-							<li><a href="<?php echo base_url();?>theatre_ctrl/admin_update_accts/author">Authors</a></li>
-							<li><a href="<?php echo base_url();?>theatre_ctrl/admin_update_accts/editor">Editors</a></li>
-							<li><a href="<?php echo base_url();?>theatre_ctrl/admin_update_accts/administrator">Administrators</a></li>
+							<li><a href="<?php echo base_url();?>theatres/admin_update_accts/author">Authors</a></li>
+							<li><a href="<?php echo base_url();?>theatres/admin_update_accts/editor">Editors</a></li>
+							<li><a href="<?php echo base_url();?>theatres/admin_update_accts/administrator">Administrators</a></li>
 						</ul>
 					</li>
-					<li><a href="<?php echo base_url();?>theatre_ctrl/change_password_form">Change My Password</a></li>
+					<li><a href="<?php echo base_url();?>theatres/change_password_form">Change My Password</a></li>
 				</ul>
-			<h4><a href="<?php echo base_url();?>theatre_ctrl/edit_main_pages">Edit Site Content</a></h4>
+			<h4><a href="<?php echo base_url();?>theatres/edit_main_pages">Edit Site Content</a></h4>
 		</div>
 	</div>
 <!-- Admin Info area -->

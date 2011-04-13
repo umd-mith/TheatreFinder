@@ -5,14 +5,14 @@
 	</div>
 	<div class="grid_3 alpha sidebar">
 		<div class="adminOpts">
-			<h4><a href="<?php echo base_url();?>theatre_ctrl/admin_dashboard">Manage Accounts</a></h4>
+			<h4><a href="<?php echo base_url();?>theatres/admin_dashboard">Manage Accounts</a></h4>
 				<ul>
 					<li>Pending Accounts</li>
 					<li>Existing Accounts</li>
 					<li>Change My Password</li>
 				
 				</ul>
-			<h4 class="active"><a href="<?php echo base_url();?>theatre_ctrl/edit_main_pages">Edit Site Content</a></h4>
+			<h4 class="active"><a href="<?php echo base_url();?>theatres/edit_main_pages">Edit Site Content</a></h4>
 				<ul>
 					<li>Update Featured Theatres</li>
 				</ul

@@ -1,5 +1,5 @@
 <div class="grid_12 breadcrumbs">
-	<p><a href="<?php echo base_url();?>theatre_ctrl">&lt;&lt; &nbsp;back to list</a>
+	<p><a href="<?php echo base_url();?>theatres">&lt;&lt; &nbsp;back to list</a>
 	</p>
 </div>
 <!-- Featured theatres -->

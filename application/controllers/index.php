@@ -13,11 +13,11 @@ class Index extends TheatreFinder_Controller {
 			'*' => array(
 				'authenticated' => array(
 					'template' => 'main_layout',
-					'view_controller' => 'theatre_ctrl'
+					'view_controller' => 'theatres'
 				),
 				'anonymous' => array(
 					'template' => 'visitors_only_layout',
-					'view_controller' => 'theatre_ctrl'
+					'view_controller' => 'theatres'
 				)
 			)
 		));

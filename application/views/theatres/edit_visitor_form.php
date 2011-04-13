@@ -1,5 +1,5 @@
 <div class="grid_12 breadcrumbs">
-	<p><a href="<?php echo  base_url();?>theatre_ctrl#<?php echo $theatre['id'];?>">&lt;&lt; &nbsp;back to list</a>
+	<p><a href="<?php echo  base_url();?>theatres#<?php echo $theatre['id'];?>">&lt;&lt; &nbsp;back to list</a>
 	</p>
 </div>
 <!-- Featured theatres -->
@@ -16,7 +16,7 @@
 	<div class="grid_3 alpha sidebar">
 		<div class="entryDetails">
 		
-			<h4 class="active"><a href="<?php echo  base_url();?>theatre_ctrl/edit_visitor_form/<?php echo $this->uri->segment(3);?>">Visitor information</a></h4>
+			<h4 class="active"><a href="<?php echo  base_url();?>theatres/edit_visitor_form/<?php echo $this->uri->segment(3);?>">Visitor information</a></h4>
                         	<ul>
 								<li><a href="#overview">Overview</a></li>
                             	<li><a href="#basic_desc">Basic description and significance</a></li>
@@ -24,7 +24,7 @@
                                 <li><a href="#rel_sites">Related sites nearby</a></li>
 								<li><a href="#gps">GPS Coordinates</a></li>
                             </ul>
-			<h4><a href="<?php echo  base_url();?>theatre_ctrl/edit_scholarly_form/<?php echo $this->uri->segment(3);?>">Scholarly details</a></h4>
+			<h4><a href="<?php echo  base_url();?>theatres/edit_scholarly_form/<?php echo $this->uri->segment(3);?>">Scholarly details</a></h4>
                         	<ul>
                             	<li>General history</li>
                                 <li>Architectural history</li>
@@ -33,7 +33,7 @@
 								<li>Bibliography</li>
 								<li>Entry Author(s)/Editor(s)</li>
                             </ul>
-		<!--   <h4><a href="<?php echo  base_url();?>theatre_ctrl/edit_biblio_form/<?php echo $this->uri->segment(3);?>">Bibliography</a></h4>
+		<!--   <h4><a href="<?php echo  base_url();?>theatres/edit_biblio_form/<?php echo $this->uri->segment(3);?>">Bibliography</a></h4>
 		   <h4><a href="#">Entry author/editors</a></h4>
 		-->
 			

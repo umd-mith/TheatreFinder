@@ -35,12 +35,12 @@ class User extends TheatreFinder_Controller {
 		} else {
 			$this->data['template'] = 'main_layout';
 			$this->data['username'] = $this->session->userdata('username');
-			$this->data['view_controller'] = 'theatre_ctrl';
+			$this->data['view_controller'] = 'theatres';
 			$this->data['access_level'] = $this->session->userdata('user_access_level');
 			
 			// check if the user is an administrator and set the admin_link appropriately
 			if ($this->data['access_level'] == 'administrator') {
-				$this->data['admin_link'] = anchor('theatre_ctrl/admin_dashboard', "Admin Options");
+				$this->data['admin_link'] = anchor('theatres/admin_dashboard', "Admin Options");
 			}
 		}
 	}
@@ -120,7 +120,7 @@ class User extends TheatreFinder_Controller {
 					}
 					$this->render('visitors_only_layout');
 						
-				} else  { // they're valid AND activated, so turn over control to theatre_ctrl
+				} else  { // they're valid AND activated, so turn over control to theatres
 					
 					$userdata = array(
 						'username' => $this->input->post('username'),
@@ -330,7 +330,7 @@ class User extends TheatreFinder_Controller {
 			
 		// check if the user is an administrator and set the admin_link appropriately
 		if ($this->data['access_level'] == 'administrator') {
-			$this->data['admin_link'] = anchor('theatre_ctrl/admin_dashboard', "Admin Options");
+			$this->data['admin_link'] = anchor('theatres/admin_dashboard', "Admin Options");
 		}
 		
 		$this->data['user_message'] = "You're already logged in...Please logout first.";

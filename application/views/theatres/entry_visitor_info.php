@@ -1,5 +1,5 @@
 <div class="grid_12 breadcrumbs"><p>
-		<a href="<?php echo  base_url();?>theatre_ctrl#<?php echo $theatre['id'];?>">&lt;&lt; &nbsp;back to list</a>
+		<a href="<?php echo  base_url();?>theatres#<?php echo $theatre['id'];?>">&lt;&lt; &nbsp;back to list</a>
 	</p>
 </div>
 <!-- Featured theatres -->
@@ -24,7 +24,7 @@
 								  }
 								?>
                             </ul>
-			<h4><a href="<?php echo  base_url();?>theatre_ctrl/entry_scholarly_details/<?php echo $curr_theatre_ref;?>">Scholarly details</a></h4>
+			<h4><a href="<?php echo  base_url();?>theatres/entry_scholarly_details/<?php echo $curr_theatre_ref;?>">Scholarly details</a></h4>
                         	<ul>
                         		<li>Alternative names for this theatre</li>
 								<li>Alternative names for this theatre's city</li>
@@ -34,7 +34,7 @@
                                 <li>Measurements and technical details</li>
 								<li>Bibliography</li>
                             </ul>
-			<!-- <h4><a href="<?php echo  base_url();?>theatre_ctrl/entry_biblio/<?php echo $curr_theatre_ref;?>">Bibliography</a></h4>
+			<!-- <h4><a href="<?php echo  base_url();?>theatres/entry_biblio/<?php echo $curr_theatre_ref;?>">Bibliography</a></h4>
 			<h4><a href="#">Entry author/editors</a></h4>
 			-->
 	</div><!-- end entry details -->

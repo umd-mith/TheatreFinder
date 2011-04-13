@@ -1,5 +1,5 @@
 <div class="grid_12 breadcrumbs"><p>
-		<a href="<?php echo  base_url();?>theatre_ctrl#<?php echo $theatre_id;?>">
+		<a href="<?php echo  base_url();?>theatres#<?php echo $theatre_id;?>">
 			&lt;&lt; &nbsp;back to list</a>
 	</p>
 </div>
@@ -12,14 +12,14 @@
 	<div class="clear"></div>
 	<div class="grid_3 alpha sidebar">
 		<div class="entryDetails">            
-			<h4><a href="<?php echo  base_url();?>theatre_ctrl/edit_visitor_form/<?php echo $curr_theatre_ref;?>">Visitor information</a></h4>
+			<h4><a href="<?php echo  base_url();?>theatres/edit_visitor_form/<?php echo $curr_theatre_ref;?>">Visitor information</a></h4>
 				<ul>
 					<li>Overview</li>
 					<li>Basic description and significance</li>
 					<li>Visiting this theatre</li>
 					<li>Related sites nearby</li>
 				</ul>
-			<h4 class="active"><a href="<?php echo  base_url();?>theatre_ctrl/add_scholarly_form/<?php echo $curr_theatre_ref;?>">Scholarly details</a></h4>
+			<h4 class="active"><a href="<?php echo  base_url();?>theatres/add_scholarly_form/<?php echo $curr_theatre_ref;?>">Scholarly details</a></h4>
 				<ul>
 					<li><a href="#gen_history">General history</a></li>
                     <li><a href="#arch_history">Architectural history</a></li>
@@ -28,7 +28,7 @@
 					<li><a href="#biblio_list">Bibliography</a></li>
 					<li><a href="#authors">Entry Author(s)/Editor(s)</a></li>
 				</ul>
-			<!--<h4><a href="<?php echo  base_url();?>theatre_ctrl/edit_biblio_form/<?php echo $curr_theatre_ref;?>">Bibliography</a></h4>
+			<!--<h4><a href="<?php echo  base_url();?>theatres/edit_biblio_form/<?php echo $curr_theatre_ref;?>">Bibliography</a></h4>
 			<h4><a href="#">Entry author/editors</a></h4>-->
 
 	</div><!-- end entry details -->
