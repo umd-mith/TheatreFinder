@@ -9,7 +9,7 @@ class Theatres extends TheatreFinder_Controller {
 		
 		// *** MAKE SURE USER IS LOGGED IN
 		// If they are logged in, several $this->['data'] params for the
-		// theatre_ctrl controller object are initialized 
+		// theatres controller object are initialized 
 		// (e.g., $this->['username'], $this->['access_level'])
 		$this->_is_logged_in(array(
 			'*' => array(
@@ -85,11 +85,11 @@ class Theatres extends TheatreFinder_Controller {
 
 			// Build a uri for edit/delete that is comprised of the idData= entry id."_"previousRowNum ('prev');
 			if(array_key_exists('idData', $theatres[$i])) {
-				$theatres[$i]['Details'] = anchor('theatre_ctrl/entry_visitor_info/'.$theatres[$i]['idData'], 'View Details');
-				$theatres[$i]['Edit'] = anchor('theatre_ctrl/edit_visitor_form/'.$theatres[$i]['idData'], 'Edit');
-				$theatres[$i]['Delete'] = anchor('theatre_ctrl/delete_theatre_form/'.$theatres[$i]['idData'], 'Delete');
+				$theatres[$i]['Details'] = anchor('theatres/entry_visitor_info/'.$theatres[$i]['idData'], 'View Details');
+				$theatres[$i]['Edit'] = anchor('theatres/edit_visitor_form/'.$theatres[$i]['idData'], 'Edit');
+				$theatres[$i]['Delete'] = anchor('theatres/delete_theatre_form/'.$theatres[$i]['idData'], 'Delete');
 			}
-			$theatres[$i]['Add'] = anchor('theatre_ctrl/add_new_form/', 'Add new');
+			$theatres[$i]['Add'] = anchor('theatres/add_new_form/', 'Add new');
 			// get the image information for this theatre
 			$thumbnailData = $this->Theatre_model->getThumbNail($theatres[$i]['id']);
 			if (isset($thumbnailData)) {
@@ -146,7 +146,7 @@ class Theatres extends TheatreFinder_Controller {
 
 		// form submit url 
 		// (control method that inserts the theatre if form input is valid)
-		$this->data['form_open']=form_open('theatre_ctrl/insert_theatre/');
+		$this->data['form_open']=form_open('theatres/insert_theatre/');
 
 		// checkbox for TheatreName Aliases
 		// Since this is an "ADD," the theatre alias will be blank initially
@@ -235,7 +235,7 @@ class Theatres extends TheatreFinder_Controller {
 			$this->data['title'] = "Theatre finder: ERROR Adding new theatre";
 			$this->data['heading'] = "Error Adding New Theatre to the database";
 			$this->data['errorMsg'] = "Please try again, there was an error!";
-			$this->data['form_open']=form_open('theatre_ctrl/insert_theatre/');
+			$this->data['form_open']=form_open('theatres/insert_theatre/');
 
 		// checkbox for TheatreName Aliases
 		// Since this is an "ADD," the theatre alias will be blank initially
@@ -452,7 +452,7 @@ class Theatres extends TheatreFinder_Controller {
 				}
 			}
 
-			redirect('theatre_ctrl/add_scholarly_form/'.$new_theatre_id.'-'.$scholarly_id, $this->data);
+			redirect('theatres/add_scholarly_form/'.$new_theatre_id.'-'.$scholarly_id, $this->data);
 		}
 	}
 
@@ -466,7 +466,7 @@ class Theatres extends TheatreFinder_Controller {
 	function add_scholarly_form() {
 
 		// form submit url (control method)
-		$this->data['form_open'] = form_open('theatre_ctrl/update_scholarly_details/');
+		$this->data['form_open'] = form_open('theatres/update_scholarly_details/');
 
 		// get the theatre id in the uri sent from add_new_form/insert_theatre
 		list($theatre_id, $scholar_id) = explode('-', $this->uri->segment(3));
@@ -833,7 +833,7 @@ class Theatres extends TheatreFinder_Controller {
 				}
 			}
 
-			redirect('theatre_ctrl/edit_scholarly_form/'.$idData);
+			redirect('theatres/edit_scholarly_form/'.$idData);
 		}
 	}
 
@@ -877,7 +877,7 @@ class Theatres extends TheatreFinder_Controller {
 
 		// form submit url 
 		// (control method that inserts the theatre if form input is valid)
-		$this->data['form_open']=form_open('theatre_ctrl/update_scholarly_details/');
+		$this->data['form_open']=form_open('theatres/update_scholarly_details/');
 
 		// Build ckeditor textarea wrappers
 		// 1) set-up ckeditor_id=>form_element_id array
@@ -990,7 +990,7 @@ class Theatres extends TheatreFinder_Controller {
 			$this->Theatre_model->update_time_in_theatres($id, $mysql_datetime);
 
 			// go back to the theatre list, user can view details from there
-			redirect('theatre_ctrl'."#".$id);
+			redirect('theatres'."#".$id);
 		}
 	}
 
@@ -1031,7 +1031,7 @@ class Theatres extends TheatreFinder_Controller {
 
 		// form submit url 
 		// (control method that inserts the theatre if form input is valid)
-		$this->data['form_open']=form_open('theatre_ctrl/update_biblio/');
+		$this->data['form_open']=form_open('theatres/update_biblio/');
 
 		// Build ckeditor textarea wrappers
 		// 1) set-up ckeditor_id=>form_element_id array
@@ -1103,7 +1103,7 @@ class Theatres extends TheatreFinder_Controller {
 			$this->Theatre_model->update_time_in_theatres($id, $mysql_datetime);
 
 			// go back to the theatre list, user can view details from there
-			redirect('theatre_ctrl'."#".$id);
+			redirect('theatres'."#".$id);
 		}
 	}
 
@@ -1361,7 +1361,7 @@ class Theatres extends TheatreFinder_Controller {
 		}
 		$this->Theatre_model->delete_theatre($id);
 		// now redirect back to the main page+entryRow
-		redirect('theatre_ctrl'."#".$prev);
+		redirect('theatres'."#".$prev);
 	}
 
 
@@ -1370,7 +1370,7 @@ class Theatres extends TheatreFinder_Controller {
 	 * Input:	
 	 * Output:	
 	 * Description:	very simply calls the theatre_model for this
-	 * 				May need this for AJAX calls to theatre_ctrl 
+	 * 				May need this for AJAX calls to theatres 
 	 * *********************************************************** */
 	function getPeriods() {
 
@@ -1667,7 +1667,7 @@ class Theatres extends TheatreFinder_Controller {
 				case 'pending':
 				break;
 				default:
-					redirect('theatre_ctrl/admin_acct_info'); 
+					redirect('theatres/admin_acct_info'); 
 					// redirect them back to the overall counts
 					// if it's not an expected user_access_level
 				break;
@@ -1965,7 +1965,7 @@ class Theatres extends TheatreFinder_Controller {
 		if ($this->data['access_level']==='administrator') {
 			$this->data['heading'] = "Administrator Options";
 		} else {
-			redirect('theatre_ctrl/password_form');
+			redirect('theatres/password_form');
 		}
 
 		// get pending count for sidebar <li> info
@@ -2020,10 +2020,10 @@ class Theatres extends TheatreFinder_Controller {
 			$this->data['heading'] = "Administrator Options";
 
 			$this->data['pend_count'] = $this->Theatre_model->get_num_accounts('pending');
-			// theatre_ctrl username
+			// theatres username
 			$this->data['user'] = $this->Theatre_model->get_account_by_username($this->data['username']); 
 
-			$this->template->load('layouts/main_layout', 'theatre_ctrl/password_changed', $this->data);
+			$this->template->load('layouts/main_layout', 'theatres/password_changed', $this->data);
 
 		} else { // form input not valid -- 
 				 // So, set up all the page data for the change_password form again
@@ -2033,13 +2033,13 @@ class Theatres extends TheatreFinder_Controller {
 
 			$this->data['pend_count'] = $this->Theatre_model->get_num_accounts('pending');
 
-			// theatre_ctrl username
+			// theatres username
 			$this->data['user'] = $this->Theatre_model->get_account_by_username($this->data['username']); 
 
 			// Slightly different template format than the $this->render() from TheatreFinder_Controller
 			// Using to ensure that the CI Form Validation Errors are working properly
 			// This may work better for the entire app - will look at changing (emb/07/05/2010)
-			$this->template->load('layouts/main_layout', 'theatre_ctrl/change_password_form', $this->data);
+			$this->template->load('layouts/main_layout', 'theatres/change_password_form', $this->data);
 		}
 	}
 
@@ -2061,13 +2061,13 @@ class Theatres extends TheatreFinder_Controller {
 		$this->data['title'] = "Theatre finder: Update Password";
 
 		if ($this->data['access_level']==='administrator') { // in case the admin got here somehow
-			redirect('theatre_ctrl/change_password_form');   // redirect them to the right place
+			redirect('theatres/change_password_form');   // redirect them to the right place
 
 		} else { // regular user
 			$this->data['heading'] = "Update Password";
 			$this->data['body_id'] = '<body id="admin">';
 
-			// theatre_ctrl username
+			// theatres username
 			$this->data['user'] = $this->Theatre_model->get_account_by_username($this->data['username']); 
 
 			$this->render();
@@ -2117,7 +2117,7 @@ class Theatres extends TheatreFinder_Controller {
 			// get user data
 			$this->data['user'] = $this->Theatre_model->get_account_by_username($this->data['username']); 
 
-			$this->template->load('layouts/main_layout', 'theatre_ctrl/reg_password_changed', $this->data);
+			$this->template->load('layouts/main_layout', 'theatres/reg_password_changed', $this->data);
 
 		} else { // form input not good -- 
 				 // So, set up all the page data for the change_password form again
@@ -2131,7 +2131,7 @@ class Theatres extends TheatreFinder_Controller {
 
 			// Slightly different template format than the $this->render() from TheatreFinder_Controller
 			// Using to ensure that the CI Form Validation Errors are working properly
-			$this->template->load('layouts/main_layout', 'theatre_ctrl/password_form', $this->data);
+			$this->template->load('layouts/main_layout', 'theatres/password_form', $this->data);
 		}
 	}
 
