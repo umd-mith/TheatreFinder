@@ -1213,7 +1213,7 @@ class Theatres extends TheatreFinder_Controller {
 		list($theatre['lat_dms'], $theatre['lng_dms']) = $this->_convert_decimal_degrees_to_DMS($theatre['lat'], $theatre['lng']);
 
 		if(array_key_exists('id', $theatre) && array_key_exists('username', $this->data)) {
-			$theatre['Edit'] = anchor('theatres/edit_theatre_form/'.$theatre['id'], 'Edit');
+			$theatre['Edit'] = anchor('theatres/edit_visitor_form/'.$theatre['id'], 'Edit Visitor Information');
 			$theatre['Delete'] = anchor('theatres/delete_theatre_form/'.$theatre['id'], 'Delete');
 		}
 		$this->data['theatre'] = $theatre;
