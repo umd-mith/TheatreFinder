@@ -1,11 +1,15 @@
 div.theatre {
-	width: 180px;
+	width: 170px;
 	text-align: center;
 	height: 170px;
 }
 
 div.theatre table {
-	width: 180px;
+	width: 170px;
 	text-align: left;
 	margin: 0px;
+}
+
+div.exhibit-viewPanel {
+	margin-right: 2px;
 }

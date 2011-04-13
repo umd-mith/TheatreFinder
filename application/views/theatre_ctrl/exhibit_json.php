@@ -15,7 +15,7 @@
     $item = array();
     $item['label'] = $theatre['theatre_name'];
     $item['id'] = $theatre['id'];
-    $item['theatre_url'] = base_url().'entry_visitor_info/'.$theatre['id'].'_top';
+    $item['theatre_url'] = base_url().'theatre_view/entry_visitor_info/'.$theatre['id'].'_top';
     $item['theatre_name'] = $theatre['theatre_name'];
     $item['city'] = $theatre['city'];
     $item['thumbnail'] = base_url().$theatre['thumbnail'];

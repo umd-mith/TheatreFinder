@@ -1,13 +1,13 @@
-<table width="100%">
+<table width="98%">
 	<tr valign="top">
 		<td ex:role="viewPanel">
 			<div ex:role="lens" class="theatre">
 			  <table>
 				<tr>
-					<td colspan="2" align="center"><img width="130" ex:src-content=".thumbnail" /></td>
+					<td colspan="2" align="center"><a ex:href-content=".theatre_url"><img width="130" ex:src-content=".thumbnail" /></a></td>
 				</tr>
 				<tr>
-				    <td colspan="2" align="center"><span ex:content=".label" class="name"></span></td>
+				    <td colspan="2" align="center"><a ex:href-content=".theatre_url"><span ex:content=".label"></span></a></td>
 				</tr><tr>
 					<td align="right" width="60">Country:</td>
 					<td><span ex:content=".country_name" class="country"></span></td>
@@ -31,9 +31,9 @@
 		</td>
 		<td width="25%">
 			<div ex:role="facet" ex:facetClass="TextSearch" ex:expression=".label" ex:facetLabel="Search"></div>
-			<div ex:role="facet" ex:expression=".sub_type" ex:facetLabel="Theatre Type"></div>
-			<div ex:role="facet" ex:expression=".country_name" ex:facetLabel="Country"></div>
-			<div ex:role="facet" ex:expression=".period_rep" ex:facetLabel="Period"></div>
+			<div ex:role="facet" ex:expression=".sub_type" ex:facetLabel="Theatre Type" ex:showMissing="false"></div>
+			<div ex:role="facet" ex:expression=".country_name" ex:facetLabel="Country" ex:showMissing="false"></div>
+			<div ex:role="facet" ex:expression=".period_rep" ex:facetLabel="Period" ex:showMissing="false"></div>
 			
 		</td>
 	</tr>
