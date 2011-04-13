@@ -1213,8 +1213,8 @@ class Theatres extends TheatreFinder_Controller {
 		list($theatre['lat_dms'], $theatre['lng_dms']) = $this->_convert_decimal_degrees_to_DMS($theatre['lat'], $theatre['lng']);
 
 		if(array_key_exists('id', $theatre) && array_key_exists('username', $this->data)) {
-			$theatre['Edit'] = anchor('theatres/edit_visitor_form/'.$theatre['id'], 'Edit Visitor Information');
-			$theatre['Delete'] = anchor('theatres/delete_theatre_form/'.$theatre['id'], 'Delete');
+			$theatre['Edit'] = anchor('theatres/edit_visitor_form/'.$theatre['id'].'_top', 'Edit Visitor Information');
+			$theatre['Delete'] = anchor('theatres/delete_theatre_form/'.$theatre['id'].'_top', 'Delete');
 		}
 		$this->data['theatre'] = $theatre;
 		// need this for the nav link back to this visitorinfo page
