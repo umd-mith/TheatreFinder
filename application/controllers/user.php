@@ -59,7 +59,7 @@ class User extends TheatreFinder_Controller {
               'name' 	   => 'username',
               'id'         => 'username',
 			  'class'	   => 'login_text',
-              'value'      => 'Username',
+              'value'      => '',
               'maxlength'  => '32',
                );
 			$this->data['username_login'] = form_input($login_input);
@@ -68,7 +68,7 @@ class User extends TheatreFinder_Controller {
               'name' 	   => 'password',
               'id'         => 'password',
 			  'class'	   => 'login_text',
-              'value'      => 'Password',
+              'value'      => '',
                );
 			$this->data['login_password'] = form_password($login_password);
 		
