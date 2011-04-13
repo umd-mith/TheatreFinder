@@ -88,7 +88,7 @@ class User extends TheatreFinder_Controller {
 		
 			// Inform the user to log out before they login again or as someone else
 			// Keep the layout as 'main' layout versus visitors layout
-			redirect('login/already_logged_in');
+			redirect('user/already_logged_in');
 			//$this->render('main_layout', 'already_logged_in');
 		
 		}
@@ -129,7 +129,7 @@ class User extends TheatreFinder_Controller {
 					);
 			
 					$this->session->set_userdata($userdata);			
-					redirect('theatre_ctrl');
+					redirect('index');
 				}	
 			}
 			 
@@ -427,7 +427,6 @@ class User extends TheatreFinder_Controller {
 		// return the form of info
 		return $login_form_data;	
 	}
-	
 	
 }
 ?>
