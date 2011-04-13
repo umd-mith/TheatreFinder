@@ -15,7 +15,7 @@
     $item = array();
     $item['label'] = $theatre['theatre_name'];
     $item['id'] = $theatre['id'];
-    $item['theatre_url'] = base_url().'theatre_view/entry_visitor_info/'.$theatre['id'].'_top';
+    $item['theatre_url'] = base_url().'theatres/entry_visitor_info/'.$theatre['id'].'_top';
     $item['theatre_name'] = $theatre['theatre_name'];
     $item['theatre_name_link'] = "<a href='" . $item['theatre_url'] . "'>" . $item['theatre_name'] . "</a>";
     $item['city'] = $theatre['city'];
