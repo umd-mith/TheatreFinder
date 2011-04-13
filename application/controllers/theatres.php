@@ -20,6 +20,9 @@ class Theatres extends TheatreFinder_Controller {
 			),
 			'exhibit_json' => array(
 				'requires_auth' => false
+			),
+			'entry_visitor_info' => array(
+				'requires_auth' => false
 			)
 		));
 		

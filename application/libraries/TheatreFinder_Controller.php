@@ -42,7 +42,7 @@ class TheatreFinder_Controller extends Controller {
 			}
 			
 			$this->data['template'] = $this->_get_logged_in_config($config, $this->method_name, 'anonymous', 'template', 'visitors_only_layout');
-			$this->data['view_controller'] = $this->_get_logged_in_config($config, $this->method_name, 'authenticated', 'view_controller', 'theatre_view');
+			$this->data['view_controller'] = $this->_get_logged_in_config($config, $this->method_name, 'anonymous', 'view_controller', 'theatre_view');
 			
 		} else {
 			
@@ -118,7 +118,10 @@ class TheatreFinder_Controller extends Controller {
 		 */
 	}
 
-	protected function render($template='main_layout', $alt=FALSE) {
+	protected function render($template=FALSE, $alt=FALSE) {
+		if(!$template) {
+			$template = $this->data['template'];
+		}
 		$view_path = $this->controller_name . '/' . $this->method_name . '.php';
 		
 		if ($alt) { // if we don't follow the views/controller/method path,
