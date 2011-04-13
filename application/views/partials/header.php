@@ -9,7 +9,7 @@
 	                <li class="grid_2 nav_1"><h2><a href="<?php echo base_url();?>index/about">about</a></h2>
 	                	<p>information on what is covered in this guide</p>
 	                </li>
-	                <li class="grid_2 nav_2"><h2><a href="<?php echo base_url();?>index/exhibit">browse</a></h2>
+	                <li class="grid_2 nav_2"><h2><a href="<?php echo base_url();?>theares">browse</a></h2>
 	                	<p>Advanced textual and geographic searches</p>
 	                </li>
                   <li class="grid_2 nav_3"><h2><a href="<?php echo base_url();?>index/join">contribute</a></h2>
