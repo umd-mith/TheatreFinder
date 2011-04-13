@@ -15,6 +15,7 @@
     $item = array();
     $item['label'] = $theatre['theatre_name'];
     $item['id'] = $theatre['id'];
+    $item['theatre_url'] = base_url().'entry_visitor_info/'.$theatre['id'].'_top';
     $item['theatre_name'] = $theatre['theatre_name'];
     $item['city'] = $theatre['city'];
     $item['thumbnail'] = base_url().$theatre['thumbnail'];
@@ -23,7 +24,7 @@
     $item['sub_type'] = $theatre['sub_type'];
     $item['date_range'] = $theatre['date_range'];
     $item['period_rep'] = $theatre['period_rep'];
-    
+        
     $exhibit_data["items"][] = $item;
   }
 
