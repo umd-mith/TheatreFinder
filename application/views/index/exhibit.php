@@ -16,17 +16,17 @@
 			</div>
 			<div ex:role="view"
 				ex:viewClass="Tabular"
-				ex:columns=".label, .thumbnail, .sub_type, .period"
-				ex:columnFormats="list, image, list, list"
+				ex:columns=".theatre_name_link, .thumbnail_link, .sub_type, .period_rep"
+				ex:columnFormats="list, list, list, list"
 				ex:columnLabels="name, photo, type, period"
-				ex:sortColumn="1"
+				ex:sortColumn="0"
 				ex:grouped="false"
 				ex:sortAscending="true">
 			</div>
 			<div ex:role="view"
 			ex:viewClass="Thumbnail"
 			    ex:orders=".label"
-			    ex:possibleOrders=".label, .sub_type, .period, .region"
+			    ex:possibleOrders=".label, .sub_type, .period_rep, .region"
 				ex:grouped="false"></div>
 		</td>
 		<td width="25%">

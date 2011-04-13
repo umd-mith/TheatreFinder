@@ -17,8 +17,10 @@
     $item['id'] = $theatre['id'];
     $item['theatre_url'] = base_url().'theatre_view/entry_visitor_info/'.$theatre['id'].'_top';
     $item['theatre_name'] = $theatre['theatre_name'];
+    $item['theatre_name_link'] = "<a href='" . $item['theatre_url'] . "'>" . $item['theatre_name'] . "</a>";
     $item['city'] = $theatre['city'];
     $item['thumbnail'] = base_url().$theatre['thumbnail'];
+    $item['thumbnail_link'] = "<a href='" . $item['theatre_url'] . "'><img src='" . $item['thumbnail'] . "' width='130' /></a>";
     $item['country_name'] = $theatre['country_name'];
     $item['region'] = $theatre['region'];
     $item['sub_type'] = $theatre['sub_type'];
