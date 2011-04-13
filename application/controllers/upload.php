@@ -2,25 +2,34 @@
 
 class Upload extends TheatreFinder_Controller {
 	
-	function Upload()
-	{
-		parent::Controller();
+	function __construct() {
+		parent::__construct();
+		
+		// load 'Theatres' table model
+		$this->load->model('Theatre_model');
+		
+		// check to see if a user is logged in
 		$this->_is_logged_in(array(
 			'*' => array(
-				'requires_auth' => true
+				'requires_auth' => TRUE
 			)
 		));
-		$this->load->helper(array('form', 'url'));
+		
+		//$this->load->helper(array('url','form'));
+		$this->add_css('all_css');
+		$this->add_scripts('all_scripts');
+	
 	}
 	
 	function index()
 	{	
-		$this->load->view('upload_form', array('error' => ' ' ));
+		//$this->load->view('upload_form', array('error' => ' ' ));
+		$this -> render();
 	}
 
 	function do_upload()
 	{
-		$config['upload_path'] = '/Users/davelester/Sites/CodeIgniter/upload/';
+		$config['upload_path'] = '/Users/jgsmith/Sites/TheatreFinder/upload/';
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['max_size']	= '100';
 		$config['max_width']  = '1024';
@@ -29,16 +38,15 @@ class Upload extends TheatreFinder_Controller {
 		$this->load->library('upload', $config);
 	
 		if ( ! $this->upload->do_upload())
-		{
-			$error = array('error' => $this->upload->display_errors());
-			
-			$this->load->view('upload_form', $error);
+		{			
+			$this->data['error'] = $this->upload->display_errors();
+			$this->render(FALSE, 'upload_form');
 		}	
 		else
 		{
-			$data = array('upload_data' => $this->upload->data());
+			$this->data['upload_data'] = $this->upload->data();
 			
-			$this->load->view('upload_success', $data);
+			$this->render(FALSE, 'upload_success');
 		}
 	}	
 }

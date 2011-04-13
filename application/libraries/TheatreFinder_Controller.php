@@ -16,6 +16,7 @@ class TheatreFinder_Controller extends Controller {
 		
 		// need to set the admin_link for all children Controllers here...
 		$this->data['admin_link'] = '';
+		$this->data['body_id'] = "<body>";
 		// layout vars default load
 		$this->load_defaults();
 			
