@@ -14,6 +14,9 @@ ffcf41 - yellow
 f69c2d - orange
 cde6e9 - light blue
 ======================== */
+
+@import url("fonts.css");
+
 /*general styles*/
 body { 
 	font-family:Arial, Helvetica, sans-serif;
@@ -117,8 +120,8 @@ body {
 /*logo styles*/
 .logo h1 {
 	background-repeat:no-repeat;
-	width:140px;
-	height:71px;
+	width:170px;
+	height:108px;
 	text-indent:-9999px;
 }.logo h1 a {
 	display:block;
@@ -993,3 +996,7 @@ a.tipsy:hover {text-decoration:none;}
 	color: #000;
 	cursor: pointer;
 }
+
+/* Added Styles */
+.blockheader-font { font-family: "SteinemRoman"; font-size:1.5em; line-height: 135%; }
+.grid_6.featured_text { padding-right:30px; width: 430px; /*border-left: 10px #666666 solid;*/ padding-left:0px; }

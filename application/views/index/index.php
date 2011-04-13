@@ -1,6 +1,12 @@
 <!-- Content area -->
 <div class="grid_12 maincontent">
-    <div class="grid_6 alpha"><a id="updated"></a>
+    <div class="grid_6 alpha featured_text"><a id="about"></a>
+        <h2 class="blockheader-font">Theatre Finder is a comprehensive, web-based, world-wide guide to theatres over 100 years old</h2>
+        <p>Theatre Finder is a guide people to the historic theatres that exist around the world. We want you to visit them, experience what it is like to stand inside them, and to take an interest in their preservation. Our goal is to provide you with the most accurate information possible about each theatre in order to enhance your understanding of them and as an aid to those who wish to research them further.</p>
+  	<p>For more details visit the <a href="main/about">about finder</a> page. To apply to join the project, visit the <a href="main/join">join finder</a> section.</p>
+    </div>
+
+    <div class="grid_6 omega"><a id="updated"></a>
         <h2>Recently Updated Theatre Entries</h2>
 
 		<div class="grid_2 boxgrid captionfull alpha">
@@ -75,11 +81,6 @@
                 </p>
             </div>
         </div>
-    </div>
-    <div class="grid_6 omega"><a id="about"></a>
-        <h2>Theatre Finder is a comprehensive, web-based, world-wide guide to theatres over 100 years old</h2>
-        <p>Theatre Finder is a guide people to the historic theatres that exist around the world. We want you to visit them, experience what it is like to stand inside them, and to take an interest in their preservation. Our goal is to provide you with the most accurate information possible about each theatre in order to enhance your understanding of them and as an aid to those who wish to research them further.</p>
-		<p>For more details visit the <a href="main/about">about finder</a> page. To apply to join the project, visit the <a href="main/join">join finder</a> section.</p>
     </div>
 </div>
 
