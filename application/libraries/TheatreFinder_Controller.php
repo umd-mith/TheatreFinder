@@ -20,7 +20,96 @@ class TheatreFinder_Controller extends Controller {
 		$this->load_defaults();
 			
 	}
+	
+	/* ***********************************************************
+	 * Name:		_is_logged_in
+	 * Input:	
+	 * Output:	
+	 * Dependency:  session library and indirectly, the login controller	
+	 * Description:	Checks to see if the session data is logged in
+	 * 				The template used is set based on whether the
+	 * 				user is logged in or not
+	 * 				
+	 * *********************************************************** */
+	function _is_logged_in($config) {
+
+		$is_logged_in = $this->session->userdata('is_logged_in');
+		if(!isset($is_logged_in) || $is_logged_in != true) {
+			
+			if($this -> _get_logged_in_requires_auth($config, $this->method_name)) {
+				echo 'You don\'t have permission to access this page. <a href="http://localhost:8888/TheatreFinder/login">Login</a>';	
+				die();
+			}
+			
+			$this->data['template'] = $this->_get_logged_in_config($config, $this->method_name, 'anonymous', 'template', 'visitors_only_layout');
+			$this->data['view_controller'] = $this->_get_logged_in_config($config, $this->method_name, 'authenticated', 'view_controller', 'theatre_view');
+			
+		} else {
+			
+			$this->data['template'] = $this->_get_logged_in_config($config, $this->method_name, 'authenticated', 'template', 'main_layout');
+			$this->data['view_controller'] = $this->_get_logged_in_config($config, $this->method_name, 'authenticated', 'view_controller', 'theatre_ctrl');
+			
+			$this->data['username'] = $this->session->userdata('username');
+			$this->data['access_level'] = $this->session->userdata('user_access_level');
+			
+			// check if the user is an administrator and set the admin_link appropriately
+			if ($this->data['access_level'] == 'administrator') {
+				$this->data['admin_link'] = anchor('theatre_ctrl/admin_dashboard', "Admin Options");
+			} else {
+				$this->data['admin_link'] = anchor('theatre_ctrl/password_form', "Change account password");
+			}
+		}
+	}
+	
+	protected function _get_logged_in_requires_auth($config, $method) {
+		if(!array_key_exists($method, $config)) {
+			if($method == '*') {
+				return false;
+			}
+			return $this->_get_logged_in_requires_auth($config, '*');
+		}
+		if(!array_key_exists('requires_auth', $config[$method])) {
+			return false;
+		}
+		return $config[$method]['requires_auth'];
+	}
+	
+	protected function _get_logged_in_config($config, $method, $auth_type, $key, $default) {
+		if(!array_key_exists($method, $config)) {
+			if($method == '*') {
+				return $default;
+			}
+			return $this->_get_logged_in_config($config, '*', $auth_type, $key, $default);
+		}
+		if(!array_key_exists($auth_type, $config[$method])) {
+			if($method == '*') {
+				return $default;
+			}
+			return $this->_get_logged_in_config($config, '*', $auth_type, $key, $default);
+		}
+		if(!array_key_exists($key, $config[$method][$auth_type])) {
+			return $default;
+		}
+		return $config[$method][$auth_type][$key];
+	}
+	
+/*	if(!isset($is_logged_in) || $is_logged_in != true) {
+		// need to load a view with error message
+		echo 'You don\'t have permission to access this page. <a href="http://localhost:8888/TheatreFinder/login">Login</a>';	
+		die();		
+		//$this->load->view('login_form');
+	} else {
+		$this->data['username'] = $this->session->userdata('username');
+		$this->data['access_level'] = $this->session->userdata('user_access_level');
 		
+		// check if the user is an administrator and set the admin_link appropriately
+		if ($this->data['access_level'] == 'administrator') {
+			$this->data['admin_link'] = anchor('theatre_ctrl/admin_dashboard', "Admin Options");
+		} else {
+			$this->data['admin_link'] = anchor('theatre_ctrl/password_form', "Change account password");
+		}
+	}
+*/		
 	protected function load_defaults() {
 		
 		$this->controller_name = $this->router->fetch_directory() . $this->router->fetch_class();
