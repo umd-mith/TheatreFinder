@@ -342,7 +342,7 @@ class User extends TheatreFinder_Controller {
 		$this->session->sess_destroy();
 		$this->data['body_id'] = '<body id="login">';
 		
-		redirect('main');
+		redirect('index');
 	}
 	
 	/* **************************************************************************
