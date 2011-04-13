@@ -31,7 +31,6 @@
 		</td>
 		<td width="25%">
 			<div ex:role="facet" ex:facetClass="TextSearch" ex:expression=".label" ex:facetLabel="Search"></div>
-			<div ex:role="facet" ex:facetClass="NumericRange" ex:expression=".date" ex:interval="10" ex:facetLabel="Year"></div>
 			<div ex:role="facet" ex:expression=".sub_type" ex:facetLabel="Theatre Type"></div>
 			<div ex:role="facet" ex:expression=".country_name" ex:facetLabel="Country"></div>
 			<div ex:role="facet" ex:expression=".period_rep" ex:facetLabel="Period"></div>
