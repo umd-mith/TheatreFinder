@@ -557,7 +557,7 @@ class Theatres extends TheatreFinder_Controller {
 
 		// form submit url 
 		// (control method that inserts the theatre if form input is valid)
-		$this->data['form_open']=form_open('theatre_ctrl/update_visitor_info/');
+		$this->data['form_open']=form_open('theatres/update_visitor_info/');
 
 		// Build ckeditor text area wrappers
 		// 1) set-up ckeditor_id=>form_element_id array
