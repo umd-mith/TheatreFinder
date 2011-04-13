@@ -1,18 +1,19 @@
 <table width="100%">
 	<tr valign="top">
 		<td ex:role="viewPanel">
-			<table ex:role="lens" class="theatre" width="180px">
+			<div ex:role="lens" class="theatre">
+			  <table>
 				<tr>
-					<td colspan="2" align="center"><img ex:src-content=".thumbnail" /></td>
+					<td colspan="2" align="center"><img width="130" ex:src-content=".thumbnail" /></td>
 				</tr>
 				<tr>
-					<td align="right">Name:</td>
-				    <td><span ex:content=".label" class="name"></span></td>
+				    <td colspan="2" align="center"><span ex:content=".label" class="name"></span></td>
 				</tr><tr>
-					<td align="right">Country:</td>
+					<td align="right" width="60">Country:</td>
 					<td><span ex:content=".country_name" class="country"></span></td>
 				</tr>
-			</table>
+			  </table>
+			</div>
 			<div ex:role="view"
 				ex:viewClass="Tabular"
 				ex:columns=".label, .thumbnail, .sub_type, .period"
