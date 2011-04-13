@@ -1212,6 +1212,10 @@ class Theatres extends TheatreFinder_Controller {
 		// get the decimal degrees (lat/lng) and convert to degrees/min/secs (DMS)
 		list($theatre['lat_dms'], $theatre['lng_dms']) = $this->_convert_decimal_degrees_to_DMS($theatre['lat'], $theatre['lng']);
 
+		if(array_key_exists('id', $theatre) && array_key_exists('username', $this->data)) {
+			$theatre['Edit'] = anchor('theatres/edit_theatre_form/'.$theatre['id'], 'Edit');
+			$theatre['Delete'] = anchor('theatres/delete_theatre_form/'.$theatre['id'], 'Delete');
+		}
 		$this->data['theatre'] = $theatre;
 		// need this for the nav link back to this visitorinfo page
 		$this->data['curr_theatre_ref'] = $this->uri->segment(3);

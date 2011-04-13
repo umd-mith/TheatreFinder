@@ -18,6 +18,11 @@
                                 <li><a href="#rel_sites">Related sites nearby</a></li>
 								<li><a href="#gps">GPS Coordinates</a></li>
 								<li><a href="#entry_author">Entry Author/Editor</a></li>
+								<?php
+								  if(array_key_exists('Edit', $theatre)) {
+									?><li><?php echo $theatre['Edit']; ?></li><?php
+								  }
+								?>
                             </ul>
 			<h4><a href="<?php echo  base_url();?>theatre_ctrl/entry_scholarly_details/<?php echo $curr_theatre_ref;?>">Scholarly details</a></h4>
                         	<ul>
