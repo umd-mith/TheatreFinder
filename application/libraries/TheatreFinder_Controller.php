@@ -38,7 +38,7 @@ class TheatreFinder_Controller extends Controller {
 		if(!isset($is_logged_in) || $is_logged_in != true) {
 			
 			if($this -> _get_logged_in_requires_auth($config, $this->method_name)) {
-				echo 'You don\'t have permission to access this page. <a href="http://localhost:8888/TheatreFinder/login">Login</a>';	
+				echo 'You don\'t have permission to access this page. ' .anchor('/login', 'Login');	
 				die();
 			}
 			
