@@ -9,7 +9,18 @@ class Index extends TheatreFinder_Controller {
 		$this->load->model('Theatre_model');
 		
 		// check to see if a user is logged in
-		$this->_is_logged_in();
+		$this->_is_logged_in(array(
+			'*' => array(
+				'authenticated' => array(
+					'template' => 'main_layout',
+					'view_controller' => 'theatre_ctrl'
+				),
+				'anonymous' => array(
+					'template' => 'visitors_only_layout',
+					'view_controller' => 'theatre_ctrl'
+				)
+			)
+		));
 		
 		//$this->load->helper(array('url','form'));
 		$this->add_css('all_css');

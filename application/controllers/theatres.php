@@ -1,5 +1,45 @@
 <?php
 class Theatres extends TheatreFinder_Controller {
+	function __construct() {
+		parent::__construct();
+			
+		// load 'Theatres' table model
+		$this->load->model('Theatre_model');
+		//mb_http_output( "UTF-8" );
+		
+		// *** MAKE SURE USER IS LOGGED IN
+		// If they are logged in, several $this->['data'] params for the
+		// theatre_ctrl controller object are initialized 
+		// (e.g., $this->['username'], $this->['access_level'])
+		$this->_is_logged_in(array(
+			'*' => array(
+				'requires_auth' => true
+			),
+			'index' => array(
+				'requires_auth' => false
+			),
+			'exhibit_json' => array(
+				'requires_auth' => false
+			)
+		));
+		
+		// Most library functions loaded in autoload.php (under config/ dir) 02/04/2010
+			
+		$this->load->library('TheatreFinder_Xmlrpc');
+		//$this->load->library('MyMultiByte');
+			
+		// load helper functions
+		// **Could be loaded in autoload.php (under config/ dir) 02/04/2010
+		// removed from autoload.php 02/17/2010, calling here
+		// loading URL & Form helpers from autoload.php (06/18/2010)
+		$this->load->helper('international');
+		$this->load->helper('ckeditor');
+		
+		// at start, ensure that all scripts+styles are added to 'views'
+		$this->add_css('all_css');
+		$this->add_scripts('all_scripts');
+		
+	}
 	function index() {
 		$this->data['title'] = 'Theatre Finder | Browse Theatres';
 		$this->data['body_id'] = '<body id="search">';
@@ -20,7 +60,9 @@ class Theatres extends TheatreFinder_Controller {
 			unset($thumbnailFile);
 			unset($thumbnailData);
 
-			$theatres[$i]['idData'] = $theatres[$i]['id']."_".$theatres[$i]['prev'];
+			if(array_key_exists('prev', $theatres[$i])) {
+				$theatres[$i]['idData'] = $theatres[$i]['id']."_".$theatres[$i]['prev'];
+			}
 
 			$theatres[$i]['theatre_name'] = stripslashes($theatres[$i]['theatre_name']);
 
@@ -39,9 +81,11 @@ class Theatres extends TheatreFinder_Controller {
 			$theatres[$i]['date_range'] = $this->_format_date($theatres[$i]['est_earliest'], $theatres[$i]['est_latest'], $theatres[$i]['earliestdate_bce_ce'], $theatres[$i]['latestdate_bce_ce']);
 
 			// Build a uri for edit/delete that is comprised of the idData= entry id."_"previousRowNum ('prev');
-			$theatres[$i]['Details'] = anchor('theatre_ctrl/entry_visitor_info/'.$theatres[$i]['idData'], 'View Details');
-			$theatres[$i]['Edit'] = anchor('theatre_ctrl/edit_visitor_form/'.$theatres[$i]['idData'], 'Edit');
-			$theatres[$i]['Delete'] = anchor('theatre_ctrl/delete_theatre_form/'.$theatres[$i]['idData'], 'Delete');
+			if(array_key_exists('idData', $theatres[$i])) {
+				$theatres[$i]['Details'] = anchor('theatre_ctrl/entry_visitor_info/'.$theatres[$i]['idData'], 'View Details');
+				$theatres[$i]['Edit'] = anchor('theatre_ctrl/edit_visitor_form/'.$theatres[$i]['idData'], 'Edit');
+				$theatres[$i]['Delete'] = anchor('theatre_ctrl/delete_theatre_form/'.$theatres[$i]['idData'], 'Delete');
+			}
 			$theatres[$i]['Add'] = anchor('theatre_ctrl/add_new_form/', 'Add new');
 			// get the image information for this theatre
 			$thumbnailData = $this->Theatre_model->getThumbNail($theatres[$i]['id']);
@@ -2768,4 +2812,3 @@ class Theatres extends TheatreFinder_Controller {
 		$this->email->send();
 	}
 } 
-}
