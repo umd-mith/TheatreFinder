@@ -5,6 +5,11 @@ class Upload extends TheatreFinder_Controller {
 	function Upload()
 	{
 		parent::Controller();
+		$this->_is_logged_in(array(
+			'*' => array(
+				'requires_auth' => true
+			)
+		));
 		$this->load->helper(array('form', 'url'));
 	}
 	
