@@ -27,35 +27,6 @@ class Index extends TheatreFinder_Controller {
 		$this->add_scripts('all_scripts');
 	
 	}
-	
-	/* ***********************************************************
-	 * Name:		_is_logged_in
-	 * Input:	
-	 * Output:	
-	 * Dependency:  session library and indirectly, the login controller	
-	 * Description:	Checks to see if the session data is logged in
-	 * 				The template used is set based on whether the
-	 * 				user is logged in or not
-	 * 				
-	 * *********************************************************** */
-	function _is_logged_in() {
-		
-		$is_logged_in = $this->session->userdata('is_logged_in');
-		if(!isset($is_logged_in) || $is_logged_in != true) {
-			$this->data['template'] = 'visitors_only_layout';
-			$this->data['view_controller'] = 'theatre_view';
-		} else {
-			$this->data['template'] = 'main_layout';
-			$this->data['username'] = $this->session->userdata('username');
-			$this->data['view_controller'] = 'theatre_ctrl';
-			$this->data['access_level'] = $this->session->userdata('user_access_level');
-			
-			// check if the user is an administrator and set the admin_link appropriately
-			if ($this->data['access_level'] == 'administrator') {
-				$this->data['admin_link'] = anchor('theatre_ctrl/admin_dashboard', "Admin Options");
-			}
-		}
-	}
 
 	/* ***********************************************************
 	 * Name:		index
