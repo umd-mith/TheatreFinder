@@ -18,6 +18,19 @@ $config['base_url']	= "http://localhost:8888/TheatreFinder/";
 
 /*
 |--------------------------------------------------------------------------
+| Site Root Directory
+|--------------------------------------------------------------------------
+|
+| Path to your CodeIgniter root. Typically this will be your document root,
+| WITHOUT a trailing slash:
+|
+|	/Users/jgsmith/Sites/TheatreFinder
+|
+*/
+$config['site_root'] = '/Users/jgsmith/Sites/TheatreFinder';
+
+/*
+|--------------------------------------------------------------------------
 | Index File
 |--------------------------------------------------------------------------
 |

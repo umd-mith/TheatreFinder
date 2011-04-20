@@ -31,14 +31,15 @@ class Upload extends TheatreFinder_Controller {
 
 	function do_upload()
 	{
+		$CI =& get_instance();
+		$site_root = $CI->config->slash_item('site_root');
+		
 		$t_id = $this -> uri -> segment(3);
 		$this->data['id'] = $t_id;
 		$i_type = $this->uri->segment(4);
 		$this->data['type'] = $i_type;
-		
-		$site_root = "/Users/jgsmith/Sites/TheatreFinder";
-		
-		$config['upload_path'] = "$site_root/images/theatres/$i_type/";
+				
+		$config['upload_path'] = $site_root."/images/theatres/$i_type/";
 		$config['allowed_types'] = 'gif|jpg|png';
 		$config['max_size']	= '100';
 		$config['max_width']  = '1024';
@@ -48,7 +49,7 @@ class Upload extends TheatreFinder_Controller {
 	
 		if ( ! $this->upload->do_upload())
 		{			
-			$this->data['error'] = $this->upload->display_errors();
+			$this->data['error'] = $this->upload->display_errors() . " (". $upconfig['upload_path'] . ")";
 			$this->render(FALSE, 'upload_form');
 		}	
 		else
