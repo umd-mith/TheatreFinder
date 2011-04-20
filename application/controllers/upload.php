@@ -24,6 +24,8 @@ class Upload extends TheatreFinder_Controller {
 	function index()
 	{	
 		//$this->load->view('upload_form', array('error' => ' ' ));
+		$this->data['id'] = $this -> uri -> segment(3);
+		$this->data['type'] = $this->uri -> segment(4);
 		$this -> render();
 	}
 
@@ -35,6 +37,9 @@ class Upload extends TheatreFinder_Controller {
 		$config['max_width']  = '1024';
 		$config['max_height']  = '768';
 		
+		$this->data['id'] = $this -> uri -> segment(3);
+		$this->data['type'] = $this->uri -> segment(4);
+		
 		$this->load->library('upload', $config);
 	
 		if ( ! $this->upload->do_upload())
@@ -45,6 +50,7 @@ class Upload extends TheatreFinder_Controller {
 		else
 		{
 			$this->data['upload_data'] = $this->upload->data();
+			# tie uploaded image to the id/type
 			
 			$this->render(FALSE, 'upload_success');
 		}

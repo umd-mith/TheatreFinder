@@ -1178,9 +1178,11 @@ class Theatres extends TheatreFinder_Controller {
 					$image_key = $sub_path.'_image';
 					$theatre[$image_key] = $t_imgs['top_file_path'].$sub_path."/".$filename;
 				}
+				$theatre['needs_'.$image_key] = FALSE;
 			} else {	
 				$image_key = $sub_path.'_image';
 				$theatre[$image_key] = $t_imgs['top_file_path']."/".$filename;
+				$theatre['needs_'.$image_key] = TRUE;
 			}
 		}
 

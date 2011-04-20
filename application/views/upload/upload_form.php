@@ -6,7 +6,10 @@
 
 <?php echo $error;?>
 
-<?php echo form_open_multipart('upload/do_upload');?>
+<pre>[<?php echo $id;		
+?>]</pre>
+
+<?php echo form_open_multipart('upload/do_upload/' . $id . '/' . $type);?>
 
 <input type="file" name="userfile" size="20" />
 
