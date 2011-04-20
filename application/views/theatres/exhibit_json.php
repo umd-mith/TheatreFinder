@@ -26,6 +26,7 @@
     $item['sub_type'] = $theatre['sub_type'];
     $item['date_range'] = $theatre['date_range'];
     $item['period_rep'] = $theatre['period_rep'];
+	$item['type'] = 'Theatre';
         
     $exhibit_data["items"][] = $item;
   }

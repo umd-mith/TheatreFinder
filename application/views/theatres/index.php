@@ -1,40 +1,54 @@
-<table width="98%">
-	<tr valign="top">
-		<td ex:role="viewPanel">
-			<div ex:role="lens" class="theatre">
-			  <table>
-				<tr>
-					<td colspan="2" align="center"><a ex:href-content=".theatre_url"><img width="130" ex:src-content=".thumbnail" /></a></td>
-				</tr>
-				<tr>
-				    <td colspan="2" align="center"><a ex:href-content=".theatre_url"><span ex:content=".label"></span></a></td>
-				</tr><tr>
-					<td align="right" width="60">Country:</td>
-					<td><span ex:content=".country_name" class="country"></span></td>
-				</tr>
-			  </table>
+<div class="theatres">
+	<div class="facets">
+		<div ex:role="facet" ex:facetClass="TextSearch" ex:expression=".label, .country_name, .period_rep, .sub_type, .city" ex:facetLabel="Search"></div>
+		<div ex:role="facet" ex:expression=".sub_type" ex:facetLabel="Theatre Type" ex:showMissing="false"></div>
+		<div ex:role="facet" ex:expression=".city" ex:facetLabel="City" ex:showMissing="false"></div>
+		<div ex:role="facet" ex:expression=".country_name" ex:facetLabel="Country" ex:showMissing="false"></div>
+		<div ex:role="facet" ex:expression=".period_rep" ex:facetLabel="Period" ex:showMissing="false"></div>
+	</div>
+	<div class="results">
+		<div ex:role="viewPanel">
+			<div ex:role="lens" class="theatre" style="display: none;">
+				<div class="title"><a ex:href-content=".theatre_url" target="_blank"><span ex:content=".label"></span></a></div>
+			    <div class="titling">
+			    	<div class="thumbnail">
+				    	<a ex:href-content=".theatre_url" target="_blank"><img width="130" ex:src-content=".thumbnail" /></a>
+					</div>
+				</div>
+				<div class="location">
+					Location: <span ex:content=".city"></span>,
+					          <span ex:content=".country_name"></span>
+				</div>
+				<div class="timing">
+					<div class="date">Date(s): <span ex:content=".date_range"></span></div>
+				</div>
+				<div class="classification">
+					<div class="type">Type: <span ex:content=".sub_type"></span> <span ex:content=".period_rep"></span></div>
+				</div>
+				<div class="status">Entry Status: <span ex:content=".entry_status"></span></div>
+				<div class="clear-both"></div>
 			</div>
-			<div ex:role="view"
+			<!-- div ex:role="view"
 				ex:viewClass="Tabular"
-				ex:columns=".theatre_name_link, .thumbnail_link, .sub_type, .period_rep"
-				ex:columnFormats="list, list, list, list"
-				ex:columnLabels="name, photo, type, period"
+				ex:columns=".theatre_name_link, .thumbnail_link, .sub_type, .country_name, .period_rep"
+				ex:columnFormats="list, list, list, list, list"
+				ex:columnLabels="name, photo, type, country, period"
 				ex:sortColumn="0"
 				ex:grouped="false"
 				ex:sortAscending="true">
 			</div>
 			<div ex:role="view"
+				ex:viewClass="Timeline"
+				ex:start=".date_range"
+				ex:topBandUnit="decade"
+				ex:bottomBandUnit="century"
+				></div -->
+			<div ex:role="view"
 			ex:viewClass="Thumbnail"
-			    ex:orders=".label"
-			    ex:possibleOrders=".label, .sub_type, .period_rep, .region"
-				ex:grouped="false"></div>
-		</td>
-		<td width="25%">
-			<div ex:role="facet" ex:facetClass="TextSearch" ex:expression=".label" ex:facetLabel="Search"></div>
-			<div ex:role="facet" ex:expression=".sub_type" ex:facetLabel="Theatre Type" ex:showMissing="false"></div>
-			<div ex:role="facet" ex:expression=".country_name" ex:facetLabel="Country" ex:showMissing="false"></div>
-			<div ex:role="facet" ex:expression=".period_rep" ex:facetLabel="Period" ex:showMissing="false"></div>
-			
-		</td>
-	</tr>
-</table>
+			    ex:orders=".country_name, .city"
+			    ex:possibleOrders=".label, .sub_type, .city, .country_name, .period_rep, .region"
+				ex:grouped="true"></div>
+		</div>		
+	</div>
+	<div class="clear-both"></div>
+</div>

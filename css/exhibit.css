@@ -1,15 +1,47 @@
-div.theatre {
-	width: 170px;
-	text-align: center;
-	height: 170px;
+.theatre {
+	width: 718px;
 }
 
-div.theatre table {
-	width: 170px;
+.theatre .clear-both {
+	clear:both;
+}
+
+.theatre .titling {
+	float: left;
+	text-align: center;
+	width: 160px;
+}
+
+.theatre .title {
+	font-weight: bold;
+	font-size: bigger;
+}
+
+.theatre .location {
+}
+
+.theatres .results {
+	width: 720px;
 	text-align: left;
+	float: left;
 	margin: 0px;
+	padding-right: 2px;
+}
+
+.theatres .facets {
+	float: right;
+	width: 238px;
 }
 
 div.exhibit-viewPanel {
 	margin-right: 2px;
+}
+
+
+div.exhibit-collectionView-group-content div.theatre {
+	width: 705px;
+}
+
+div.exhibit-toolboxWidget-popup {
+ /* display: none; */
 }
