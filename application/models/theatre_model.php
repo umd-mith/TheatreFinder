@@ -1139,6 +1139,11 @@
 		}		  
 	}
 	
+	function update_main_image($t_id, $type, $filename) {
+		$rowData = array($type => $filename);
+		$this->db->update('main_images', $rowData, array('t_id' => $t_id));
+	}
+	
 	// 
 	function get_featured_image($t_id) {
 		
