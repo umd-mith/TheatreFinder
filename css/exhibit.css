@@ -17,7 +17,8 @@
 	font-size: bigger;
 }
 
-.theatre .location {
+.theatre .location, .theatre .timing, .theatre .status, .theatre .classification, .theatre .operations {
+	margin-left: 160px;
 }
 
 .theatres .results {

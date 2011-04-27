@@ -1,11 +1,11 @@
 <div class="theatres">
 	<div class="facets">
 		<div ex:role="facet" ex:facetClass="TextSearch" ex:expression=".label, .country_name, .period_rep, .sub_type, .city" ex:facetLabel="Search"></div>
-		<div ex:role="facet" ex:expression=".sub_type" ex:facetLabel="Theatre Type" ex:showMissing="false"></div>
-		<div ex:role="facet" ex:expression=".city" ex:facetLabel="City" ex:showMissing="false"></div>
-		<div ex:role="facet" ex:expression=".country_name" ex:facetLabel="Country" ex:showMissing="false"></div>
-		<div ex:role="facet" ex:expression=".region" ex:facetLabel="Region" ex:showMissing="false"></div>
-		<div ex:role="facet" ex:expression=".period_rep" ex:facetLabel="Period" ex:showMissing="false"></div>
+		<div ex:role="facet" ex:height="6em" ex:expression=".sub_type" ex:facetLabel="Theatre Type" ex:showMissing="false"></div>
+		<div ex:role="facet" ex:height="6em" ex:expression=".city" ex:facetLabel="City" ex:showMissing="false"></div>
+		<div ex:role="facet" ex:height="6em" ex:expression=".country_name" ex:facetLabel="Country" ex:showMissing="false"></div>
+		<div ex:role="facet" ex:height="6em" ex:expression=".region" ex:facetLabel="Region" ex:showMissing="false"></div>
+		<div ex:role="facet" ex:height="6em" ex:expression=".period_rep" ex:facetLabel="Period" ex:showMissing="false"></div>
 	</div>
 	<div class="results">
 		<div ex:role="viewPanel">
@@ -18,7 +18,7 @@
 				</div>
 				<div class="location">
 					Location: <span ex:content=".city"></span>,
-					          <span ex:content=".country_name"></span>
+					          <span ex:content=".country_name"></span>/<span ex:content=".country_digraph"></span>
 							  <span ex:if-exists=".region">(<span ex:content=".region"></span>)</span>
 				</div>
 				<div class="timing">
@@ -28,6 +28,9 @@
 					<div class="type">Type: <span ex:content=".sub_type"></span> <span ex:content=".period_rep"></span></div>
 				</div>
 				<div class="status">Entry Status: <span ex:content=".entry_status"></span></div>
+				<div class="operations">
+					<span ex:if-exists=".edit"><a ex:href-content=".edit" target="_blank">Edit</a></span>
+				</div>
 				<div class="clear-both"></div>
 			</div>
 			<!-- div ex:role="view"
