@@ -32,7 +32,14 @@
     	$item['sub_type'] = $theatre['sub_type'];
 	}
     $item['date_range'] = $theatre['date_range'];
-    $item['period_rep'] = $theatre['period_rep'];
+    $pr = $theatre['period_rep'];
+    if(substr($pr, 0, 1) == '(' && substr($pr, -1, 1) == ')') {
+		$item['period_rep'] = substr($pr, 1, -1);
+	}
+	else {
+		$item['period_rep'] = $theatre['period_rep'];
+	}
+
 	$item['type'] = 'Theatre';
 	
 	if(array_key_exists('Add', $theatre)) {

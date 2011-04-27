@@ -22,10 +22,10 @@
 							  <span ex:if-exists=".region">(<span ex:content=".region"></span>)</span>
 				</div>
 				<div class="timing">
-					<div class="date">Date(s): <span ex:content=".date_range"></span></div>
+					<div class="date">Period: <span ex:content=".period_rep"></span> (<span ex:content=".date_range"></span>)</div>
 				</div>
 				<div class="classification">
-					<div class="type">Type: <span ex:content=".sub_type"></span> <span ex:content=".period_rep"></span></div>
+					<div class="type">Type: <span ex:content=".sub_type"></span> </div>
 				</div>
 				<div class="status">Entry Status: <span ex:content=".entry_status"></span></div>
 				<div class="operations">
