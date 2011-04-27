@@ -22,7 +22,9 @@
     $item['thumbnail'] = base_url().$theatre['thumbnail'];
     $item['thumbnail_link'] = "<a href='" . $item['theatre_url'] . "'><img src='" . $item['thumbnail'] . "' width='130' /></a>";
     $item['country_name'] = $theatre['country_name'];
-    $item['region'] = $theatre['region'];
+    if($theatre['region'] != "") {
+        $item['region'] = $theatre['region'];
+	}
     $item['sub_type'] = $theatre['sub_type'];
     $item['date_range'] = $theatre['date_range'];
     $item['period_rep'] = $theatre['period_rep'];

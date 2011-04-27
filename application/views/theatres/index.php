@@ -4,6 +4,7 @@
 		<div ex:role="facet" ex:expression=".sub_type" ex:facetLabel="Theatre Type" ex:showMissing="false"></div>
 		<div ex:role="facet" ex:expression=".city" ex:facetLabel="City" ex:showMissing="false"></div>
 		<div ex:role="facet" ex:expression=".country_name" ex:facetLabel="Country" ex:showMissing="false"></div>
+		<div ex:role="facet" ex:expression=".region" ex:facetLabel="Region" ex:showMissing="false"></div>
 		<div ex:role="facet" ex:expression=".period_rep" ex:facetLabel="Period" ex:showMissing="false"></div>
 	</div>
 	<div class="results">
@@ -18,6 +19,7 @@
 				<div class="location">
 					Location: <span ex:content=".city"></span>,
 					          <span ex:content=".country_name"></span>
+							  <span ex:if-exists=".region">(<span ex:content=".region"></span>)</span>
 				</div>
 				<div class="timing">
 					<div class="date">Date(s): <span ex:content=".date_range"></span></div>
