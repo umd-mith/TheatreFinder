@@ -76,20 +76,20 @@ class Theatres extends TheatreFinder_Controller {
 			$theatres[$i]['city'] = stripslashes($theatres[$i]['city']);
 
 			$theatres[$i]['period_rep'] = stripslashes($theatres[$i]['period_rep']);
-			$theatres[$i]['period_rep'] = (strcmp('Not Yet Specified', $theatres[$i]['period_rep'])) ? 
-											"(".$theatres[$i]['period_rep']." period)" :
-											"(".$theatres[$i]['period_rep'].")";
+			$theatres[$i]['period_rep'] = ('Not Yet Specified' == $theatres[$i]['period_rep']) ? 
+											("(".$theatres[$i]['period_rep'].")") :
+											($theatres[$i]['period_rep']);
 			$theatres[$i]['sub_type'] = stripslashes($theatres[$i]['sub_type']);
 
 			$theatres[$i]['date_range'] = $this->_format_date($theatres[$i]['est_earliest'], $theatres[$i]['est_latest'], $theatres[$i]['earliestdate_bce_ce'], $theatres[$i]['latestdate_bce_ce']);
 
 			// Build a uri for edit/delete that is comprised of the idData= entry id."_"previousRowNum ('prev');
-			if(array_key_exists('idData', $theatres[$i])) {
-				$theatres[$i]['Details'] = anchor('theatres/entry_visitor_info/'.$theatres[$i]['idData'], 'View Details');
-				$theatres[$i]['Edit'] = anchor('theatres/edit_visitor_form/'.$theatres[$i]['idData'], 'Edit');
-				$theatres[$i]['Delete'] = anchor('theatres/delete_theatre_form/'.$theatres[$i]['idData'], 'Delete');
+			if(array_key_exists('id', $theatres[$i])) {
+				$theatres[$i]['Details'] = base_url().'theatres/entry_visitor_info/'.$theatres[$i]['id'].'_top';
+				$theatres[$i]['Edit'] = base_url().'theatres/edit_visitor_form/'.$theatres[$i]['id'].'_top';
+				$theatres[$i]['Delete'] = base_url().'theatres/delete_theatre_form/'.$theatres[$i]['id'].'_top';
 			}
-			$theatres[$i]['Add'] = anchor('theatres/add_new_form/', 'Add new');
+			$theatres[$i]['Add'] = base_url().'theatres/add_new_form/';
 			// get the image information for this theatre
 			$thumbnailData = $this->Theatre_model->getThumbNail($theatres[$i]['id']);
 			if (isset($thumbnailData)) {
