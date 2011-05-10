@@ -27,9 +27,9 @@
 				<div class="classification">
 					<div class="type">Type: <span ex:content=".sub_type"></span> </div>
 				</div>
-				<div class="status">Entry Status: <span ex:content=".entry_status"></span></div>
 				<div class="operations">
-					<span ex:if-exists=".edit"><a ex:href-content=".edit" target="_blank">Edit</a></span>
+					<a ex:if-exists=".edit" class="op" ex:href-content=".edit" target="_blank">Edit</a>
+					<a ex:if-exists=".add" class="op" ex:href-content=".add" target="_blank">Add New</a>
 				</div>
 				<div class="clear-both"></div>
 			</div>

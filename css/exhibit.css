@@ -21,6 +21,15 @@
 	margin-left: 160px;
 }
 
+.theatre .operations {
+	margin-top: 12px;
+}
+
+a.op + a.op {
+	border-left: 2px solid #111111;
+	padding-left: 4px;
+}
+
 .theatres .results {
 	width: 720px;
 	text-align: left;
