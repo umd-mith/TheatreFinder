@@ -29,6 +29,7 @@
 				</div>
 				<div class="operations">
 					<a ex:if-exists=".edit" class="op" ex:href-content=".edit" target="_blank">Edit</a>
+					<a ex:if-exists=".delete" class="op" ex:href-subcontent="javascript:confirmDeleteTheatre('{{.delete}}')">Delete</a>
 					<a ex:if-exists=".add" class="op" ex:href-content=".add" target="_blank">Add New</a>
 				</div>
 				<div class="clear-both"></div>
