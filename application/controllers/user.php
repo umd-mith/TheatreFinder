@@ -113,7 +113,7 @@ class User extends TheatreFinder_Controller {
 					);
 			
 					$this->session->set_userdata($userdata);			
-					redirect('index');
+					redirect('theatres');
 				}	
 			}
 			 
