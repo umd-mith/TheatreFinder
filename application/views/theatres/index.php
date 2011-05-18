@@ -22,7 +22,7 @@
 							  <span ex:if-exists=".region">(<span ex:content=".region"></span>)</span>
 				</div>
 				<div class="timing">
-					<div class="date">Period: <span ex:content=".period_rep"></span> (<span ex:content=".date_range"></span>)</div>
+					<div class="date">Period: <span ex:content=".period_rep"></span> (<span ex:content=".date_range"></span><span ex:if-exists=".auditorium_date"> / auditorium: <span ex:content=".auditorium_date"></span></span>)</div>
 				</div>
 				<div class="classification">
 					<div class="type">Type: <span ex:content=".sub_type"></span> </div>
