@@ -69,9 +69,16 @@
 		// then by city (asc), country_name (asc)
 		// Get type id from theatre_type table
 		
-		$select = "SELECT id, theatre_name, country_name, country_digraph, city, region, "
-				  ."period_rep, sub_type, est_earliest, earliestdate_bce_ce, "
-				  ."est_latest, latestdate_bce_ce "
+#		$select = "SELECT id, theatre_name, country_name, country_digraph, city, region, "
+#				  ."period_rep, sub_type, est_earliest, earliestdate_bce_ce, "
+#				  ."est_latest, latestdate_bce_ce, auditorium_date "
+		$select = "SELECT theatres.id, theatres.theatre_name, theatres.country_name, "
+					 ."theatres.country_digraph, theatres.city, theatres.region, theatres.period_rep, "
+					 ."theatres.sub_type, theatres.est_earliest, theatres.earliestdate_bce_ce, "
+					 ."theatres.est_latest, theatres.latestdate_bce_ce, theatres.auditorium_date, "
+					 ."theatres.entry_first_lister, theatres.entry_author, theatres.entry_editor, "
+					 ."theatres.entry_date, theatres.entry_status, theatres.last_updated, theatres.rating, "
+					 ."theatres.lat, theatres.lng "
 				  ."FROM theatres "
 				  ."ORDER BY country_name ASC, city ASC;";
 				  
