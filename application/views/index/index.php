@@ -10,11 +10,47 @@
         <h2>Recently Updated Theatre Entries</h2>
 
 		<div class="grid_2 boxgrid captionfull alpha">
+		<!-- this is the image --><img src="<?php echo base_url();?><?php echo $recent_theatres[0]['thumbnail'];?>" alt="featured theatre 1" />
+            <div class="cover boxcaption">
+                <!-- this is the hover --><h4><?php echo $recent_theatres[0]['country_name']; ?></h4>
+                <p>
+                   <?php echo $recent_theatres[0]['city']; ?><br>			   
+				   <?php echo $recent_theatres[0]['date_range']; ?>
+                    <br/>
+                    <a href="<?php echo base_url().$view_controller;?>/entry_visitor_info/<?php echo $recent_theatres[0]['id'];?>_top">View details</a>
+                </p>
+            </div>
+        </div>
+       <div class="grid_2 boxgrid captionfull">
+            <!-- this is the image --><img src="<?php echo base_url();?><?php echo $recent_theatres[1]['thumbnail'];?>" alt="featured theatre 1" />
+            <div class="cover boxcaption">
+                <!-- this is the hover --><h4><?php echo $recent_theatres[1]['country_name']; ?></h4>
+                <p>
+                   <?php echo $recent_theatres[1]['city']; ?> <br>
+				   <?php echo $recent_theatres[1]['date_range']; ?>
+                    <br/>
+                    <a href="<?php echo base_url().$view_controller;?>/entry_visitor_info/<?php echo $recent_theatres[1]['id'];?>_top">View details</a>
+                </p>
+            </div>
+        </div>
+        <div class="grid_2 boxgrid captionfull omega">
+            <!-- this is the image --><img src="<?php echo base_url();?><?php echo $recent_theatres[2]['thumbnail'];?>" alt="featured theatre 1" />
+            <div class="cover boxcaption">
+                <!-- this is the hover --><h4><?php echo $recent_theatres[2]['country_name']; ?></h4>
+                <p>
+                 <?php echo $recent_theatres[2]['city']; ?> <br>
+				  <?php echo $recent_theatres[2]['date_range']; ?>
+                    <br/>
+                    <a href="<?php echo base_url().$view_controller;?>/entry_visitor_info/<?php echo $recent_theatres[2]['id'];?>_top">View details</a>
+                </p>
+            </div>
+        </div>
+		<div class="grid_2 boxgrid captionfull alpha">
 		<!-- this is the image --><img src="<?php echo base_url();?><?php echo $recent_theatres[3]['thumbnail'];?>" alt="featured theatre 1" />
             <div class="cover boxcaption">
                 <!-- this is the hover --><h4><?php echo $recent_theatres[3]['country_name']; ?></h4>
                 <p>
-                   <?php echo $recent_theatres[3]['city']; ?><br>			   
+                   <?php echo $recent_theatres[3]['city']; ?> <br>			   
 				   <?php echo $recent_theatres[3]['date_range']; ?>
                     <br/>
                     <a href="<?php echo base_url().$view_controller;?>/entry_visitor_info/<?php echo $recent_theatres[3]['id'];?>_top">View details</a>
@@ -26,7 +62,7 @@
             <div class="cover boxcaption">
                 <!-- this is the hover --><h4><?php echo $recent_theatres[4]['country_name']; ?></h4>
                 <p>
-                   <?php echo $recent_theatres[4]['city']; ?> <br>
+                   <?php echo $recent_theatres[4]['city']; ?><br>
 				   <?php echo $recent_theatres[4]['date_range']; ?>
                     <br/>
                     <a href="<?php echo base_url().$view_controller;?>/entry_visitor_info/<?php echo $recent_theatres[4]['id'];?>_top">View details</a>
@@ -38,46 +74,10 @@
             <div class="cover boxcaption">
                 <!-- this is the hover --><h4><?php echo $recent_theatres[5]['country_name']; ?></h4>
                 <p>
-                 <?php echo $recent_theatres[5]['city']; ?> <br>
+                 <?php echo $recent_theatres[5]['city']; ?><br>
 				  <?php echo $recent_theatres[5]['date_range']; ?>
                     <br/>
                     <a href="<?php echo base_url().$view_controller;?>/entry_visitor_info/<?php echo $recent_theatres[5]['id'];?>_top">View details</a>
-                </p>
-            </div>
-        </div>
-		<div class="grid_2 boxgrid captionfull alpha">
-		<!-- this is the image --><img src="<?php echo base_url();?><?php echo $recent_theatres[6]['thumbnail'];?>" alt="featured theatre 1" />
-            <div class="cover boxcaption">
-                <!-- this is the hover --><h4><?php echo $recent_theatres[6]['country_name']; ?></h4>
-                <p>
-                   <?php echo $recent_theatres[6]['city']; ?> <br>			   
-				   <?php echo $recent_theatres[6]['date_range']; ?>
-                    <br/>
-                    <a href="<?php echo base_url().$view_controller;?>/entry_visitor_info/<?php echo $recent_theatres[6]['id'];?>_top">View details</a>
-                </p>
-            </div>
-        </div>
-       <div class="grid_2 boxgrid captionfull">
-            <!-- this is the image --><img src="<?php echo base_url();?><?php echo $recent_theatres[7]['thumbnail'];?>" alt="featured theatre 1" />
-            <div class="cover boxcaption">
-                <!-- this is the hover --><h4><?php echo $recent_theatres[7]['country_name']; ?></h4>
-                <p>
-                   <?php echo $recent_theatres[7]['city']; ?><br>
-				   <?php echo $recent_theatres[7]['date_range']; ?>
-                    <br/>
-                    <a href="<?php echo base_url().$view_controller;?>/entry_visitor_info/<?php echo $recent_theatres[7]['id'];?>_top">View details</a>
-                </p>
-            </div>
-        </div>
-        <div class="grid_2 boxgrid captionfull omega">
-            <!-- this is the image --><img src="<?php echo base_url();?><?php echo $recent_theatres[8]['thumbnail'];?>" alt="featured theatre 1" />
-            <div class="cover boxcaption">
-                <!-- this is the hover --><h4><?php echo $recent_theatres[8]['country_name']; ?></h4>
-                <p>
-                 <?php echo $recent_theatres[8]['city']; ?><br>
-				  <?php echo $recent_theatres[8]['date_range']; ?>
-                    <br/>
-                    <a href="<?php echo base_url().$view_controller;?>/entry_visitor_info/<?php echo $recent_theatres[8]['id'];?>_top">View details</a>
                 </p>
             </div>
         </div>
