@@ -42,14 +42,16 @@
 
 	$item['type'] = 'Theatre';
 	
-	if(array_key_exists('Add', $theatre)) {
-		$item['add'] = $theatre['Add'];
-	}
-	if(array_key_exists('Edit', $theatre)) {
-		$item['edit'] = $theatre['Edit'];
-	}	
-	if(isset($access_level) && $access_level == 'administrator' && array_key_exists('Delete', $theatre)) {
-		$item['delete'] = $theatre['Delete'];
+	if(isset($username)) {
+		if(array_key_exists('Add', $theatre)) {
+			$item['add'] = $theatre['Add'];
+		}
+		if(array_key_exists('Edit', $theatre)) {
+			$item['edit'] = $theatre['Edit'];
+		}	
+		if(isset($access_level) && $access_level == 'administrator' && array_key_exists('Delete', $theatre)) {
+			$item['delete'] = $theatre['Delete'];
+		}
 	}
         
     $exhibit_data["items"][] = $item;
