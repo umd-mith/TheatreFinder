@@ -32,24 +32,33 @@
     	$item['sub_type'] = $theatre['sub_type'];
 	}
     $item['date_range'] = $theatre['date_range'];
-//    $pr = $theatre['period_rep'];
-//    if(substr($pr, 0, 1) == '(' && substr($pr, -1, 1) == ')') {
-//		$item['period_rep'] = substr($pr, 1, -1);
-//	}
-//	else {
-		$item['period_rep'] = $theatre['period_rep'];
-//	}
+
+	$item['period_rep'] = $theatre['period_rep'];
 
 	$item['type'] = 'Theatre';
-	
-	if(array_key_exists('Add', $theatre)) {
-		$item['add'] = $theatre['Add'];
+
+    if($theatre['auditorium_date'] != 0) {
+		$item['auditorium_date'] = $theatre['auditorium_date'];
 	}
-	if(array_key_exists('Edit', $theatre)) {
-		$item['edit'] = $theatre['Edit'];
-	}	
-	if(isset($access_level) && $access_level == 'administrator' && array_key_exists('Delete', $theatre)) {
-		$item['delete'] = $theatre['Delete'];
+	
+	if($theatre['lat']) {
+		$item['lat'] = $theatre['lat'];
+	}
+	
+	if($theatre['lng']) {
+		$item['lng'] = $theatre['lng'];
+	}
+	
+	if(isset($username)) {
+		if(array_key_exists('Add', $theatre)) {
+			$item['add'] = $theatre['Add'];
+		}
+		if(array_key_exists('Edit', $theatre)) {
+			$item['edit'] = $theatre['Edit'];
+		}	
+		if(isset($access_level) && $access_level == 'administrator' && array_key_exists('Delete', $theatre)) {
+			$item['delete'] = $theatre['Delete'];
+		}
 	}
         
     $exhibit_data["items"][] = $item;

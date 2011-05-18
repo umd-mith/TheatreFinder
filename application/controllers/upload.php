@@ -57,6 +57,12 @@ class Upload extends TheatreFinder_Controller {
 			$this->data['upload_data'] = $this->upload->data();
 			# tie uploaded image to the id/type
 			$this->Theatre_model->update_main_image($t_id, $i_type, $this->upload->file_name);
+			if($this -> upload->image_width > $this->upload->image_height) {
+				# do imagemagick command the constrains height to 92 and then crops
+			}
+			else {
+				# do imagemagick command that constrains width to 130 and then crops
+			}
 			$this->render(FALSE, 'upload_success');
 		}
 	}	
