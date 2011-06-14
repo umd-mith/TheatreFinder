@@ -8,7 +8,29 @@
   $exhibit_data["types"]["Theatre"] = array();
   $exhibit_data["types"]["Theatre"]["pluralLabel"] = "Theatres";
 
-  $exhibit_data["properties"] = array();
+  $exhibit_data["types"]["City"] = array();
+  $exhibit_data["types"]["City"]["pluralLabel"] = "Cities";
+
+//  $exhibit_data["properties"] = array();
+//  $exhibit_data["properties"]["city"] = array();
+//  $exhibit_data["properties"]["city"]["valueType"] = "item";
+//  $exhibit_data["properties"]["city"]["label"] = "city";
+
+  $exhibit_data["properties"]["country_name"] = array();
+  $exhibit_data["properties"]["country_name"]["valueType"] = "text";
+  $exhibit_data["properties"]["country_name"]["label"] = "country";
+
+  $exhibit_data["properties"]["period_rep"] = array();
+  $exhibit_data["properties"]["period_rep"]["valueType"] = "text";
+  $exhibit_data["properties"]["period_rep"]["label"] = "period";
+
+  $exhibit_data["properties"]["sub_type"] = array();
+  $exhibit_data["properties"]["sub_type"]["valueType"] = "text";
+  $exhibit_data["properties"]["sub_type"]["label"] = "type";
+
+  $exhibit_data["properties"]["label"] = array();
+  $exhibit_data["properties"]["label"]["valueType"] = "text";
+  $exhibit_data["properties"]["label"]["label"] = "name";
 
   foreach($theatres as $theatre) {
     
