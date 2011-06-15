@@ -96,6 +96,11 @@ class Theatres extends TheatreFinder_Controller {
 					if($cal) {
 						foreach($cal as $alias) {
 							$cinfo['aliases'][] = $alias['city_alias'];
+							$t = iconv("UTF-8", "ASCII//TRANSLIT//IGNORE", $alias['city_alias']);
+							$t = preg_replace("/[^A-Za-z ]/", "", $t);
+							if($t != $alias['city_alias']) {
+								$cinfo['aliases'][] = $t;
+							}
 						}
 					}
 				}
