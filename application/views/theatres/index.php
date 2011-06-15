@@ -10,6 +10,13 @@
 	</div>
 	<div class="results">
 		<div ex:role="viewPanel">
+			<div ex:role="lens" class="city" style="display: none;" ex:itemTypes="City">
+				<div class="title"><span ex:content=".label"></span></div>
+				<div class="aliases" ex:if-exists=".aliases">Aliases: <span ex:content=".aliases"></span></div>
+				<div class="country">Country: <span ex:content="!city.country_name"></span></div>
+				<div class="region" ex:if-exists="!city.region">Region: <span ex:content="!city.region"></span></div>
+				<div class="theatres">Theatres: <span ex:content="!city"></span></div>
+			</div>
 			<div ex:role="lens" class="theatre" style="display: none;" ex:itemTypes="Theatre">
 				<div class="title"><a ex:href-content=".theatre_url" target="_blank"><span ex:content=".label"></span></a></div>
 			    <div class="titling">
@@ -18,7 +25,7 @@
 					</div>
 				</div>
 				<div class="location">
-					Location: <span ex:content=".city.label"></span>,
+					Location: <span ex:content=".city"></span>,
 					          <span ex:content=".country_name"></span>/<span ex:content=".country_digraph"></span>
 							  <span ex:if-exists=".region">(<span ex:content=".region"></span>)</span>
 				</div>
