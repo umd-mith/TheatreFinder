@@ -1,7 +1,7 @@
 <div class="theatres">
 	<div ex:role="exhibit-collection" ex:itemTypes="Theatre"></div>
 	<div class="facets" id="exhibit-facets">
-		<div ex:role="facet" ex:facetClass="TextSearch" ex:expression=".label, .country_name, .period_rep, .sub_type, .city.label, .theatre_aliases, .city.aliases" ex:facetLabel="Search"></div>
+		<div ex:role="facet" ex:facetClass="TextSearch" ex:expressions=".label, .country_name, .period_rep, .sub_type, .city.label, .theatre_aliases, .city.aliases" ex:facetLabel="Search"></div>
 		<div ex:role="facet" ex:height="6em" ex:expression=".sub_type" ex:facetLabel="Theatre Type" ex:showMissing="false"></div>
 		<div ex:role="facet" ex:height="6em" ex:expression=".city" ex:facetLabel="City" ex:showMissing="false"></div>
 		<div ex:role="facet" ex:height="6em" ex:expression=".country_name" ex:facetLabel="Country" ex:showMissing="false"></div>
