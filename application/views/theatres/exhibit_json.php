@@ -113,5 +113,5 @@
 	$exhibit_data["items"][] = $item;
   }
 
-  echo json_encode($exhibit_data);
+  echo @json_encode($exhibit_data);
 ?>
