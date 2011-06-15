@@ -12,8 +12,8 @@
 			<div ex:role="lens" class="theatre" style="display: none;">
 				<div class="title"><a ex:href-content=".theatre_url" target="_blank"><span ex:content=".label"></span></a></div>
 			    <div class="titling">
-			    	<div class="thumbnail">
-				    	<a ex:href-content=".theatre_url" target="_blank"><img width="130" ex:src-content=".thumbnail" /></a>
+			    	<div class="thumbnail" style="max-height: 110px; overflow: hidden;">
+				    	<a ex:href-content=".theatre_url" target="_blank"><img width="130px" ex:src-content=".thumbnail" /></a>
 					</div>
 				</div>
 				<div class="location">
