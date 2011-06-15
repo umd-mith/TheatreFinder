@@ -1,4 +1,9 @@
 <?php
+  function x($s) {
+    //return iconv("UTF-8", "UTF-8//IGNORE", $s);	
+	return utf8_encode($s);
+  }
+
   $exhibit_data = array();
   $exhibit_data["items"] = array();
 
@@ -43,42 +48,42 @@
   foreach($theatres as $theatre) {
     
     $item = array();
-    $item['label'] = $theatre['theatre_name'];
+    $item['label'] = x($theatre['theatre_name']);
     $item['id'] = $theatre['id'];
-    $item['theatre_url'] = base_url().'theatres/entry_visitor_info/'.$theatre['id'].'_top';
-    $item['theatre_name'] = $theatre['theatre_name'];
-    $item['normalized_label'] = strtolower($theatre['theatre_name']);
+    $item['theatre_url'] = x(base_url().'theatres/entry_visitor_info/'.$theatre['id'].'_top');
+    $item['theatre_name'] = x($theatre['theatre_name']);
+    $item['normalized_label'] = strtolower($item['theatre_name']);
     //$item['theatre_name_link'] = "<a href='" . $item['theatre_url'] . "'>" . $item['theatre_name'] . "</a>";
-    $item['city'] = $theatre['city'];
-    $item['thumbnail'] = base_url().$theatre['thumbnail'];
+    $item['city'] = x($theatre['city']);
+    $item['thumbnail'] = base_url().x($theatre['thumbnail']);
     //$item['thumbnail_link'] = "<a href='" . $item['theatre_url'] . "'><img src='" . $item['thumbnail'] . "' width='130' /></a>";
-    $item['country_name'] = $theatre['country_name'];
-    $item['normalized_country_name'] = strtolower($theatre['country_name']);
-	$item['country_digraph'] = $theatre['country_digraph'];
+    $item['country_name'] = x($theatre['country_name']);
+    $item['normalized_country_name'] = strtolower($item['country_name']);
+	$item['country_digraph'] = x($theatre['country_digraph']);
 
     if($theatre['region'] != "") {
-        $item['region'] = $theatre['region'];
+        $item['region'] = x($theatre['region']);
 	}
 
 	if($theatre['sub_type'] != '') {
-    	$item['sub_type'] = $theatre['sub_type'];
+    	$item['sub_type'] = x($theatre['sub_type']);
 	}
-    $item['date_range'] = $theatre['date_range'];
+    $item['date_range'] = x($theatre['date_range']);
 
-	$item['period_rep'] = $theatre['period_rep'];
+	$item['period_rep'] = x($theatre['period_rep']);
 
 	$item['type'] = 'Theatre';
 
     if($theatre['auditorium_date'] != 0) {
-		$item['auditorium_date'] = $theatre['auditorium_date'];
+		$item['auditorium_date'] = x($theatre['auditorium_date']);
 	}
 	
 	if($theatre['lat']) {
-		$item['lat'] = $theatre['lat'];
+		$item['lat'] = x($theatre['lat']);
 	}
 	
 	if($theatre['lng']) {
-		$item['lng'] = $theatre['lng'];
+		$item['lng'] = x($theatre['lng']);
 	}
 	
 	if(isset($username) && $username != "") {
@@ -98,10 +103,13 @@
 
   foreach($cities as $city) {
 	$item = array();
-	$item['id'] = $city['id'];
-	$item['label'] = $city['label'];
+	$item['id'] = x($city['id']);
+	$item['label'] = x($city['label']);
 	$item['type'] = 'City';
-	$item['aliases'] = $city['aliases'];
+	$item['aliases'] = array();
+	foreach($city['aliases'] as $a) {
+		$item['aliases'][] = x($a);
+	}
 	$exhibit_data["items"][] = $item;
   }
 
