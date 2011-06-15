@@ -56,6 +56,7 @@ class Theatres extends TheatreFinder_Controller {
 		$prev=0; // init prev (to aid Frank in navigating through the list_view)
 		$lastRow = count($theatres)-1;
 		// Iterate through the associative array to set up the list_view output
+		$cities = array();
 		for ($i=0; $i<count($theatres); $i++) {
 
 			// First: need to unset the thumbnail vars to ensure we don't double-up
@@ -68,12 +69,39 @@ class Theatres extends TheatreFinder_Controller {
 			}
 
 			$theatres[$i]['theatre_name'] = stripslashes($theatres[$i]['theatre_name']);
+			
+			// get theatre aliases
+			$aliases = $this->Theatre_model->get_theatre_aliases($theatres[$i]['id']);
+			if($aliases) {
+				$theatres[$i]['theatre_aliases'] = array();
+				foreach($aliases as $alias) {
+					$theatres[$i]['theatre_aliases'][] = $alias['theatre_alias'];
+				}
+			}
 
 			$theatres[$i]['country_name'] = stripslashes($theatres[$i]['country_name']);
 			$theatres[$i]['country_digraph'] = $theatres[$i]['country_digraph'];
 			$theatres[$i]['region'] = stripslashes($theatres[$i]['region']);
 
 			$theatres[$i]['city'] = stripslashes($theatres[$i]['city']);
+			$cid = 'city:'.$theatres[$i]['country_digraph'].':'.$theatres[$i]['city'];
+			if(!isset($cities[$cid])) {
+				$cinfo = array();
+				$cinfo['id'] = $cid;
+				$cinfo['label'] = $theatres[$i]['city'];
+				$cinfo['aliases'] = array();
+				$city_id = $this->Theatre_model->getCityId($theatres[$i]['city'], $theatres[$i]['country_digraph']);
+				if($city_id) {
+					$cal = $this->Theatre_model->getCityAliases($city_id);
+					if($cal) {
+						foreach($cal as $alias) {
+							$cinfo['aliases'][] = $alias['city_alias'];
+						}
+					}
+				}
+				$cities[$theatres[$i]['city']] = $cinfo;
+			}
+			$theatres[$i]['city'] = $cid;
 
 			$theatres[$i]['period_rep'] = stripslashes($theatres[$i]['period_rep']);
 			$theatres[$i]['period_rep'] = ('Not Yet Specified' == $theatres[$i]['period_rep']) ? 
@@ -100,7 +128,7 @@ class Theatres extends TheatreFinder_Controller {
 				// stage,  auditorium, exterior, plan, section
 				$images = $this->Theatre_model->get_main_images($theatres[$i]['id']);
 				
-				if(isset($images)) {
+				if($images) {
 					if(isset($images['stage']) && $images['stage'] != "imageNeededLarge.gif") {
 						$thumbnailFile =  'stage/'.$images['stage'];
 					}
@@ -128,6 +156,7 @@ class Theatres extends TheatreFinder_Controller {
 		}
 
 		$this->data['theatres'] = $theatres;
+		$this->data['cities'] = $cities;
 		$this -> render('json_layout');	
 	}
 

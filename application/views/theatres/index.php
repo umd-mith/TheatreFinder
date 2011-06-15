@@ -1,6 +1,7 @@
 <div class="theatres">
+	<div ex:role="exhibit-collection" ex:itemTypes="Theatre"></div>
 	<div class="facets" id="exhibit-facets">
-		<div ex:role="facet" ex:facetClass="TextSearch" ex:expression=".label, .country_name, .period_rep, .sub_type, .city" ex:facetLabel="Search"></div>
+		<div ex:role="facet" ex:facetClass="TextSearch" ex:expression=".label, .country_name, .period_rep, .sub_type, .city.label, .theatre_aliases, .city.aliases" ex:facetLabel="Search"></div>
 		<div ex:role="facet" ex:height="6em" ex:expression=".sub_type" ex:facetLabel="Theatre Type" ex:showMissing="false"></div>
 		<div ex:role="facet" ex:height="6em" ex:expression=".city" ex:facetLabel="City" ex:showMissing="false"></div>
 		<div ex:role="facet" ex:height="6em" ex:expression=".country_name" ex:facetLabel="Country" ex:showMissing="false"></div>
@@ -9,7 +10,7 @@
 	</div>
 	<div class="results">
 		<div ex:role="viewPanel">
-			<div ex:role="lens" class="theatre" style="display: none;">
+			<div ex:role="lens" class="theatre" style="display: none;" ex:itemTypes="Theatre">
 				<div class="title"><a ex:href-content=".theatre_url" target="_blank"><span ex:content=".label"></span></a></div>
 			    <div class="titling">
 			    	<div class="thumbnail" style="max-height: 110px; overflow: hidden;">
@@ -17,7 +18,7 @@
 					</div>
 				</div>
 				<div class="location">
-					Location: <span ex:content=".city"></span>,
+					Location: <span ex:content=".city.label"></span>,
 					          <span ex:content=".country_name"></span>/<span ex:content=".country_digraph"></span>
 							  <span ex:if-exists=".region">(<span ex:content=".region"></span>)</span>
 				</div>

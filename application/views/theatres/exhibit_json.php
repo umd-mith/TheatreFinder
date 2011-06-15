@@ -11,10 +11,10 @@
   $exhibit_data["types"]["City"] = array();
   $exhibit_data["types"]["City"]["pluralLabel"] = "Cities";
 
-//  $exhibit_data["properties"] = array();
-//  $exhibit_data["properties"]["city"] = array();
-//  $exhibit_data["properties"]["city"]["valueType"] = "item";
-//  $exhibit_data["properties"]["city"]["label"] = "city";
+  $exhibit_data["properties"] = array();
+  $exhibit_data["properties"]["city"] = array();
+  $exhibit_data["properties"]["city"]["valueType"] = "item";
+  $exhibit_data["properties"]["city"]["label"] = "city";
 
   $exhibit_data["properties"]["country_name"] = array();
   $exhibit_data["properties"]["country_name"]["valueType"] = "text";
@@ -84,6 +84,15 @@
 	}
         
     $exhibit_data["items"][] = $item;
+  }
+
+  foreach($cities as $city) {
+	$item = array();
+	$item['id'] = $city['id'];
+	$item['label'] = $city['label'];
+	$item['type'] = 'City';
+	$item['aliases'] = $city['aliases'];
+	$exhibit_data["items"][] = $item;
   }
 
   echo json_encode($exhibit_data);
