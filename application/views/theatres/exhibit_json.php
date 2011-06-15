@@ -71,7 +71,7 @@
 		$item['lng'] = $theatre['lng'];
 	}
 	
-	if(isset($username)) {
+	if(isset($username) && $username != "") {
 		if(array_key_exists('Add', $theatre)) {
 			$item['add'] = $theatre['Add'];
 		}

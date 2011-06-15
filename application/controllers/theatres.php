@@ -95,6 +95,33 @@ class Theatres extends TheatreFinder_Controller {
 			if (isset($thumbnailData)) {
 				$thumbnailFile = $thumbnailData->file_path."/".$thumbnailData->image_file;
 			}
+			else {
+				// start marching through images associated with the theatre
+				// stage,  auditorium, exterior, plan, section
+				$images = $this->Theatre_model->get_main_images($theatres[$i]['id']);
+				
+				if(isset($images)) {
+					if(isset($images['stage']) && $images['stage'] != "imageNeededLarge.gif") {
+						$thumbnailFile =  'stage/'.$images['stage'];
+					}
+					else if(isset($images['auditorium']) && $images['auditorium'] != "imageNeededLarge.gif") {
+						$thumbnailFile = 'auditorium/'.$images['auditorium'];
+					}
+					else if(isset($images['exterior']) && $images['exterior'] != "imageNeededLarge.gif") {
+						$thumbnailFile = 'exterior/'.$images['exterior'];
+					}
+					else if(isset($images['plan']) && $images['plan'] != "imageNeededLarge.gif") {
+						$thumbnailFile = 'plan/'.$images['plan'];
+					}
+					else if(isset($images['section']) && $images['section'] != "imageNeededLarge.gif") {
+						$thumbnailFile = 'section/'.$images['section'];
+					}
+					if(isset($thumbnailFile)) {
+						// prepend path for url
+					    $thumbnailFile = 'images/theatres/'.$thumbnailFile;
+					}
+				}
+			}
 			$thumbnailFile = (isset($thumbnailFile)) ? $thumbnailFile : "images/130px/imageNeededThumbnail.gif";
 			$theatres[$i]['thumbnail'] = $thumbnailFile;
 
