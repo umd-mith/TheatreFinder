@@ -20,6 +20,10 @@
   $exhibit_data["properties"]["country_name"]["valueType"] = "text";
   $exhibit_data["properties"]["country_name"]["label"] = "country";
 
+  $exhibit_data["properties"]["normalized_country_name"] = array();
+  $exhibit_data["properties"]["normalized_country_name"]["valueType"] = "text";
+  $exhibit_data["properties"]["normalized_country_name"]["label"] = "country";
+
   $exhibit_data["properties"]["period_rep"] = array();
   $exhibit_data["properties"]["period_rep"]["valueType"] = "text";
   $exhibit_data["properties"]["period_rep"]["label"] = "period";
@@ -32,6 +36,10 @@
   $exhibit_data["properties"]["label"]["valueType"] = "text";
   $exhibit_data["properties"]["label"]["label"] = "name";
 
+  $exhibit_data["properties"]["normalized_label"] = array();
+  $exhibit_data["properties"]["normalized_label"]["valueType"] = "text";
+  $exhibit_data["properties"]["normalized_label"]["label"] = "name";
+
   foreach($theatres as $theatre) {
     
     $item = array();
@@ -39,11 +47,13 @@
     $item['id'] = $theatre['id'];
     $item['theatre_url'] = base_url().'theatres/entry_visitor_info/'.$theatre['id'].'_top';
     $item['theatre_name'] = $theatre['theatre_name'];
+    $item['normalized_label'] = strtolower($theatre['theatre_name']);
     //$item['theatre_name_link'] = "<a href='" . $item['theatre_url'] . "'>" . $item['theatre_name'] . "</a>";
     $item['city'] = $theatre['city'];
     $item['thumbnail'] = base_url().$theatre['thumbnail'];
     //$item['thumbnail_link'] = "<a href='" . $item['theatre_url'] . "'><img src='" . $item['thumbnail'] . "' width='130' /></a>";
     $item['country_name'] = $theatre['country_name'];
+    $item['normalized_country_name'] = strtolower($theatre['country_name']);
 	$item['country_digraph'] = $theatre['country_digraph'];
 
     if($theatre['region'] != "") {

@@ -89,18 +89,27 @@ class Theatres extends TheatreFinder_Controller {
 				$cinfo = array();
 				$cinfo['id'] = $cid;
 				$cinfo['label'] = $theatres[$i]['city'];
+				$l = $theatres[$i]['city'];
+				$l = iconv("UTF-8", "ASCII//TRANSLIT//IGNORE", $l);
+				$l = preg_replace("/[^A-Za-z ]/", "", $l);
+				$l = strtolower($l);
+				$cinfo['normalized_label'] = $l;
 				$cinfo['aliases'] = array();
+				$cinfo['normalized_aliases'] = array();
 				$city_id = $this->Theatre_model->getCityId($theatres[$i]['city'], $theatres[$i]['country_digraph']);
 				if($city_id) {
 					$cal = $this->Theatre_model->getCityAliases($city_id);
 					if($cal) {
 						foreach($cal as $alias) {
-							$cinfo['aliases'][] = $alias['city_alias'];
-							$t = iconv("UTF-8", "ASCII//TRANSLIT//IGNORE", $alias['city_alias']);
+							$a = $alias['city_alias'];
+							$cinfo['aliases'][] = $a;
+							$t = iconv("UTF-8", "ASCII//TRANSLIT//IGNORE", $a);
 							$t = preg_replace("/[^A-Za-z ]/", "", $t);
-							if($t != $alias['city_alias']) {
+							if($t != $a) {
 								$cinfo['aliases'][] = $t;
 							}
+							$t = strtolower($a);
+							$cinfo['normalized_aliases'][] = $t;
 						}
 					}
 				}
