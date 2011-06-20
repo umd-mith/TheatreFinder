@@ -97,47 +97,47 @@
 		</ul>
 		<div class="tab_container">
 			<div id="stage" class="tab_content">
-				<?php if($theatre['needs_stage_image']): ?>
+				<?php if($theatre['needs_stage_image'] || $can_upload_images): ?>
 					<a href="<?php echo base_url(); ?>upload/index/<?php echo $theatre['id']?>/stage">
 				<?php endif ?>
 				<img src="<?php echo  base_url().$theatre['stage_image'];?>" alt="stage" />
-				<?php if($theatre['needs_stage_image']): ?>
+				<?php if($theatre['needs_stage_image'] || $can_upload_images): ?>
 					</a>
 				<?php endif ?>
         	</div>
 			<div id="exterior" class="tab_content">
-				<?php if($theatre['needs_exterior_image']): ?>
+				<?php if($theatre['needs_exterior_image'] || $can_upload_images): ?>
 					<a href="<?php echo base_url(); ?>upload/index/<?php echo $theatre['id']?>/exterior">
 				<?php endif ?>
 				<img src="<?php echo  base_url();?><?php echo $theatre['exterior_image'];?>" alt="exterior" />
-				<?php if ($theatre['needs_exterior_image']): ?>
+				<?php if ($theatre['needs_exterior_image'] || $can_upload_images): ?>
 					</a>
 				<?php endif ?>
 			</div>
  			<div id="auditorium" class="tab_content">
-				<?php if ($theatre['needs_auditorium_image']): ?>
+				<?php if ($theatre['needs_auditorium_image'] || $can_upload_images): ?>
 					<a href="<?php echo base_url(); ?>upload/index/<?php echo $theatre['id']?>/auditorium">
 				<?php endif ?>
 				<img src="<?php echo  base_url();?><?php echo $theatre['auditorium_image'];?>" alt="auditorium" />
-				<?php if ($theatre['needs_auditorium_image']): ?>
+				<?php if ($theatre['needs_auditorium_image'] || $can_upload_images): ?>
 					</a>
 				<?php endif ?>
 			</div> 
 			<div id="groundplan" class="tab_content">
-				<?php if ($theatre['needs_plan_image']): ?>
+				<?php if ($theatre['needs_plan_image'] || $can_upload_images): ?>
 					<a href="<?php echo base_url(); ?>upload/index/<?php echo $theatre['id']?>/groundplan">
 				<?php endif ?>
 				<img src="<?php echo  base_url();?><?php echo $theatre['plan_image'];?>" alt="groundplan" />
-				<?php if ($theatre['needs_plan_image']): ?>
+				<?php if ($theatre['needs_plan_image'] || $can_upload_images): ?>
 					</a>
 				<?php endif ?>
 			</div>
 			<div id="section" class="tab_content">
-				<?php if ($theatre['needs_section_image']): ?>
+				<?php if ($theatre['needs_section_image'] || $can_upload_images): ?>
 					<a href="<?php echo base_url(); ?>upload/index/<?php echo $theatre['id']?>/section">
 				<?php endif ?>
 				<img src="<?php echo  base_url();?><?php echo $theatre['section_image'];?>" alt="section" />
-				<?php if ($theatre['needs_section_image']): ?>
+				<?php if ($theatre['needs_section_image'] || $can_upload_images): ?>
 					</a>
 				<?php endif ?>
 			</div>

@@ -1239,6 +1239,10 @@ class Theatres extends TheatreFinder_Controller {
 		$t_imgs = $this->Theatre_model->get_main_images($theatreId);
 		//id, stage, exterior, auditorium, plan, section, video_link, top_file_path
 		//$this->data['main_images'] = $t_imgs;
+		$can_upload_images = FALSE;
+		if(isset($this->data['username']) && $this->data['username'] != "") {
+			$can_upload_images = TRUE;
+		}
 		foreach ($t_imgs as $sub_path=>$filename) {
 			if ($filename!='imageNeededLarge.gif') {
 				if ($sub_path === "video_link") { // if it's the video, take the original full column data
@@ -1252,7 +1256,7 @@ class Theatres extends TheatreFinder_Controller {
 			} else {	
 				$image_key = $sub_path.'_image';
 				$theatre[$image_key] = $t_imgs['top_file_path']."/".$filename;
-				$theatre['needs_'.$image_key] = TRUE;
+				$theatre['needs_'.$image_key] = $can_upload_images;
 			}
 		}
 
@@ -1289,6 +1293,7 @@ class Theatres extends TheatreFinder_Controller {
 			$theatre['Delete'] = anchor('theatres/delete_theatre_form/'.$theatre['id'].'_top', 'Delete');
 		}
 		$this->data['theatre'] = $theatre;
+		$this->data['can_upload_images'] = $can_upload_images;
 		// need this for the nav link back to this visitorinfo page
 		$this->data['curr_theatre_ref'] = $this->uri->segment(3);
 		$this->render();
