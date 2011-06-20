@@ -1,8 +1,5 @@
-<html>
-<head>
-<title>Upload Form</title>
-</head>
-<body>
+<div style="margin-left: 20%; margin-right: 20%;">
+
 
 <h3>Your file was successfully uploaded!</h3>
 
@@ -12,7 +9,8 @@
 <?php endforeach; ?>
 </ul>
 
-<p><?php echo anchor('upload/index', 'Upload Another File!'); ?></p>
-
-</body>
-</html>
+<p>
+	<a href="<?php echo base_url().'theatres/entry_visitor_info/'.$theatre['id'].'_top' ?>">Return to
+		&ldquo;<?php echo $theatre['theatre_name'] ?>&rdquo;</a>
+</p>
+</div>

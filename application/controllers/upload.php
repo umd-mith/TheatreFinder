@@ -24,8 +24,10 @@ class Upload extends TheatreFinder_Controller {
 	function index()
 	{	
 		//$this->load->view('upload_form', array('error' => ' ' ));
+		$this->data['title'] = 'Theatre Finder | Upload Theatre Image';
 		$this->data['id'] = $this -> uri -> segment(3);
 		$this->data['type'] = $this->uri -> segment(4);
+		$this->data['theatre'] = $this->Theatre_model->get_theatre($this->uri->segment(3));
 		$this -> render();
 	}
 
@@ -38,6 +40,8 @@ class Upload extends TheatreFinder_Controller {
 		$this->data['id'] = $t_id;
 		$i_type = $this->uri->segment(4);
 		$this->data['type'] = $i_type;
+		$this->data['theatre'] = $this->Theatre_model->get_theatre($t_id);
+		
 				
 		$config['upload_path'] = $site_root."/images/theatres/$i_type/";
 		$config['allowed_types'] = 'gif|jpg|png';
