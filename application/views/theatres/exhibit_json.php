@@ -1,7 +1,9 @@
 <?php
   function x($s) {
     //return iconv("UTF-8", "UTF-8//IGNORE", $s);	
-	return utf8_encode($s);
+    $encoding = @mb_detect_encoding($s, 'UTF-8, ISO-8859-1, ASCII', true);
+	if(!$encoding) $encoding = 'UTF-8';
+	return @iconv($encoding, "UTF-8//IGNORE", $s);
   }
 
   $exhibit_data = array();
@@ -50,12 +52,12 @@
     $item = array();
     $item['label'] = x($theatre['theatre_name']);
     $item['id'] = $theatre['id'];
-    $item['theatre_url'] = x(base_url().'theatres/entry_visitor_info/'.$theatre['id'].'_top');
+    $item['theatre_url'] = base_url().'theatres/entry_visitor_info/'.$theatre['id'].'_top';
     $item['theatre_name'] = x($theatre['theatre_name']);
     $item['normalized_label'] = strtolower($item['theatre_name']);
     //$item['theatre_name_link'] = "<a href='" . $item['theatre_url'] . "'>" . $item['theatre_name'] . "</a>";
     $item['city'] = x($theatre['city']);
-    $item['thumbnail'] = base_url().x($theatre['thumbnail']);
+    $item['thumbnail'] = base_url().$theatre['thumbnail'];
     //$item['thumbnail_link'] = "<a href='" . $item['theatre_url'] . "'><img src='" . $item['thumbnail'] . "' width='130' /></a>";
     $item['country_name'] = x($theatre['country_name']);
     $item['normalized_country_name'] = strtolower($item['country_name']);
