@@ -52,6 +52,13 @@ class Theatres extends TheatreFinder_Controller {
 		$this->add_scripts("exhibit_headers");
 		$this->render($this->data['template']);  
 	}
+	
+	function _x($s) {
+	    //return iconv("UTF-8", "UTF-8//IGNORE", $s);	
+	    $encoding = @mb_detect_encoding($s, 'UTF-8, ISO-8859-1, ASCII', true);
+		if(!$encoding) $encoding = 'UTF-8';
+		return @iconv($encoding, "UTF-8//IGNORE", $s);
+	}
 
 	function exhibit_json() {
 		$theatres = $this->Theatre_model->getTheatres();
@@ -87,7 +94,7 @@ class Theatres extends TheatreFinder_Controller {
 			$theatres[$i]['region'] = stripslashes($theatres[$i]['region']);
 
 			$theatres[$i]['city'] = stripslashes($theatres[$i]['city']);
-			$cid = 'city:'.$theatres[$i]['country_digraph'].':'.$theatres[$i]['city'];
+			$cid = $this->_x('city:'.$theatres[$i]['country_digraph'].':'.$theatres[$i]['city']);
 			if(!isset($cities[$cid])) {
 				$cinfo = array();
 				$cinfo['id'] = $cid;
@@ -116,7 +123,7 @@ class Theatres extends TheatreFinder_Controller {
 						}
 					}
 				}
-				$cities[$theatres[$i]['city']] = $cinfo;
+				$cities[$cid] = $cinfo;
 			}
 			$theatres[$i]['city'] = $cid;
 
