@@ -89,6 +89,30 @@ class Index extends TheatreFinder_Controller {
 		$this->render($this->data['template']);
 	}
 	
+	function about_included() {
+		$this->data['title'] = 'Theatre Finder | About What\'s Included in Theatre Finder';
+		$this->data['body_id'] = '<body id="about">';
+		$this->render($this->data['template']);
+	}
+
+	function about_phases() {
+		$this->data['title'] = 'Theatre Finder | About Phases of Theatre Finder';
+		$this->data['body_id'] = '<body id="about">';
+		$this->render($this->data['template']);
+	}
+
+	function about_navigation() {
+		$this->data['title'] = 'Theatre Finder | About Using Theatre Finder';
+		$this->data['body_id'] = '<body id="about">';
+		$this->render($this->data['template']);
+	}
+
+	function about_methodology() {
+		$this->data['title'] = 'Theatre Finder | About Methodology';
+		$this->data['body_id'] = '<body id="about">';
+		$this->render($this->data['template']);
+	}
+
 	function search() {
 		$this->data['title'] = 'Theatre Finder | Search';
 		$this->data['body_id'] = '<body id="search">';
