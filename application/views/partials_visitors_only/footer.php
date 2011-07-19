@@ -18,4 +18,4 @@
        </div>
 </div>
 
-<script type="text/javascript"> Cufon.now(); </script>
+<script type="text/javascript"> if(Cufon !== undefined) { Cufon.now(); }</script>
