@@ -110,7 +110,7 @@
        
        <!-- Featured theatres -->
        <div class="grid_12 featuredarea">   
-            <div class="grid_12 alpha omega theatreName"><h1><?=$theatre->theatre_name;?></h1></div>
+            <div class="grid_12 alpha omega theatreName"><h2><?=$theatre->theatre_name;?></h2></div>
 			<div class="grid_3 alpha sidebar">
             	<div class="entryDetails">
                     

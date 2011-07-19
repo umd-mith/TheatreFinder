@@ -48,7 +48,7 @@ class Theatres extends TheatreFinder_Controller {
 	}
 	function index() {
 		$this->data['title'] = 'Theatre Finder | Browse Theatres';
-		$this->data['body_id'] = '<body id="search">';
+		$this->data['body_id'] = '<body id="browse">';
 		$this->add_scripts("exhibit_headers");
 		$this->render($this->data['template']);  
 	}

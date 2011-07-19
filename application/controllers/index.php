@@ -97,8 +97,8 @@ class Index extends TheatreFinder_Controller {
 
 	function join() {
 		$this->add_scripts('period_slider_script');
-		$this->data['title'] = 'Theatre Finder | Join';
-		$this->data['body_id'] = '<body id="join">';
+		$this->data['title'] = 'Theatre Finder | Contribute';
+		$this->data['body_id'] = '<body id="contribute">';
 		$this->render($this->data['template']);
 	}
 	

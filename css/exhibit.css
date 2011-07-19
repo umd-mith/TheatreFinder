@@ -1,7 +1,10 @@
 .theatre {
-	width: 718px;
+	padding:10px !important;
+/*	width: 718px; */
 }
-
+.exhibit-ui-protection div.thumbnail {
+	margin-right:10px;
+}
 .theatre .clear-both {
 	clear:both;
 }
@@ -9,16 +12,17 @@
 .theatre .titling {
 	float: left;
 	text-align: center;
-	width: 160px;
+/*	width: 160px; */
 }
 
 .theatre .title {
 	font-weight: bold;
-	font-size: bigger;
+	padding-bottom: 10px;
+/*	font-size: bigger; */
 }
 
 .theatre .location, .theatre .timing, .theatre .status, .theatre .classification, .theatre .operations {
-	margin-left: 160px;
+/*	margin-left: 160px; */
 }
 
 .theatre .operations {
@@ -31,25 +35,63 @@ a.op + a.op {
 }
 
 .theatres .results {
-	width: 720px;
+/*	width: 720px;
 	text-align: left;
 	float: left;
 	margin: 0px;
-	padding-right: 2px;
+	padding-right: 2px; */
 }
 
 .theatres .facets {
-	float: right;
-	width: 238px;
+/*	float: right;
+	width: 238px; */
+	padding: 10px;
 }
 
 div.exhibit-viewPanel {
-	margin-right: 2px;
+/*	margin-right: 2px; */
+}
+
+div.exhibit-text-facet {
+	margin-bottom: 10px;
+}
+
+#sidebar div.exhibit-text-facet input {
+        width:274px;
+}
+div.exhibit-facet-body {
+        background:#fff;
+}
+.exhibit-ui-protection div.exhibit-collectionView-header {
+        padding:10px;
+        margin-bottom:20px;
+        background:#CDE6E9;
+}
+.exhibit-ui-protection div.exhibit-collectionView-header-sortControls {
+        text-align:left;
+        margin:0;
+        padding-top:5px;
+}
+.exhibit-ui-protection div.exhibit-collectionView-group-content {
+        margin-left:0;
+}
+.exhibit-ui-protection div.exhibit-thumbnailView-itemContainer {
+        float:none;
+        margin-bottom:15px;
 }
 
 
 div.exhibit-collectionView-group-content div.theatre {
-	width: 705px;
+/*	width: 705px; */
+}
+
+#browse .theatres .results .exhibit-ui-protection h1 {
+        background-image:none;
+        padding:0;
+        margin-top:10px;
+}
+.results .exhibit-ui-protection h2 {
+        margin:10px 0px;
 }
 
 div.exhibit-toolboxWidget-popup {
