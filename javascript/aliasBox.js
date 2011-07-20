@@ -180,7 +180,7 @@ jQuery.fn.addFormTxtBox = function(aliasDivId, aliasClassString, img_dir, contro
 		'add_btn': 'Add button',
 		'add_title': 'add an alias',
 		'del_btn': 'Delete button',
-		'del_title': 'remove this alias',
+		'del_title': 'remove this alias'
 	};
 	
 	var add_btn=$("#"+aliasIdString).children("#add_btn");
