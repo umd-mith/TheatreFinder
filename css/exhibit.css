@@ -79,7 +79,10 @@ div.exhibit-facet-body {
         float:none;
         margin-bottom:15px;
 }
-
+.exhibit-ui-protection div.exhibit-thumbnailView-itemContainer-IE {
+        float:none;
+        margin-bottom:15px;
+}
 
 div.exhibit-collectionView-group-content div.theatre {
 /*	width: 705px; */
