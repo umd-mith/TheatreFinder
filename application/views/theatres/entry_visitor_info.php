@@ -144,19 +144,6 @@
 			<div id="otherimages" class="tab_content">
 			<!--Content-->
 			</div>
-			<div id="video" class="tab_content">
-				<object width="640" height="505">
-					<param name="movie" value="<?php echo $theatre['video_link'];?>"></param>
-					<param name="allowFullScreen" value="true"></param>
-					<param name="allowscriptaccess" value="always"></param>
-					<embed src="<?php echo $theatre['video_link'];?>" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="640" height="505">
-					</embed>
-				</object>
-			</div>
-			<div id="map" class="tab_content">
-				<iframe width="660" height="500" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=palmyra,+syria&amp;sll=37.860975,-78.263337&amp;sspn=0.019618,0.038581&amp;ie=UTF8&amp;hq=&amp;hnear=Palmyra,+Syria&amp;ll=34.547287,38.279114&amp;spn=0.339337,0.823975&amp;z=9&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="http://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=palmyra,+syria&amp;sll=37.860975,-78.263337&amp;sspn=0.019618,0.038581&amp;ie=UTF8&amp;hq=&amp;hnear=Palmyra,+Syria&amp;ll=34.547287,38.279114&amp;spn=0.339337,0.823975&amp;z=9&amp;iwloc=A" style="color:#ab2023;text-align:left" target="blank">View larger map</a></small>
-			</div>
-			<div id="campmodel" class="tab_content">
 			<!--Content-->
 			</div>
 		</div>
