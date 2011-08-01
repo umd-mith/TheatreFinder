@@ -371,6 +371,20 @@ body {
 }#resources .copyright {
 	border-color:#f8b868;	 
 }
+#resources .maincontent ul {
+  list-style: none;
+}
+
+#resources .maincontent li {
+  padding: 10px;
+  margin-left: 0;
+}
+
+#resources .maincontent ul li:nth-child(even) {
+  background-color: #E7F3F4;
+  border-bottom: 1px solid #94BEC4;
+  border-top: 1px solid #94BEC4;
+}
 /* --------------list styles */
 #list h3, #list h3 a{
 	color:#ab2023;
