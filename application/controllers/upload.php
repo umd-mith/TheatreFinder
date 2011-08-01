@@ -53,7 +53,7 @@ class Upload extends TheatreFinder_Controller {
 	
 		if ( ! $this->upload->do_upload())
 		{			
-			$this->data['error'] = $this->upload->display_errors() . " (". $upconfig['upload_path'] . ")";
+			$this->data['error'] = $this->upload->display_errors() . " (". $config['upload_path'] . ")";
 			$this->render(FALSE, 'upload_form');
 		}	
 		else
