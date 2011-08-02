@@ -58,6 +58,7 @@ div.exhibit-text-facet {
 
 #sidebar div.exhibit-text-facet input {
         width:274px;
+  		font-size: 150%;
 }
 div.exhibit-facet-body {
         background:#fff;
