@@ -91,16 +91,7 @@
         <img src="<?php echo base_url();?><?php echo $featured_1['featured_img'];?>" alt="featured theatre 1" width="620" height="464" id="featuredimage" />
     </div>
     <div class="grid_4 omega featuredsidebar" >
-		<div class="grid_4 alpha omega theatre " id="featured_two">
-            <h3><?php echo $featured_2['theatre_name']; ?></h3>
-            <p>
-                <?php echo $featured_2['period_rep']; ?> theatre, <?php echo $featured_2['date_range'];?>, 
-			<?php echo $featured_2['city'];?>, <?php echo $featured_2['country_name']." (".$featured_2['country_digraph']."). "; ?>
-			<?php echo $featured_2['featured_text'];?> 
-			 <a href="<?php echo base_url().$view_controller;?>/entry_visitor_info/<?php echo $featured_2['id'];?>_top">
-			 	View complete theatre description.</a>
-            </p>
-        </div>
+		
         <div class="grid_4 alpha omega theatre active" id="featured_one">
             <h3><?php echo $featured_1['theatre_name']; ?></h3>
             <p>
@@ -111,7 +102,16 @@
                 	View complete theatre description.</a>
 		   </p>
         </div>
-        
+        <div class="grid_4 alpha omega theatre " id="featured_two">
+            <h3><?php echo $featured_2['theatre_name']; ?></h3>
+            <p>
+                <?php echo $featured_2['period_rep']; ?> theatre, <?php echo $featured_2['date_range'];?>, 
+			<?php echo $featured_2['city'];?>, <?php echo $featured_2['country_name']." (".$featured_2['country_digraph']."). "; ?>
+			<?php echo $featured_2['featured_text'];?> 
+			 <a href="<?php echo base_url().$view_controller;?>/entry_visitor_info/<?php echo $featured_2['id'];?>_top">
+			 	View complete theatre description.</a>
+            </p>
+        </div>
         <div class="grid_4 alpha omega theatre last" id="featured_three">
             <h3><?php echo $featured_3['theatre_name']; ?></h3>
             <p>

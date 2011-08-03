@@ -46,7 +46,7 @@ class Index extends TheatreFinder_Controller {
 		$this->add_scripts('link_mainHomejs');
 		
 		// Build featured theatres details (featured_theatres table)
-		for($featured_index=1; $featured_index<4; $featured_index++) {
+		for($featured_index=1; $featured_index<4a; $featured_index++) {
 			
 			$ft_index = 'featured_'.$featured_index;
 			$this->data[$ft_index] = $this->Theatre_model->get_featured_theatre($featured_index);
