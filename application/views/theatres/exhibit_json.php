@@ -6,6 +6,10 @@
 	return @iconv($encoding, "UTF-8//IGNORE", $s);
   }
 
+  function ascii($s) {
+	return @iconv('UTF-8', 'ASCII//TRANSLIT', $s);
+  }
+
   $exhibit_data = array();
   $exhibit_data["items"] = array();
 
@@ -109,8 +113,21 @@
 	$item['label'] = x($city['label']);
 	$item['type'] = 'City';
 	$item['aliases'] = array();
+	$aliases_includes_label = false;
 	foreach($city['aliases'] as $a) {
 		$item['aliases'][] = x($a);
+		if(x($a) === $item['label']) {
+			$aliases_includes_label = true;
+		}
+		if(x($a) !== ascii(x($a))) {
+			$item['aliases'][] = ascii(x($a));
+		}
+	}
+	if(!$aliases_includes_label) {
+		$item['aliases'][] = $item['label'];
+		if($item['label'] !== ascii($item['label'])) {
+			$item['aliases'][] = ascii($item['label']);
+		}
 	}
 	$exhibit_data["items"][] = $item;
   }
