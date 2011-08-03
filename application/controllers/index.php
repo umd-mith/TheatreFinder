@@ -152,11 +152,11 @@ class Index extends TheatreFinder_Controller {
 			
 		switch ($new_active) {
 			case "featured_one":
-				$t_id=8; // hard-coded for now, will add "Featured Theatre" table/plus UI
+				$t_id=345; // hard-coded for now, will add "Featured Theatre" table/plus UI
 			break;
 				
 			case "featured_two":
-				$t_id=345;
+				$t_id=8;
 			break;
 				
 			case "featured_three":
