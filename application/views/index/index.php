@@ -88,7 +88,7 @@
 <div class="grid_12 featuredarea">
     <div class="grid_8 alpha featuredimage">
         <h1>Featured theatres</h1>
-        <img src="<?php echo base_url();?><?php echo $featured_1['featured_img'];?>" alt="featured theatre 1" width="620" height="464" id="featuredimage" />
+        <img src="<?php echo base_url();?><?php echo $featured_2['featured_img'];?>" alt="featured theatre 1" width="620" height="464" id="featuredimage" />
     </div>
     <div class="grid_4 omega featuredsidebar" >
 		<div class="grid_4 alpha omega theatre active" id="featured_two">
