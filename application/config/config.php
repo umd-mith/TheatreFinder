@@ -12,7 +12,7 @@
 |
 */
 // local base_url
-$config['base_url']	= "http://mith.umd.edu/theatrefinder/";
+$config['base_url']	= "http://localhost:8888/TheatreFinder/";
 // peach base_url
 //$config['base_url'] = "http://peach.umd.edu/TheatreFinder/";
 
@@ -27,7 +27,7 @@ $config['base_url']	= "http://mith.umd.edu/theatrefinder/";
 |	/Users/jgsmith/Sites/TheatreFinder
 |
 */
-$config['site_root'] = '/export/software/www/sites/theatrefinder';
+$config['site_root'] = '/Users/grantd/Aptana/TheatreFinder';
 
 /*
 |--------------------------------------------------------------------------

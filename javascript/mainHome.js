@@ -10,7 +10,7 @@ jQuery(document).ready(function($){
 	var siteRoot = jQuery.url.segment(0);
 	// Typically, segment 1 will be my controller
 	// e.g., "main" or "theatre_ctrl"
-	var mainController = (jQuery.url.segment(1)) ? jQuery.url.segment(1) : "main";
+	var mainController = (jQuery.url.segment(1)) ? jQuery.url.segment(1) : "index";
 	
 	if (port!=0) {
 		urlString = protocolPrefix+urlHost+port+"/"+siteRoot+"/";
@@ -21,7 +21,6 @@ jQuery(document).ready(function($){
 	var urlController = urlString+mainController+"/";
 	// Image directory path (needed for aliasBox.js functions)
 	var img_dir = urlString+"images/";
-	
 	/* ************************ */
     
     // Country Name AutoComplete
@@ -52,9 +51,12 @@ jQuery(document).ready(function($){
     });
 	
 	$(".theatre").mouseover(function(){
-         
 		$(".active").removeClass('active');
 		$(this).addClass('active');
+		// $.post(urlController+'featured_image', {'new_active': $(this).attr('id')}, function(data){
+		// 			$("#featuredimage").attr("src",urlString+data);
+		// 		});
+		
 		$.ajax({
 			url: urlController+"featured_image",
 	    	data: 'new_active='+$(this).attr('id'), 
@@ -63,28 +65,30 @@ jQuery(document).ready(function($){
 			dataType: 'json', 
 			success: function(data){
 				$("#featuredimage").attr("src",urlString+data);
+			},
+			failure: function(e) {
+				$("#featuredimage").attr("src",urlString+data);
 			}
-		})
+		});
 
-        });
+    });
 	
 	//overkill - can mouseover or click, and it calls the same function (see above)
-	$(".theatre").click(function(){
-         
-		$(".active").removeClass('active');
-		$(this).addClass('active');
-		$.ajax({
-			url: urlController+"featured_image",
-	    	data: 'new_active='+$(this).attr('id'), 
-			ajax: 'true',
-			type: 'POST',
-			dataType: 'json', 
-			success: function(data){
-				$("#featuredimage").attr("src",urlString+data);
-			}
-		})
-
-        });
+	// $(".theatre").click(function(){
+	// 		$(".active").removeClass('active');
+	// 		$(this).addClass('active');
+	// 		$.ajax({
+	// 			url: urlController+"featured_image",
+	// 	    	data: {'new_active':$(this).attr('id')}, 
+	// 			ajax: 'true',
+	// 			type: 'POST',
+	// 			dataType: 'json', 
+	// 			success: function(data){
+	// 				$("#featuredimage").attr("src",urlString+data);
+	// 			}
+	// 		})
+	// 
+	//         });
 
     
 });

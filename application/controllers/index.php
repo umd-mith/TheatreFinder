@@ -46,7 +46,7 @@ class Index extends TheatreFinder_Controller {
 		$this->add_scripts('link_mainHomejs');
 		
 		// Build featured theatres details (featured_theatres table)
-		for($featured_index=1; $featured_index<4a; $featured_index++) {
+		for($featured_index=1; $featured_index<4; $featured_index++) {
 			
 			$ft_index = 'featured_'.$featured_index;
 			$this->data[$ft_index] = $this->Theatre_model->get_featured_theatre($featured_index);
@@ -147,29 +147,30 @@ class Index extends TheatreFinder_Controller {
 	}
 
 	function featured_image() {
+		
 		// Get the id for the featured theatre div clicked
 		$new_active = $_POST['new_active'];
-			
+	
 		switch ($new_active) {
 			case "featured_one":
 				$t_id=8; // hard-coded for now, will add "Featured Theatre" table/plus UI
 			break;
-				
+			
 			case "featured_two":
 				$t_id=345;
 			break;
-				
+			
 			case "featured_three":
 				$t_id=98;
 			break;
-				
+			
 			default:
 				$t_id=0;
 			break;
 		}
-		
+	
 		$filename = $this->Theatre_model->get_featured_image($t_id);
-		
+	
 		if ($filename!='imageNeededLarge.gif') {
 			$filename = 'images/theatres/stage/'.$filename;
 			if ($filename == 'imageNeededLarge.gif') {
@@ -179,6 +180,8 @@ class Index extends TheatreFinder_Controller {
 			$filename = 'images/theatres/'.$filename;
 		}
 		echo json_encode($filename);
+	
+	
 	}
 
 	function _format_date($est_earliest, $est_latest, $earliest_bce_ce, $latest_bce_ce) {
