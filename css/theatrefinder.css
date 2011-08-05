@@ -183,6 +183,28 @@ body {
 	font-style:italic;	
 	margin-bottom:10px;
 }
+#subnav {
+    margin: 0;
+    padding: 0;
+   font-size: 105%;
+}
+#subnav ul {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+#subnav ul li {
+    margin: 0 0 5px 20px;
+    padding: 0;
+}
+#subnav ul li a, #subnav ul li a:link {
+    color: #333333;
+    text-decoration: none;
+}
+#subnav ul li a:hover {
+    color: #6C9B0D;
+    text-decoration: none;
+}
 
 /*page styles */
 /* --------------home (and some theatre entry) styles */
