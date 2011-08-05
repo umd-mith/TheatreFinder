@@ -1,6 +1,9 @@
-
 <IfModule mod_rewrite.c>
     RewriteEngine On
+	RewriteRule ^about$ index/about
+	RewriteRule ^contribute$ index/contribute 
+	RewriteRule ^resources$ index/resources 
+	
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteRule ^(.*)$ /theatrefinder/index.php/$1 [L]
