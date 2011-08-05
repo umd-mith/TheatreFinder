@@ -1,55 +1,30 @@
 <!-- Featured theatres -->
 <div class="grid_12 featuredarea">
     <div class="grid_3 alpha sidebar">
-        <h1>About Finder</h1>
-        <h3>What is CAMP?</h3>
-        <p>CAMP is a Collaborative, Ajax-Based, Modeling Platform. As the name suggests, this tool is an open source, collaborative, 3d modeler that will allow users with very little experience to generate a 3-dimensional model in their web browser which they can then allow other users to both view and edit. The tool will initially be used to construct theatre models in Theatre Finder.</p>
-        <p><a href="http://mith.umd.edu/camp/">Visit the camp website.</a></p>
+        <h1>About</h1>
+        <h3></h3>
+                <div id="subnav">
+                <ul>
+                        <li><a href="about_phases">Project Phases</a></li>
+                        <li><a href="about_included">Theatre Types Included</a></li>
+                        <li><a href="about_methodology">Project Methodology</a></li>
+                        <li><a href="about_navigation">Navigating the Site</a></li>
+                </ul>
+                </div>
     </div>
     <div class="grid_8 omega maincontent suffix_1">
         <!-- Content area -->
-        <div class="grid_4 alpha">
-            <h3>What theatre-finder.org is</h3>
-            	<ul>
-					<li>Affiliated organizations</li>
-					<li>Editorial Board</li>
-					<li>Contributing authors</li>
-					<li>Project funders</li>
-					<li>Technical specifications</li>
-				</ul>
-			<h3>What theatre-finder.org does</h3>
-				<ul>
-					<li>How theatres are selected for inclusion</li>
-					<li>Data provided for each theatre
-						<ul>
-							<li>Text</li>
-							<li>Measurements/ technical details</li>
-							<li>Illustrations</li>
-							<li>Coordination with Google Earth</li>
-							<li>CAMP models</li>
-						</ul></li>
-					<li>Searches</li>
-					<li>Resources</li>
-				</ul>
-        </div>
-        <div class="grid_4 omega">
-            <h3>Standards used</h3>
-            	<ul>
-					<li>Theatre name</li>
-					<li>Country name</li>
-					<li>City name</li>
-					<li>Regional designations</li>
-					<li>Dates used</li>
-					<li>Period designations</li>
-					<li>Theatre type designations</li>
-				</ul>
-			<h3>Methodology for finding theatres</h3>
-				<ul>
-					<li>Greek and Roman</li>
-					<li>Post Roman</li>
-					<li>Outside Europe</li>
-				</ul>
-			<h3>Manual for authors/editors</h3>	
+        <div class="grid_8 alpha">
+                        <h3>What is Theatre Finder?</h3>
+                        <p><strong>Theatre Finder</strong> is a comprehensive, web based, world-wide guide to all theatres that are now over 100 years old.  It provides a consistent body of reliable data on existing theatre buildings from the Menoan theatral areas of 2500 B.C.E. to the last playhouse built in 1915. Developed by Prof. Franklin J. Hildy, at the University of Maryland, with the support of the Maryland Institute for Technology in the Humanities (MITH), it is collaboratively written, peer reviewed, and intended for use by those who want to visit such theatres, those who are doing serious research on them, and those who seek to preserve and maintain them.</p>
+                        <p>In order to collect reliable information on theatres around the world, theatre-finder.org requires the participation of its users in the following ways:
+                        <ul>
+                                <li>1. If you find a theatre that belongs in this study but is missing from the list, send as much information as possible (digital photos to if you have them) to theatre-finder@umd.edu.</li>
+                                <li>2. If you havc photos of any theatre on the list that you are willing to have put up on the cite, please send them to theatre-finder@umd.edu with an appropriate identification and credit line. </li>
+                                <li>3. If you have any expertise concerning a specific theatre or group of theatre, please volunteer to write entries for the project (click Contribute, above.) </li>
+                                <li>4. If you have expertise on the theatres of an entire country or region, please volunteer to serve and the editor for that country or region.  </li>
+                        </ul>
+                        </p>
         </div>
     </div>
 </div>
