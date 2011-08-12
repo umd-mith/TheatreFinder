@@ -63,10 +63,12 @@
 				ex:bottomBandUnit="century"
 				></div --> 
 			<div ex:role="view"
-			ex:viewClass="Thumbnail"
 			    ex:orders=".country_name, .city"
+				ex:viewClass="Thumbnail"
+				ex:showAll="false"
+				ex:abbreviatedCount="10"
 			    ex:possibleOrders=".label, .sub_type, .city, .country_name, .period_rep, .region"
-				ex:grouped="true"></div> 
+				ex:grouped="false"></div> 
 		</div>		
 	</div> 
 	
