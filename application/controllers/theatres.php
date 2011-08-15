@@ -67,6 +67,7 @@ class Theatres extends TheatreFinder_Controller {
 		$lastRow = count($theatres)-1;
 		// Iterate through the associative array to set up the list_view output
 		$cities = array();
+		
 		for ($i=0; $i<count($theatres); $i++) {
 
 			// First: need to unset the thumbnail vars to ensure we don't double-up
