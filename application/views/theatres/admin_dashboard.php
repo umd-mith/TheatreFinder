@@ -24,7 +24,9 @@
 	<div class="grid_9 omega maincontent">            
 		<h3><a name="overview">Review Accounts Awaiting Approval (Total: <span class="pend"><?php echo $pend_count;?></span>)</h3>  
 		<div class="clear"></div>        
-		<?php foreach($pending as $individual_request):?>
+		<?php 
+		if(isset($pending)):
+		foreach($pending as $individual_request):?>
 		<form class="acct_form" id='acct_form-<?php echo $individual_request['id'];?>'>
 			<input type="hidden" name="id" value='<?php echo $individual_request['id'];?>' />
 			<div class="grid_9 headerRow alpha omega" id='<?php echo "headerRow-".$individual_request['id'];?>'>
@@ -56,6 +58,8 @@
 			</p>
 		 </div>
 					
-		<?php endforeach;?>
+		<?php endforeach;
+			endif;
+		?>
 	</div>
 </div>
