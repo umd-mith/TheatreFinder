@@ -59,10 +59,11 @@ $db['default']['dbcollat'] = "utf8_general_ci";
 /* THEATRES DATABASE stuff 
  * Remember to turn off db_debug in production
  */
-$db['theatrefinder']['hostname'] = "localhost";
-$db['theatrefinder']['username'] = "root";
-$db['theatrefinder']['password'] = "root";
-$db['theatrefinder']['database'] = "theatrefinder";
+$db['theatrefinder']['hostname'] = "zelda.umd.edu";
+$db['theatrefinder']['username'] = "tf_admin";
+$db['theatrefinder']['password'] = "p455w0rd";
+$db['theatrefinder']['password'] = trim(file_get_contents("/export/software/www/conf/passwords/theatrefinder.db"));
+$db['theatrefinder']['database'] = "ci_theatrefinder";
 $db['theatrefinder']['dbdriver'] = "mysql";
 $db['theatrefinder']['dbprefix'] = "";
 $db['theatrefinder']['pconnect'] = TRUE;
