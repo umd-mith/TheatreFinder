@@ -81,6 +81,7 @@ div.exhibit-facet-body {
         margin-bottom:15px;
 }
 div.exhibit-thumbnailView-itemContainer-IE {
+		width: 100%;
         float:none;
         margin-bottom:15px;
 }
