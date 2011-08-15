@@ -6,7 +6,9 @@
 			<?php echo form_open('user/validate_user_credentials'); ?>
 	
 			<div class="login_details">
+				<h2>Username:</h2>
 				<?php echo $username_login;?>
+				<h2>Password:</h2>
 				<?php echo $login_password; ?>
 				<?php echo $login_submit; ?>
 				<a href="<?php echo base_url();?>user/signup" class="login_links">Request Account</a>

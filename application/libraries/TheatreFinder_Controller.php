@@ -55,9 +55,9 @@ class TheatreFinder_Controller extends Controller {
 			
 			// check if the user is an administrator and set the admin_link appropriately
 			if ($this->data['access_level'] == 'administrator') {
-				$this->data['admin_link'] = anchor('theatre_ctrl/admin_dashboard', "Admin Options");
+				$this->data['admin_link'] = anchor('theatres/admin_dashboard', "Admin Options");
 			} else {
-				$this->data['admin_link'] = anchor('theatre_ctrl/password_form', "Change account password");
+				$this->data['admin_link'] = anchor('theatres/password_form', "Change account password");
 			}
 		}
 	}
