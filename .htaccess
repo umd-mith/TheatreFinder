@@ -1,6 +1,10 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
 	RewriteRule ^about$ index/about
+	RewriteRule ^about_phases$ index/about_phases
+	RewriteRule ^about_included$ index/about_included
+	RewriteRule ^about_methodology$ index/about_methodology
+	RewriteRule ^about_navigation$ index/about_navigation
 	RewriteRule ^contribute$ index/contribute 
 	RewriteRule ^resources$ index/resources 
 	
