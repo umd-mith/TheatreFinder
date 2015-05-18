@@ -276,11 +276,14 @@ class CI_Form_validation {
 	 */		
 	function run($group = '')
 	{
+echo "<-- running validation -->";
 		// Do we even have any data to process?  Mm?
 		if (count($_POST) == 0)
 		{
+echo "<!-- no POST data -->";
 			return FALSE;
 		}
+echo "<!-- we have POST data -->";
 		
 		// Does the _field_data array containing the validation rules exist?
 		// If not, we look to see if they were assigned via a config file
@@ -289,14 +292,18 @@ class CI_Form_validation {
 			// No validation rules?  We're done...
 			if (count($this->_config_rules) == 0)
 			{
+echo "<!-- no validation rules -->";
 				return FALSE;
 			}
+echo "<!-- we have validation rules -->";
 			
 			// Is there a validation rule for the particular URI being accessed?
 			$uri = ($group == '') ? trim($this->CI->uri->ruri_string(), '/') : $group;
+echo "<!-- uri: ", $uri, " -->";
 			
 			if ($uri != '' AND isset($this->_config_rules[$uri]))
 			{
+echo "<!-- we have rules for that uri -->";
 				$this->set_rules($this->_config_rules[$uri]);
 			}
 			else
@@ -307,6 +314,7 @@ class CI_Form_validation {
 			// We're we able to set the rules correctly?
 			if (count($this->_field_data) == 0)
 			{
+echo "<!-- unable to find validation rules -->";
 				log_message('debug', "Unable to find validation rules");
 				return FALSE;
 			}

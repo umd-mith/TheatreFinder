@@ -34,7 +34,7 @@
 				<li><em><a href="fhildy">Franklin J. Hildy</a><br />General Editor<br />University of Maryland</em></li>
 			</ul>
 			<p>The rest of the board will be constituted in the fall of 2010.</p>
-			<p class="loginbutton"><a href="<?php echo base_url();?>login" id="login_button">Log on and edit entries</a></p>
+			<p class="loginbutton"><a href="<?php echo base_url();?>user" id="login_button">Log on and edit entries</a></p>
 			
         </div>
     </div>

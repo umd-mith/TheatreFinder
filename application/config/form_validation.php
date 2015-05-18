@@ -5,7 +5,8 @@
                  // Researchers/Accounts (login) form & table validation
 				 // NOTE: with config.php global: $config['global_xss_filtering'] = TRUE, 
 				//       "xss_clean" is not really needed here, but extra	
-                 'login/create_member' => array(
+                 'login/create_member' => array(),
+                 'user/create_member' => array(
 				 					array(
                                             'field' => 'first_name',
                                             'label' => 'First Name',
@@ -44,11 +45,12 @@
 									array(
                                             'field' => 'app_stmt',
                                             'label' => 'Application Statement',
-											'rules' => 'xss_clean'
+					'rules' => 'xss_clean'
                                          ),
                                     ),
 				// note the same validation rules for change_admin_password/change_password
-				'theatre_ctrl/change_admin_password' => array(
+				'theatre_ctrl/change_admin_password' => array(),
+				'theatres/change_admin_password' => array(
 									array(
                                             'field' => 'password',
                                             'label' => 'Password',
@@ -60,7 +62,8 @@
                                             'rules' => 'trim|required|matches[password]|xss_clean'
                                          ),
 									),
-				'theatre_ctrl/change_password' => array(
+				'theatre_ctrl/change_password' => array(),
+				'theatres/change_password' => array(
 									array(
                                             'field' => 'password',
                                             'label' => 'Password',

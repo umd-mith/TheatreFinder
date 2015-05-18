@@ -1,5 +1,6 @@
 <?php
 
+
 # Set PHP's internal character encoding to UTF-8
 mb_internal_encoding('UTF-8');
 

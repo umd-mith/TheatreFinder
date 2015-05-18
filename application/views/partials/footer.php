@@ -5,8 +5,8 @@
                                 <li class="grid_2 nav_1"><h4><a href="<?php echo base_url();?>index">Home</a></h4></li>
                 <li class="grid_2 nav_2"><h4><a href="<?php echo base_url();?>index/about">About</a></h4></li>
                 <li class="grid_2 nav_3"><h4><a href="<?php echo base_url();?>theatres">Browse</a></h4></li>
-                <li class="grid_2 nav_4"><h4><a href="<?php echo base_url();?>main/join">Contribute</a></h4></li>
-                <li class="grid_2 omega nav_5"><h4><a href="<?php echo base_url();?>main/resources">Resources</a></h4></li>
+                <li class="grid_2 nav_4"><h4><a href="<?php echo base_url();?>contribute">Contribute</a></h4></li>
+                <li class="grid_2 omega nav_5"><h4><a href="<?php echo base_url();?>resources">Resources</a></h4></li>
                         </ul>
        </div>
                 <div class="grid_12 contact">

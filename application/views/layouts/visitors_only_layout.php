@@ -12,7 +12,7 @@
 
 </head>
 
-<!-- <div><?php echo $debug_info; ?></div> -->
+<!-- <div><?php # echo $debug_info; ?></div> -->
 
 <?php echo $body_id; ?> 
 <a name="top_of_navbar"></a>

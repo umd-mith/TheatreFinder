@@ -179,7 +179,7 @@ class User extends TheatreFinder_Controller {
 		// trying out a better template than what i'm using in libraries/MY_Controller.php
 		$this->load->library('template');
 		
-		if ($this->form_validation->run()) { // Registration form input is good 
+		if ($this->form_validation->run() !== FALSE) { // Registration form input is good 
 										
 			// generate a random activation code that will be sent later to the user
 			$activation_code = $this->_gen_rand();
