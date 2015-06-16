@@ -82,7 +82,6 @@
 <li>Boydell, Peter. "The Manoel Theatre, Malta." <em>Theatre Notebook </em>12 (Spring 1958): 91-93.</li> 
 <li>Braun, Kazimierz. <em>Przestrzen Teatraina</em>. Warsaw: 1982.</li> 
 <li>Brayley, Edward Wedlake. <em>Historical and Descriptive Account of the Theatres of London</em>. London: 1826.</li> 
-<li>Brai, M., M. Casaletto, G. Gennaro, M. Marrale, and T. Schillaci. "Degradation of stone materials in the archaeological context of the Greekâ€“Roman Theatre in Taormina (Sicily, Italy)." <em>Applied Physics A: Materials Science &amp; Processing</em> 100, no. 3 (2009): 945-951.</li> 
 <li> 
 Brandt, George W., ed. <em>German and Dutch Theatre 1600-1848</em>. New York: Cambridge University Press, 1993. </li> 
 <li> 
