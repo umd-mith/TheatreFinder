@@ -12,7 +12,7 @@
 of Theatre, Dance and Performance Studies at the University of Maryland, College Park. He also serves 
 as the Director of Shakespeare’s Globe (USA) Research Archive. He works as a theatre consultant 
 for historic theatre preservation and reconstruction, and is a member of the Architecture Research 
-Group for Shakespeare’s Globe in London. He is the founding convenor of the architecture working group for the International Federation for Theatre Research.</p>
+Group for Shakespeare’s Globe in London. He is the founding convenor of the architecture working group for the International Federation for Theatre Research (IFTR).</p>
 <p>Dr. Hildy has conducted field research on historic theatres in twenty one countries including  Austria 1989, 2002; Croatia 1986; Czech Republic 1994, 2002, 2007; 
 Denmark 1973, 2003, 2009; England 1973, 1978-79, 1983, 1986, 1988 and twice a year since then; France 1973, 1983, 1989, 2004; 
 Germany 1983, 1989, 2002, 2003; Greece 1979, 1993, 1999; Israel 2006; Italy 1974, 1983, 1994, 2006; Japan 1991; 
