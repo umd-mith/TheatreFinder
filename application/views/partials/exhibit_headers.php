@@ -1,8 +1,8 @@
 <link href="<?php echo base_url(); ?>theatres/exhibit_json" type="application/json" rel="exhibit/data" />
 
-<script src="http://static.simile.mit.edu/exhibit/api-2.0/exhibit-api.js"
+<script src="/javascript/exhibit/api-2.0/exhibit-api.js"
 		type="text/javascript"></script>
-<script src="http://static.simile.mit.edu/exhibit/extensions-2.0/time/time-extension.js"></script>
+<script src="/javascript/exhibit/extensions-2.0/time/time-extension.js"></script>
 <script type="text/javascript">
 function confirmDeleteTheatre(url) {
   if (confirm("Are you sure you want to delete the theatre?")) {
