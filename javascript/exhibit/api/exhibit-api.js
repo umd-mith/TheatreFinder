@@ -229,7 +229,8 @@
         window.SimileAjax_onLoad = loadMe;
         
         var url = useLocalResources ?
-            "http://127.0.0.1:8888/ajax/api/simile-ajax-api.js" :
+            //"http://127.0.0.1:8888/ajax/api/simile-ajax-api.js" :
+            "/javascript/exhibit/ajax/api/simile-ajax-api.js" :
             "http://static.simile.mit.edu/ajax/api-2.0/simile-ajax-api.js";
             
         var createScriptElement = function() {
