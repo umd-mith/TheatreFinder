@@ -1,6 +1,6 @@
 /*==================================================
- *  English localization 
- *  (also base and default localization)
+ *  Swedish localization
+ *
  *==================================================
  */
 (function() {
@@ -23,11 +23,11 @@
     var cssFiles = [
     ];
 
-    var urlPrefix = Exhibit.urlPrefix + "locales/en/";
+    var urlPrefix = Exhibit.urlPrefix + "locales/sv/";
     if (Exhibit.params.bundle) {
-        SimileAjax.includeJavascriptFiles(document, urlPrefix, [ "exhibit-en-bundle.js" ]);
+        SimileAjax.includeJavascriptFiles(document, urlPrefix, [ "exhibit-sv-bundle.js" ]);
         if (cssFiles.length > 0) {
-            SimileAjax.includeCssFiles(document, urlPrefix, [ "exhibit-en-bundle.css" ]);
+            SimileAjax.includeCssFiles(document, urlPrefix, [ "exhibit-sv-bundle.css" ]);
         }
     } else {
         SimileAjax.includeJavascriptFiles(document, urlPrefix + "scripts/", javascriptFiles);

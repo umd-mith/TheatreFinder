@@ -1,6 +1,5 @@
 /*==================================================
- *  English localization 
- *  (also base and default localization)
+ *  French localization 
  *==================================================
  */
 (function() {
@@ -23,11 +22,11 @@
     var cssFiles = [
     ];
 
-    var urlPrefix = Exhibit.urlPrefix + "locales/en/";
+    var urlPrefix = Exhibit.urlPrefix + "locales/fr/";
     if (Exhibit.params.bundle) {
-        SimileAjax.includeJavascriptFiles(document, urlPrefix, [ "exhibit-en-bundle.js" ]);
+        SimileAjax.includeJavascriptFiles(document, urlPrefix, [ "exhibit-fr-bundle.js" ]);
         if (cssFiles.length > 0) {
-            SimileAjax.includeCssFiles(document, urlPrefix, [ "exhibit-en-bundle.css" ]);
+            SimileAjax.includeCssFiles(document, urlPrefix, [ "exhibit-fr-bundle.css" ]);
         }
     } else {
         SimileAjax.includeJavascriptFiles(document, urlPrefix + "scripts/", javascriptFiles);

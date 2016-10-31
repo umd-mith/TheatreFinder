@@ -9,18 +9,12 @@
 
 (function() {
     var useLocalResources = false;
-    var noAuthentication = false;
-    
     if (document.location.search.length > 0) {
         var params = document.location.search.substr(1).split("&");
         for (var i = 0; i < params.length; i++) {
             if (params[i] == "exhibit-use-local-resources") {
                 useLocalResources = true;
             }
-            if (params[i] == 'exhibit-no-authentication') {
-                noAuthentication = true;
-            }
-            
         }
     }
     
@@ -30,9 +24,8 @@
         }
     
         window.Exhibit = {
-            version:    "2.2.0",
             loaded:     false,
-            params:     { bundle: !useLocalResources, authenticated: !noAuthentication, autoCreate: true, safe: false },
+            params:     { bundle: true, autoCreate: true, safe: false },
             namespace:  "http://simile.mit.edu/2006/11/exhibit#",
             importers:  {},
             locales:    [ "en" ]
@@ -41,7 +34,7 @@
         var javascriptFiles = [
             "exhibit.js",
             "persistence.js",
-            "authentication.js",
+            
             "util/set.js",
             "util/util.js",
             "util/settings.js",
@@ -56,7 +49,6 @@
             "data/controls.js",
             "data/collection.js",
             
-            "data/importers/authenticated-importer.js",
             "data/importers/exhibit-json-importer.js",
             "data/importers/html-table-importer.js",
             "data/importers/jsonp-importer.js",
@@ -68,7 +60,6 @@
             "data/exporters/exhibit-json-exporter.js",
             "data/exporters/tsv-exporter.js",
             "data/exporters/bibtex-exporter.js",
-            "data/exporters/facet-selection-exporter.js",
             
             "ui/ui.js",
             "ui/ui-context.js",
@@ -81,12 +72,7 @@
             "ui/facets/numeric-range-facet.js",
             "ui/facets/text-search-facet.js",
             "ui/facets/cloud-facet.js",
-            "ui/facets/hierarchical-facet.js",
-            "ui/facets/image-facet.js",
-	          "ui/facets/slider-facet.js",
-	          "ui/facets/slider.js",
-	          "ui/facets/alpha-range-facet.js",
-      	    
+            
             "ui/coders/color-coder.js",
             "ui/coders/default-color-coder.js",
             "ui/coders/color-gradient-coder.js",
@@ -162,10 +148,6 @@
         
             SimileAjax.parseURLParameters(url, Exhibit.params, paramTypes);
         }
-        
-        if (useLocalResources) {
-            Exhibit.urlPrefix = "http://127.0.0.1:8888/exhibit/api/";
-        }
 
         if (Exhibit.params.locale) { // ISO-639 language codes,
             // optional ISO-3166 country codes (2 characters)
@@ -225,10 +207,14 @@
          *  Extensions (for backward compatibility)
          */
         if (includeTimeline) {
-            scriptURLs.push(Exhibit.urlPrefix + "extensions/time/time-extension.js");
+            scriptURLs.push(useLocalResources ?
+                "http://127.0.0.1:8888/exhibit/extensions/time/time-extension.js" :
+                "http://static.simile.mit.edu/exhibit/extensions-2.0/time/time-extension.js");
         }
         if (includeMap) {
-            scriptURLs.push(Exhibit.urlPrefix + "extensions/map/map-extension.js");
+            scriptURLs.push(useLocalResources ?
+                "http://127.0.0.1:8888/exhibit/extensions/map/map-extension.js" :
+                "http://static.simile.mit.edu/exhibit/extensions-2.0/map/map-extension.js");
         }
         
         SimileAjax.includeJavascriptFiles(document, "", scriptURLs);
@@ -243,8 +229,8 @@
         window.SimileAjax_onLoad = loadMe;
         
         var url = useLocalResources ?
-            "/javascript/exhibit/simile-ajax-bundle.js" :
-            "http://api.simile-widgets.org/ajax/2.2.1/simile-ajax-api.js";
+            "http://127.0.0.1:8888/ajax/api/simile-ajax-api.js" :
+            "http://static.simile.mit.edu/ajax/api-2.0/simile-ajax-api.js";
             
         var createScriptElement = function() {
             var script = document.createElement("script");
