@@ -8,7 +8,7 @@
  */
 
 (function() {
-    var useLocalResources = false;
+    var useLocalResources = true;
     if (document.location.search.length > 0) {
         var params = document.location.search.substr(1).split("&");
         for (var i = 0; i < params.length; i++) {
@@ -208,12 +208,12 @@
          */
         if (includeTimeline) {
             scriptURLs.push(useLocalResources ?
-                "http://127.0.0.1:8888/exhibit/extensions/time/time-extension.js" :
+                "/javascript/exhibit/extensions/time/time-extension.js" :
                 "http://static.simile.mit.edu/exhibit/extensions-2.0/time/time-extension.js");
         }
         if (includeMap) {
             scriptURLs.push(useLocalResources ?
-                "http://127.0.0.1:8888/exhibit/extensions/map/map-extension.js" :
+                "/javascript/exhibit/extensions/map/map-extension.js" :
                 "http://static.simile.mit.edu/exhibit/extensions-2.0/map/map-extension.js");
         }
         
