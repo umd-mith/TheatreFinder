@@ -153,7 +153,7 @@
         }
         
         if (useLocalResources) {
-            Exhibit.urlPrefix = "http://127.0.0.1:8888/exhibit/api/";
+            Exhibit.urlPrefix = "/javascript/exhibit/api-2.0/";
         }
 
         if (Exhibit.params.locale) { // ISO-639 language codes,
