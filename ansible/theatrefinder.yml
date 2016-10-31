@@ -1,0 +1,88 @@
+---
+- name: Deploy theatrefinder
+  hosts: theatrefinder-production
+  user: ubuntu
+  vars:
+    mysql_root_password: changeme
+    db_name: theatrefinder
+    db_user: st_mith_admin
+    site_name: 54.167.75.192
+  vars_files:
+    - secrets.yml
+  tasks:
+    - name: install apt packages
+      apt: pkg={{ item }} update_cache=yes cache_valid_time=3600
+      sudo: True
+      with_items:
+        - git
+        - apache2
+        - libapache2-mod-php5
+        - mysql-server
+        - python-mysqldb
+        - php5
+        - php5-fpm
+        - php5-mysql
+
+    - name: update mysql conf for admins
+      template: src=templates/home_my.cnf.j2 dest=/home/ubuntu/.my.cnf
+
+    # - name: update root password
+    #   mysql_user: login_user=root login_password="" name=root password="{{ mysql_root_password }}"
+
+    - name: create theatrefinder db
+      mysql_db: name={{ db_name }} state=present
+
+    - name: create theatrefinder db user
+      mysql_user: name={{ db_user }} password={{ db_password }} priv={{ db_name }}.*:ALL host='localhost' state=present
+
+    - name: copy database contents
+      copy: src=files/theatrefinder.sql.gz dest=/tmp
+
+    - name: load database
+      mysql_db: name=theatrefinder state=import target=/tmp/theatrefinder.sql.gz
+
+    - name: enable mod_rewrite
+      apache2_module: name=rewrite state=present
+      sudo: True
+      notify:
+       - restart apache
+
+    - name: create virtual host
+      template: src=templates/tf.conf.j2 dest=/etc/apache2/sites-available/tf.conf
+      sudo: True
+
+    - name: enable virtual host
+      command: a2ensite tf
+      sudo: True
+      notify:
+       - restart apache
+
+    - name: disable default virtual host
+      command: a2dissite 000-default
+      sudo: True
+      notify:
+       - restart apache
+
+    - name: Ensure theatrefinder dir exists
+      file: dest=/var/www/theatrefinder state=directory
+      sudo: True
+
+    - name: checkout theatrefinder repo
+      git: repo=https://github.com/umd-mith/TheatreFinder.git dest=/var/www/theatrefinder clone=yes accept_hostkey=yes version=localize-exhibit
+      sudo: True
+
+    - name: modify apache config for standalone
+      lineinfile: dest=/var/www/theatrefinder/.htaccess regexp=".*\[L\]" line="RewriteRule ^(.*)$ /index.php/$1 [L]"
+      sudo: True
+
+    - name: add theatrefinder php config
+      template: src=templates/config.php.j2 dest=/var/www/theatrefinder/application/config/config.php
+      sudo: True
+
+    - name: add theatrefinder db config
+      template: src=templates/database.php.j2 dest=/var/www/theatrefinder/application/config/database.php
+      sudo: True
+
+  handlers:
+    - name: restart apache
+      service: name=apache2 state=restarted
