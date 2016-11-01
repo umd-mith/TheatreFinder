@@ -68,7 +68,7 @@
       sudo: True
 
     - name: checkout theatrefinder repo
-      git: repo=https://github.com/umd-mith/TheatreFinder.git dest=/var/www/theatrefinder clone=yes accept_hostkey=yes version=localize-exhibit
+      git: repo=https://github.com/umd-mith/TheatreFinder.git dest=/var/www/theatrefinder clone=yes accept_hostkey=yes
       sudo: True
 
     - name: modify apache config for standalone
